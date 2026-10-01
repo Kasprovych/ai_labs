@@ -1,0 +1,26 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data files (Credit Card CSV is >100MB, cannot be committed to GitHub)
+data/*.csv
+data/*.gz
+data/*.zip
+!data/.gitkeep
+
+# OS / Editor artifacts
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Antigravity artifacts
+.gemini/
