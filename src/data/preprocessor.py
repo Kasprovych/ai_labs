@@ -98,6 +98,12 @@ class DataPreprocessor:
         """
         logger.info("Starting preprocessing pipeline on %d rows...", len(df))
 
+        # 0. Remove exact duplicates so identical rows cannot appear in both train and test
+        if self._config.drop_duplicates:
+            n_before = len(df)
+            df = df.drop_duplicates().reset_index(drop=True)
+            logger.info("Removed %d duplicate rows (%d -> %d)", n_before - len(df), n_before, len(df))
+
         # Separate features and target
         x_raw = df.drop(columns=[self._config.target_column]).copy()
         y_raw = df[self._config.target_column].to_numpy(dtype=np.int32)

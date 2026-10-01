@@ -1,0 +1,125 @@
+2026-10-01 15:16:13 [INFO   ] Application                 : Initializing Laboratory Work #1 Deep Learning Pipeline...
+2026-10-01 15:16:13 [INFO   ] Application                 : Configuration loaded: Epochs=15, BatchSize=512, LearningRate=0.0010, Seed=42
+================================================================================
+ >>> STEP 2 & 3: DATA INGESTION AND EXPLORATORY DATA ANALYSIS (EDA)
+================================================================================
+2026-10-01 15:16:13 [INFO   ] src.data.loader             : Found cached dataset at ./data/creditcard.csv
+2026-10-01 15:16:13 [INFO   ] src.data.loader             : Dataset ready: 284807 records, 30 features. Class balance: 0=284315, 1=492 (0.173% fraud)
+2026-10-01 15:16:13 [INFO   ] src.eda.analyzer            : Executing comprehensive EDA...
+2026-10-01 15:16:13 [INFO   ] src.eda.analyzer            : Dataset statistics: Rows=284807, Missing Values=0
+2026-10-01 15:16:13 [INFO   ] src.eda.analyzer            : Class distribution: {0: '284315 (99.827%)', 1: '492 (0.173%)'}
+2026-10-01 15:16:19 [INFO   ] src.eda.analyzer            : EDA completed. Plots saved to ./artifacts/plots
+================================================================================
+ >>> STEP 4 & 5: PREPROCESSING, TRAIN/VAL/TEST SPLIT & SMOTE BALANCING
+================================================================================
+2026-10-01 15:16:19 [INFO   ] src.data.preprocessor       : Starting preprocessing pipeline on 284807 rows...
+2026-10-01 15:16:19 [INFO   ] src.data.preprocessor       : Removed 1081 duplicate rows (284807 -> 283726)
+2026-10-01 15:16:19 [INFO   ] src.data.preprocessor       : Dataset split completed: Train=198608, Val=42559, Test=42559 (Stratified)
+2026-10-01 15:16:19 [INFO   ] src.data.preprocessor       : Applying SMOTE oversampling to training set...
+2026-10-01 15:16:20 [INFO   ] src.data.preprocessor       : SMOTE applied: original 198608 samples -> resampled 237932 samples (positives: 39655)
+2026-10-01 15:16:20 [INFO   ] Application                 : Data Preprocessing Summary:
+2026-10-01 15:16:20 [INFO   ] Application                 :   Training samples:   237932 (minority class oversampled with SMOTE)
+2026-10-01 15:16:20 [INFO   ] Application                 :   Validation samples: 42559 (realistic imbalanced distribution)
+2026-10-01 15:16:20 [INFO   ] Application                 :   Testing samples:    42559 (realistic imbalanced distribution)
+2026-10-01 15:16:20 [INFO   ] Application                 :   Feature dimensions: 30
+================================================================================
+ >>> STEP 6 & 7: NEURAL NETWORK ARCHITECTURE & ACTIVATION SETUP
+================================================================================
+2026-10-01 15:16:20 [INFO   ] Application                 : Configured 6 distinct model experiments for training.
+================================================================================
+ >>> STEP 8 & 9: MODEL TRAINING (FIXED EPOCHS) & INDEPENDENT TEST SET EVALUATION
+================================================================================
+2026-10-01 15:16:20 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:20 [INFO   ] src.training.trainer        : Starting experiment: Baseline_FFN_relu (Activation: relu)
+2026-10-01 15:16:20 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:20 [INFO   ] src.training.trainer        : Fitting Baseline_FFN_relu for 15 epochs (batch_size=512, lr=0.0010)...
+2026-10-01 15:16:28 [INFO   ] src.training.trainer        : F1-optimal threshold on validation set: 0.871
+2026-10-01 15:16:28 [INFO   ] src.training.trainer        : Evaluating Baseline_FFN_relu on independent Test set...
+2026-10-01 15:16:29 [INFO   ] src.training.evaluator      : [Baseline_FFN_relu] Evaluation (thr=0.500) -> F1: 0.7260, Recall: 0.7465, Precision: 0.7067, ROC-AUC: 0.9570, PR-AUC: 0.7503 (TP=53, FP=22, FN=18)
+2026-10-01 15:16:29 [INFO   ] src.training.evaluator      : [Baseline_FFN_relu] Evaluation (thr=0.871) -> F1: 0.7500, Recall: 0.7183, Precision: 0.7846, ROC-AUC: 0.9570, PR-AUC: 0.7503 (TP=51, FP=14, FN=20)
+2026-10-01 15:16:29 [INFO   ] src.training.trainer        : Model saved to ./artifacts/saved_models/Baseline_FFN_relu.keras
+2026-10-01 15:16:29 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:29 [INFO   ] src.training.trainer        : Starting experiment: Baseline_FFN_leaky_relu (Activation: leaky_relu)
+2026-10-01 15:16:29 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:29 [INFO   ] src.training.trainer        : Fitting Baseline_FFN_leaky_relu for 15 epochs (batch_size=512, lr=0.0010)...
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : F1-optimal threshold on validation set: 0.992
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : Evaluating Baseline_FFN_leaky_relu on independent Test set...
+2026-10-01 15:16:37 [INFO   ] src.training.evaluator      : [Baseline_FFN_leaky_relu] Evaluation (thr=0.500) -> F1: 0.6788, Recall: 0.7887, Precision: 0.5957, ROC-AUC: 0.9527, PR-AUC: 0.7675 (TP=56, FP=38, FN=15)
+2026-10-01 15:16:37 [INFO   ] src.training.evaluator      : [Baseline_FFN_leaky_relu] Evaluation (thr=0.992) -> F1: 0.7737, Recall: 0.7465, Precision: 0.8030, ROC-AUC: 0.9527, PR-AUC: 0.7675 (TP=53, FP=13, FN=18)
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : Model saved to ./artifacts/saved_models/Baseline_FFN_leaky_relu.keras
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : Starting experiment: Baseline_FFN_gelu (Activation: gelu)
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:37 [INFO   ] src.training.trainer        : Fitting Baseline_FFN_gelu for 15 epochs (batch_size=512, lr=0.0010)...
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : F1-optimal threshold on validation set: 0.954
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : Evaluating Baseline_FFN_gelu on independent Test set...
+2026-10-01 15:16:49 [INFO   ] src.training.evaluator      : [Baseline_FFN_gelu] Evaluation (thr=0.500) -> F1: 0.6503, Recall: 0.7465, Precision: 0.5761, ROC-AUC: 0.9456, PR-AUC: 0.7610 (TP=53, FP=39, FN=18)
+2026-10-01 15:16:49 [INFO   ] src.training.evaluator      : [Baseline_FFN_gelu] Evaluation (thr=0.954) -> F1: 0.7647, Recall: 0.7324, Precision: 0.8000, ROC-AUC: 0.9456, PR-AUC: 0.7610 (TP=52, FP=13, FN=19)
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : Model saved to ./artifacts/saved_models/Baseline_FFN_gelu.keras
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : Starting experiment: Regularized_BN_Dropout_L2_relu (Activation: relu)
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:16:49 [INFO   ] src.training.trainer        : Fitting Regularized_BN_Dropout_L2_relu for 15 epochs (batch_size=512, lr=0.0010)...
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : F1-optimal threshold on validation set: 0.964
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : Evaluating Regularized_BN_Dropout_L2_relu on independent Test set...
+2026-10-01 15:17:02 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_relu] Evaluation (thr=0.500) -> F1: 0.6746, Recall: 0.8028, Precision: 0.5816, ROC-AUC: 0.9590, PR-AUC: 0.7585 (TP=57, FP=41, FN=14)
+2026-10-01 15:17:02 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_relu] Evaluation (thr=0.964) -> F1: 0.7794, Recall: 0.7465, Precision: 0.8154, ROC-AUC: 0.9590, PR-AUC: 0.7585 (TP=53, FP=12, FN=18)
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : Model saved to ./artifacts/saved_models/Regularized_BN_Dropout_L2_relu.keras
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : Starting experiment: Regularized_BN_Dropout_L2_leaky_relu (Activation: leaky_relu)
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:17:02 [INFO   ] src.training.trainer        : Fitting Regularized_BN_Dropout_L2_leaky_relu for 15 epochs (batch_size=512, lr=0.0010)...
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : F1-optimal threshold on validation set: 0.983
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : Evaluating Regularized_BN_Dropout_L2_leaky_relu on independent Test set...
+2026-10-01 15:17:16 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_leaky_relu] Evaluation (thr=0.500) -> F1: 0.6486, Recall: 0.8451, Precision: 0.5263, ROC-AUC: 0.9565, PR-AUC: 0.7047 (TP=60, FP=54, FN=11)
+2026-10-01 15:17:16 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_leaky_relu] Evaluation (thr=0.983) -> F1: 0.7971, Recall: 0.7746, Precision: 0.8209, ROC-AUC: 0.9565, PR-AUC: 0.7047 (TP=55, FP=12, FN=16)
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : Model saved to ./artifacts/saved_models/Regularized_BN_Dropout_L2_leaky_relu.keras
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : Starting experiment: Regularized_BN_Dropout_L2_gelu (Activation: gelu)
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : ==================================================
+2026-10-01 15:17:16 [INFO   ] src.training.trainer        : Fitting Regularized_BN_Dropout_L2_gelu for 15 epochs (batch_size=512, lr=0.0010)...
+2026-10-01 15:17:34 [INFO   ] src.training.trainer        : F1-optimal threshold on validation set: 0.965
+2026-10-01 15:17:34 [INFO   ] src.training.trainer        : Evaluating Regularized_BN_Dropout_L2_gelu on independent Test set...
+2026-10-01 15:17:34 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_gelu] Evaluation (thr=0.500) -> F1: 0.6277, Recall: 0.8310, Precision: 0.5043, ROC-AUC: 0.9584, PR-AUC: 0.7674 (TP=59, FP=58, FN=12)
+2026-10-01 15:17:34 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_gelu] Evaluation (thr=0.965) -> F1: 0.7761, Recall: 0.7324, Precision: 0.8254, ROC-AUC: 0.9584, PR-AUC: 0.7674 (TP=52, FP=11, FN=19)
+2026-10-01 15:17:34 [INFO   ] src.training.trainer        : Model saved to ./artifacts/saved_models/Regularized_BN_Dropout_L2_gelu.keras
+================================================================================
+ >>> STEP 10: GENERATING PUBLICATION-QUALITY PLOTS
+================================================================================
+2026-10-01 15:17:34 [INFO   ] src.visualization.plots     : Saved Training vs Validation Loss (Binary Cross-Entropy) to ./artifacts/plots/learning_curves_comparison.png
+2026-10-01 15:17:35 [INFO   ] src.visualization.plots     : Saved Training vs Validation PR-AUC to ./artifacts/plots/learning_curves_pr_auc.png
+2026-10-01 15:17:35 [INFO   ] src.visualization.plots     : Saved ROC and PR curves to ./artifacts/plots/roc_and_pr_curves.png
+2026-10-01 15:17:35 [INFO   ] src.visualization.plots     : Saved confusion matrices to ./artifacts/plots/confusion_matrices.png
+2026-10-01 15:17:35 [INFO   ] src.visualization.plots     : Saved metrics comparison bar chart to ./artifacts/plots/metrics_comparison_barchart.png
+================================================================================
+ >>> STEP 11 & 12: MODEL PERFORMANCE COMPARISON & FINDINGS
+================================================================================
+Test metrics @ threshold 0.5:
+| Model                                |   Threshold |   Accuracy |   Precision |   Recall |   F1-Score |   ROC-AUC |   PR-AUC (AP) |   TP |   FP |    TN |   FN |
+|:-------------------------------------|------------:|-----------:|------------:|---------:|-----------:|----------:|--------------:|-----:|-----:|------:|-----:|
+| Baseline_FFN_relu                    |         0.5 |     0.9991 |      0.7067 |   0.7465 |     0.726  |    0.957  |        0.7503 |   53 |   22 | 42466 |   18 |
+| Baseline_FFN_leaky_relu              |         0.5 |     0.9988 |      0.5957 |   0.7887 |     0.6788 |    0.9527 |        0.7675 |   56 |   38 | 42450 |   15 |
+| Baseline_FFN_gelu                    |         0.5 |     0.9987 |      0.5761 |   0.7465 |     0.6503 |    0.9456 |        0.761  |   53 |   39 | 42449 |   18 |
+| Regularized_BN_Dropout_L2_relu       |         0.5 |     0.9987 |      0.5816 |   0.8028 |     0.6746 |    0.959  |        0.7585 |   57 |   41 | 42447 |   14 |
+| Regularized_BN_Dropout_L2_leaky_relu |         0.5 |     0.9985 |      0.5263 |   0.8451 |     0.6486 |    0.9565 |        0.7047 |   60 |   54 | 42434 |   11 |
+| Regularized_BN_Dropout_L2_gelu       |         0.5 |     0.9984 |      0.5043 |   0.831  |     0.6277 |    0.9584 |        0.7674 |   59 |   58 | 42430 |   12 |
+Test metrics @ F1-optimal threshold (tuned on validation):
+| Model                                |   Threshold |   Accuracy |   Precision |   Recall |   F1-Score |   ROC-AUC |   PR-AUC (AP) |   TP |   FP |    TN |   FN |
+|:-------------------------------------|------------:|-----------:|------------:|---------:|-----------:|----------:|--------------:|-----:|-----:|------:|-----:|
+| Baseline_FFN_relu                    |       0.871 |     0.9992 |      0.7846 |   0.7183 |     0.75   |    0.957  |        0.7503 |   51 |   14 | 42474 |   20 |
+| Baseline_FFN_leaky_relu              |       0.992 |     0.9993 |      0.803  |   0.7465 |     0.7737 |    0.9527 |        0.7675 |   53 |   13 | 42475 |   18 |
+| Baseline_FFN_gelu                    |       0.954 |     0.9992 |      0.8    |   0.7324 |     0.7647 |    0.9456 |        0.761  |   52 |   13 | 42475 |   19 |
+| Regularized_BN_Dropout_L2_relu       |       0.964 |     0.9993 |      0.8154 |   0.7465 |     0.7794 |    0.959  |        0.7585 |   53 |   12 | 42476 |   18 |
+| Regularized_BN_Dropout_L2_leaky_relu |       0.983 |     0.9993 |      0.8209 |   0.7746 |     0.7971 |    0.9565 |        0.7047 |   55 |   12 | 42476 |   16 |
+| Regularized_BN_Dropout_L2_gelu       |       0.965 |     0.9993 |      0.8254 |   0.7324 |     0.7761 |    0.9584 |        0.7674 |   52 |   11 | 42477 |   19 |
+Over/underfitting diagnostics:
+| Model                                |   Final train loss |   Final val loss |   Best val loss |   Best epoch | Val loss rise after best   |   Final val PR-AUC |
+|:-------------------------------------|-------------------:|-----------------:|----------------:|-------------:|:---------------------------|-------------------:|
+| Baseline_FFN_relu                    |             0.0009 |           0.0102 |          0.0077 |            6 | +32.3%                     |             0.7214 |
+| Baseline_FFN_leaky_relu              |             0.0034 |           0.0082 |          0.0082 |           15 | +0.0%                      |             0.7242 |
+| Baseline_FFN_gelu                    |             0.0013 |           0.0116 |          0.0079 |            5 | +46.0%                     |             0.7187 |
+| Regularized_BN_Dropout_L2_relu       |             0.0128 |           0.0117 |          0.0106 |           12 | +11.0%                     |             0.753  |
+| Regularized_BN_Dropout_L2_leaky_relu |             0.0258 |           0.0126 |          0.0126 |           15 | +0.0%                      |             0.7433 |
+| Regularized_BN_Dropout_L2_gelu       |             0.0137 |           0.0134 |          0.012  |            8 | +11.3%                     |             0.7731 |
+2026-10-01 15:17:35 [INFO   ] Application                 : Summary markdown table saved to ./artifacts/metrics_summary.md
+2026-10-01 15:17:35 [INFO   ] Application                 : All tasks completed successfully!

@@ -20,6 +20,8 @@ class DataConfig:
     features_to_scale: Tuple[str, ...] = ("Time", "Amount")
     # Subsampling ratio or SMOTE sampling strategy
     smote_sampling_strategy: float = 0.2  # Minority class oversampled to 20% of majority
+    # Exact duplicate rows can land in both train and test, leaking information
+    drop_duplicates: bool = True
 
 
 @dataclass(frozen=True)
@@ -31,6 +33,10 @@ class TrainingConfig:
     optimizer_name: str = "adam"
     loss_function: str = "binary_crossentropy"
     metrics: Tuple[str, ...] = ("accuracy", "precision", "recall", "auc")
+    # Global seed for Python / NumPy / TensorFlow to make runs reproducible
+    random_seed: int = 42
+    # Default decision threshold; a second, F1-optimal threshold is tuned on the validation set
+    default_threshold: float = 0.5
 
 
 @dataclass(frozen=True)

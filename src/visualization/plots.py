@@ -26,48 +26,51 @@ class TrainingVisualizer:
         self._output_dir = output_dir
         self._output_dir.mkdir(parents=True, exist_ok=True)
 
-    def plot_learning_curves(self, results: List[ExperimentRunResult]) -> Path:
-        """Plots training and validation loss & AUC trajectories across all epochs."""
-        fig, (ax_loss, ax_metric) = plt.subplots(1, 2, figsize=(16, 6))
+    def _grid(self, n: int, cell_w: float = 5.5, cell_h: float = 4.2):
+        """Creates a 2-row grid (Baseline row / Regularized row) holding n subplots."""
+        n_cols = int(np.ceil(n / 2)) if n > 1 else 1
+        n_rows = 2 if n > 1 else 1
+        fig, axes = plt.subplots(n_rows, n_cols, figsize=(cell_w * n_cols, cell_h * n_rows), squeeze=False)
+        flat = axes.ravel()
+        for ax in flat[n:]:
+            ax.set_visible(False)
+        return fig, flat
 
-        palette = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
-
-        for idx, res in enumerate(results):
-            color = palette[idx % len(palette)]
-            epochs = range(1, len(res.history.get("loss", [])) + 1)
-
-            # Loss plot
-            ax_loss.plot(epochs, res.history["loss"], label=f"{res.model_name} (Train)", color=color, linestyle="--", alpha=0.7)
-            if "val_loss" in res.history:
-                ax_loss.plot(epochs, res.history["val_loss"], label=f"{res.model_name} (Val)", color=color, linewidth=2.0)
-
-            # Metric plot (PR-AUC or AUC or Precision)
-            metric_key = "pr_auc" if "pr_auc" in res.history else ("auc" if "auc" in res.history else "accuracy")
-            val_metric_key = f"val_{metric_key}"
-
-            if metric_key in res.history:
-                ax_metric.plot(epochs, res.history[metric_key], label=f"{res.model_name} (Train)", color=color, linestyle="--", alpha=0.7)
-            if val_metric_key in res.history:
-                ax_metric.plot(epochs, res.history[val_metric_key], label=f"{res.model_name} (Val)", color=color, linewidth=2.0)
-
-        ax_loss.set_title("Training vs Validation Loss (Cross-Entropy)", fontsize=13, weight="bold")
-        ax_loss.set_xlabel("Epoch", fontsize=11)
-        ax_loss.set_ylabel("Loss", fontsize=11)
-        ax_loss.legend(loc="upper right", fontsize=8)
-        ax_loss.grid(True, linestyle=":", alpha=0.6)
-
-        ax_metric.set_title("Training vs Validation Metric (PR-AUC)", fontsize=13, weight="bold")
-        ax_metric.set_xlabel("Epoch", fontsize=11)
-        ax_metric.set_ylabel("Metric Score", fontsize=11)
-        ax_metric.legend(loc="lower right", fontsize=8)
-        ax_metric.grid(True, linestyle=":", alpha=0.6)
-
+    def _plot_history_grid(self, results: List[ExperimentRunResult], metric: str, title: str, ylabel: str, filename: str) -> Path:
+        """One subplot per model: train vs validation curve, best val-loss epoch marked."""
+        fig, axes = self._grid(len(results))
+        for ax, res in zip(axes, results):
+            epochs = range(1, len(res.history[metric]) + 1)
+            ax.plot(epochs, res.history[metric], label="Train (SMOTE)", color="#1f77b4", linestyle="--", marker="o", ms=3)
+            ax.plot(epochs, res.history[f"val_{metric}"], label="Validation", color="#d62728", linewidth=2.0, marker="o", ms=3)
+            ax.axvline(res.best_val_loss_epoch, color="gray", linestyle=":", lw=1.2,
+                       label=f"Min val loss (epoch {res.best_val_loss_epoch})")
+            ax.set_title(res.model_name, fontsize=11, weight="bold")
+            ax.set_xlabel("Epoch")
+            ax.set_ylabel(ylabel)
+            ax.grid(True, linestyle=":", alpha=0.6)
+            ax.legend(fontsize=8, loc="best")
+        fig.suptitle(title, fontsize=14, weight="bold")
         plt.tight_layout()
-        save_path = self._output_dir / "learning_curves_comparison.png"
-        fig.savefig(save_path, dpi=300)
+        save_path = self._output_dir / filename
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
-        logger.info("Saved learning curves plot to %s", save_path)
+        logger.info("Saved %s to %s", title, save_path)
         return save_path
+
+    def plot_learning_curves(self, results: List[ExperimentRunResult]) -> Path:
+        """Plots training and validation loss trajectories, one panel per model."""
+        return self._plot_history_grid(
+            results, "loss", "Training vs Validation Loss (Binary Cross-Entropy)", "Loss",
+            "learning_curves_comparison.png"
+        )
+
+    def plot_metric_curves(self, results: List[ExperimentRunResult]) -> Path:
+        """Plots training and validation PR-AUC trajectories, one panel per model."""
+        return self._plot_history_grid(
+            results, "pr_auc", "Training vs Validation PR-AUC", "PR-AUC",
+            "learning_curves_pr_auc.png"
+        )
 
     def plot_roc_and_pr_curves(
         self,
@@ -77,7 +80,7 @@ class TrainingVisualizer:
         """Plots Receiver Operating Characteristic (ROC) and Precision-Recall (PR) curves."""
         fig, (ax_roc, ax_pr) = plt.subplots(1, 2, figsize=(16, 6))
 
-        palette = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
+        palette = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"]
 
         for idx, res in enumerate(results):
             color = palette[idx % len(palette)]
@@ -110,17 +113,14 @@ class TrainingVisualizer:
 
         plt.tight_layout()
         save_path = self._output_dir / "roc_and_pr_curves.png"
-        fig.savefig(save_path, dpi=300)
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
         logger.info("Saved ROC and PR curves to %s", save_path)
         return save_path
 
     def plot_confusion_matrices(self, results: List[ExperimentRunResult]) -> Path:
         """Renders side-by-side heatmaps of confusion matrices."""
-        n_models = len(results)
-        fig, axes = plt.subplots(1, n_models, figsize=(4.5 * n_models, 4))
-        if n_models == 1:
-            axes = [axes]
+        fig, axes = self._grid(len(results), cell_w=4.8, cell_h=4.2)
 
         for ax, res in zip(axes, results):
             cm = res.test_metrics.confusion_matrix
@@ -134,13 +134,13 @@ class TrainingVisualizer:
                 xticklabels=["Normal (0)", "Fraud (1)"],
                 yticklabels=["Normal (0)", "Fraud (1)"]
             )
-            ax.set_title(f"{res.model_name}\nF1={res.test_metrics.f1_score:.3f} | Recall={res.test_metrics.recall:.3f}", fontsize=10, weight="bold")
+            ax.set_title(f"{res.model_name} (thr=0.5)\nF1={res.test_metrics.f1_score:.3f} | Recall={res.test_metrics.recall:.3f}", fontsize=10, weight="bold")
             ax.set_xlabel("Predicted Label")
             ax.set_ylabel("True Label")
 
         plt.tight_layout()
         save_path = self._output_dir / "confusion_matrices.png"
-        fig.savefig(save_path, dpi=300)
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
         logger.info("Saved confusion matrices to %s", save_path)
         return save_path
@@ -157,12 +157,12 @@ class TrainingVisualizer:
 
         data_matrix = np.array(data_matrix)  # shape: (n_models, n_metrics)
 
-        fig, ax = plt.subplots(figsize=(12, 6))
+        fig, ax = plt.subplots(figsize=(14, 6))
         x = np.arange(len(metrics_names))
         total_width = 0.8
         single_width = total_width / len(model_names)
 
-        palette = ["#4C72B0", "#55A868", "#C44E52", "#8172B2"]
+        palette = ["#4C72B0", "#55A868", "#C44E52", "#8172B2", "#CCB974", "#64B5CD"]
 
         for i, (name, color) in enumerate(zip(model_names, palette)):
             offset = (i - len(model_names) / 2) * single_width + single_width / 2
@@ -176,21 +176,21 @@ class TrainingVisualizer:
                         f"{height:.2f}",
                         ha="center",
                         va="bottom",
-                        fontsize=8,
-                        fontweight="bold"
+                        fontsize=6,
+                        rotation=90
                     )
 
         ax.set_xticks(x)
         ax.set_xticklabels(metrics_names, fontsize=11, weight="bold")
         ax.set_ylabel("Score [0.0 - 1.0]", fontsize=11)
-        ax.set_title("Performance Comparison Across All Architectures & Activation Functions", fontsize=13, weight="bold")
-        ax.set_ylim(0, 1.15)
-        ax.legend(loc="upper right", frameon=True, fontsize=9)
+        ax.set_title("Test Metrics @ threshold 0.5 — All Architectures & Activation Functions", fontsize=13, weight="bold")
+        ax.set_ylim(0, 1.2)
+        ax.legend(loc="upper center", ncol=3, frameon=True, fontsize=8)
         ax.grid(axis="y", linestyle=":", alpha=0.7)
 
         plt.tight_layout()
         save_path = self._output_dir / "metrics_comparison_barchart.png"
-        fig.savefig(save_path, dpi=300)
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
         logger.info("Saved metrics comparison bar chart to %s", save_path)
         return save_path

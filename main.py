@@ -50,8 +50,13 @@ def main() -> None:
 
     # 1. Configuration (Inversion of Control container setup)
     config = ExperimentConfig()
-    logger.info("Configuration loaded: Epochs=%d, BatchSize=%d, LearningRate=%.4f",
-                config.training.epochs, config.training.batch_size, config.training.learning_rate)
+    logger.info("Configuration loaded: Epochs=%d, BatchSize=%d, LearningRate=%.4f, Seed=%d",
+                config.training.epochs, config.training.batch_size, config.training.learning_rate,
+                config.training.random_seed)
+
+    # Seed Python, NumPy and TensorFlow RNGs so the whole pipeline is reproducible
+    import tensorflow as tf
+    tf.keras.utils.set_random_seed(config.training.random_seed)
 
     # 2. Step 2 & 3: Data Loading & Exploratory Data Analysis (EDA)
     print_banner("Step 2 & 3: Data Ingestion and Exploratory Data Analysis (EDA)")
@@ -78,22 +83,19 @@ def main() -> None:
 
     # 4. Step 6 & 7: Model Builders Configuration
     print_banner("Step 6 & 7: Neural Network Architecture & Activation Setup")
-    # We test:
-    # 1. Baseline Feedforward (ReLU)
-    # 2. Baseline Feedforward (GELU)
-    # 3. Regularized (BatchNorm + Dropout + L2) (ReLU)
-    # 4. Regularized (BatchNorm + Dropout + L2) (GELU)
+    # 2 architectures x 3 activations (ReLU, LeakyReLU, GELU) = 6 experiments.
+    # Order matters for the 2x3 plot grids: row 1 = Baseline, row 2 = Regularized.
+    activations = ["relu", "leaky_relu", "gelu"]
     model_builders: List[IModelBuilder] = [
-        BaselineModelBuilder(activation="relu", hidden_units=[64, 32]),
-        BaselineModelBuilder(activation="gelu", hidden_units=[64, 32]),
-        RegularizedModelBuilder(activation="relu", hidden_units=[64, 32], dropout_rate=0.3, l2_factor=1e-4),
-        RegularizedModelBuilder(activation="gelu", hidden_units=[64, 32], dropout_rate=0.3, l2_factor=1e-4),
+        *(BaselineModelBuilder(activation=act, hidden_units=[64, 32]) for act in activations),
+        *(RegularizedModelBuilder(activation=act, hidden_units=[64, 32], dropout_rate=0.3, l2_factor=1e-4)
+          for act in activations),
     ]
 
     logger.info("Configured %d distinct model experiments for training.", len(model_builders))
 
     # 5. Step 8 & 9: Training & Comprehensive Metric Evaluation
-    print_banner("Step 8 & 9: Model Training (15 Epochs) & Independent Test Set Evaluation")
+    print_banner("Step 8 & 9: Model Training (Fixed Epochs) & Independent Test Set Evaluation")
     trainer = ModelTrainer(config=config.training)
     experiment_results: List[ExperimentRunResult] = []
 
@@ -111,29 +113,37 @@ def main() -> None:
     visualizer = TrainingVisualizer(output_dir=config.paths.plots_dir)
 
     learning_curves_path = visualizer.plot_learning_curves(experiment_results)
+    metric_curves_path = visualizer.plot_metric_curves(experiment_results)
     roc_pr_path = visualizer.plot_roc_and_pr_curves(preprocessed_data.y_test, experiment_results)
     cm_path = visualizer.plot_confusion_matrices(experiment_results)
     bar_chart_path = visualizer.plot_metrics_comparison_bar(experiment_results)
 
     # 7. Step 11 & 12: Summary Report Generation
     print_banner("Step 11 & 12: Model Performance Comparison & Findings")
-    metrics_table = [res.test_metrics.to_dict() for res in experiment_results]
-    metrics_df = pd.DataFrame(metrics_table)
+    default_md = pd.DataFrame([r.test_metrics.to_dict() for r in experiment_results]).to_markdown(index=False)
+    tuned_md = pd.DataFrame([r.test_metrics_tuned.to_dict() for r in experiment_results]).to_markdown(index=False)
+    overfit_md = pd.DataFrame([r.overfitting_summary for r in experiment_results]).to_markdown(index=False)
 
-    table_markdown = metrics_df.to_markdown(index=False)
-    print("\n" + table_markdown + "\n")
+    print("\nTest metrics @ threshold 0.5:\n" + default_md)
+    print("\nTest metrics @ F1-optimal threshold (tuned on validation):\n" + tuned_md)
+    print("\nOver/underfitting diagnostics:\n" + overfit_md + "\n")
 
     # Persist summary report to artifacts
     report_file = config.paths.artifacts_dir / "metrics_summary.md"
     with open(report_file, "w", encoding="utf-8") as f:
         f.write("# Laboratory Work #1: Model Evaluation Summary (TensorFlow)\n\n")
-        f.write("## Performance Metrics Table\n\n")
-        f.write(table_markdown + "\n\n")
+        f.write(f"Seed: {config.training.random_seed}, epochs: {config.training.epochs}, "
+                f"optimizer: {config.training.optimizer_name}, lr: {config.training.learning_rate}, "
+                f"batch size: {config.training.batch_size}\n\n")
+        f.write("## Test Metrics @ threshold 0.5\n\n" + default_md + "\n\n")
+        f.write("## Test Metrics @ F1-optimal threshold (tuned on validation set)\n\n" + tuned_md + "\n\n")
+        f.write("## Over/Underfitting Diagnostics (train vs validation loss)\n\n" + overfit_md + "\n\n")
         f.write("## Visual Artifacts\n\n")
-        f.write(f"- [Learning Curves]({learning_curves_path.name})\n")
-        f.write(f"- [ROC & PR Curves]({roc_pr_path.name})\n")
-        f.write(f"- [Confusion Matrices]({cm_path.name})\n")
-        f.write(f"- [Metrics Comparison Bar Chart]({bar_chart_path.name})\n")
+        f.write(f"- [Learning Curves (loss)](plots/{learning_curves_path.name})\n")
+        f.write(f"- [Learning Curves (PR-AUC)](plots/{metric_curves_path.name})\n")
+        f.write(f"- [ROC & PR Curves](plots/{roc_pr_path.name})\n")
+        f.write(f"- [Confusion Matrices](plots/{cm_path.name})\n")
+        f.write(f"- [Metrics Comparison Bar Chart](plots/{bar_chart_path.name})\n")
 
     logger.info("Summary markdown table saved to %s", report_file)
     logger.info("All tasks completed successfully!")

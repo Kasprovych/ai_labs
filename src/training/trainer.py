@@ -27,6 +27,29 @@ class ExperimentRunResult:
     history: Dict[str, List[float]]
     test_metrics: EvaluationResult
     test_predictions: np.ndarray
+    # Test metrics at the F1-optimal threshold tuned on the validation set
+    test_metrics_tuned: EvaluationResult
+    tuned_threshold: float
+
+    @property
+    def best_val_loss_epoch(self) -> int:
+        """1-based epoch with the lowest validation loss (later epochs = overfitting)."""
+        return int(np.argmin(self.history["val_loss"])) + 1
+
+    @property
+    def overfitting_summary(self) -> Dict[str, Any]:
+        """Train/val loss diagnostics used to judge over- and underfitting."""
+        val_loss = self.history["val_loss"]
+        best = self.best_val_loss_epoch
+        return {
+            "Model": self.model_name,
+            "Final train loss": f"{self.history['loss'][-1]:.4f}",
+            "Final val loss": f"{val_loss[-1]:.4f}",
+            "Best val loss": f"{min(val_loss):.4f}",
+            "Best epoch": best,
+            "Val loss rise after best": f"{(val_loss[-1] - min(val_loss)) / min(val_loss) * 100:+.1f}%",
+            "Final val PR-AUC": f"{self.history['val_pr_auc'][-1]:.4f}",
+        }
 
 
 class ModelTrainer:
@@ -59,6 +82,10 @@ class ModelTrainer:
         logger.info("Starting experiment: %s (Activation: %s)", builder.name, builder.activation)
         logger.info("==================================================")
 
+        # 0. Re-seed before every experiment so each model starts from the same RNG state
+        #    (identical weight init seeds / dropout masks / batch order) -> reproducible comparison
+        tf.keras.utils.set_random_seed(self._config.random_seed)
+
         # 1. Instantiate network architecture
         model = builder.build(input_dim=data.input_dim)
 
@@ -90,7 +117,8 @@ class ModelTrainer:
             validation_data=(data.x_val, data.y_val),
             epochs=self._config.epochs,
             batch_size=self._config.batch_size,
-            verbose=1
+            shuffle=True,
+            verbose=2
         )
 
         # Extract history as serializable python floats
@@ -99,16 +127,28 @@ class ModelTrainer:
             for metric, values in history_obj.history.items()
         }
 
-        # 4. Predict on unseen Test set
+        # 4. Tune the decision threshold on the validation set (never on test)
+        val_pred_proba = model.predict(data.x_val, batch_size=self._config.batch_size, verbose=0)
+        tuned_threshold = MetricsEvaluator.find_best_f1_threshold(data.y_val, val_pred_proba)
+        logger.info("F1-optimal threshold on validation set: %.3f", tuned_threshold)
+
+        # 5. Predict on unseen Test set at default and tuned thresholds
         logger.info("Evaluating %s on independent Test set...", builder.name)
-        test_pred_proba = model.predict(data.x_test, batch_size=self._config.batch_size)
+        test_pred_proba = model.predict(data.x_test, batch_size=self._config.batch_size, verbose=0)
         test_metrics = MetricsEvaluator.evaluate(
             model_name=builder.name,
             y_true=data.y_test,
-            y_pred_proba=test_pred_proba
+            y_pred_proba=test_pred_proba,
+            threshold=self._config.default_threshold
+        )
+        test_metrics_tuned = MetricsEvaluator.evaluate(
+            model_name=builder.name,
+            y_true=data.y_test,
+            y_pred_proba=test_pred_proba,
+            threshold=tuned_threshold
         )
 
-        # 5. Optionally persist trained weights
+        # 6. Optionally persist trained weights
         if model_save_dir:
             model_save_dir.mkdir(parents=True, exist_ok=True)
             save_path = model_save_dir / f"{builder.name}.keras"
@@ -120,5 +160,7 @@ class ModelTrainer:
             activation=builder.activation,
             history=history,
             test_metrics=test_metrics,
-            test_predictions=test_pred_proba.ravel()
+            test_predictions=test_pred_proba.ravel(),
+            test_metrics_tuned=test_metrics_tuned,
+            tuned_threshold=tuned_threshold
         )

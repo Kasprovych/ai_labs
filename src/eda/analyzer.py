@@ -34,6 +34,7 @@ class EdaAnalyzer:
         stats = self.compute_summary_statistics(df, target_col)
         self.plot_class_distribution(df, target_col)
         self.plot_feature_distributions(df, target_col)
+        self.plot_all_feature_histograms(df, target_col)
         self.plot_correlation_heatmap(df, target_col)
         logger.info("EDA completed. Plots saved to %s", self._output_dir)
         return stats
@@ -96,7 +97,7 @@ class EdaAnalyzer:
 
         plt.tight_layout()
         save_path = self._output_dir / "eda_class_imbalance.png"
-        fig.savefig(save_path, dpi=300)
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
         return save_path
 
@@ -139,7 +140,27 @@ class EdaAnalyzer:
 
         plt.tight_layout()
         save_path = self._output_dir / "eda_feature_distributions.png"
-        fig.savefig(save_path, dpi=300)
+        fig.savefig(save_path, dpi=200)
+        plt.close(fig)
+        return save_path
+
+    def plot_all_feature_histograms(self, df: pd.DataFrame, target_col: str = "Class") -> Path:
+        """Plots a histogram of every input feature to show its overall distribution and skew."""
+        features = [c for c in df.columns if c != target_col]
+        n_cols = 6
+        n_rows = int(np.ceil(len(features) / n_cols))
+        fig, axes = plt.subplots(n_rows, n_cols, figsize=(3 * n_cols, 2.4 * n_rows))
+        for ax, feat in zip(axes.ravel(), features):
+            ax.hist(df[feat], bins=60, color="#2b5c8f", alpha=0.85)
+            ax.set_yscale("log")
+            ax.set_title(f"{feat} (skew={df[feat].skew():.1f})", fontsize=9, weight="bold")
+            ax.tick_params(labelsize=7)
+        for ax in axes.ravel()[len(features):]:
+            ax.set_visible(False)
+        fig.suptitle("Distribution of All Input Features (log-scaled counts)", fontsize=13, weight="bold")
+        plt.tight_layout()
+        save_path = self._output_dir / "eda_all_feature_histograms.png"
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
         return save_path
 
@@ -159,9 +180,10 @@ class EdaAnalyzer:
             cmap="vlag",
             center=0,
             cbar_kws={"shrink": 0.8},
-            xticklabels=False,
-            yticklabels=False
+            xticklabels=True,
+            yticklabels=True
         )
+        ax1.tick_params(axis="both", labelsize=6)
         ax1.set_title("Full Feature Correlation Heatmap (30x30)", weight="bold", fontsize=12)
 
         # Subplot 2: Top correlated features with target
@@ -173,6 +195,6 @@ class EdaAnalyzer:
 
         plt.tight_layout()
         save_path = self._output_dir / "eda_correlation_analysis.png"
-        fig.savefig(save_path, dpi=300)
+        fig.savefig(save_path, dpi=200)
         plt.close(fig)
         return save_path

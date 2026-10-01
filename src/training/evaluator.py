@@ -17,7 +17,7 @@ from sklearn.metrics import (
     roc_auc_score,
     average_precision_score,
     confusion_matrix,
-    classification_report
+    precision_recall_curve
 )
 
 logger = logging.getLogger(__name__)
@@ -38,11 +38,13 @@ class EvaluationResult:
     fp: int
     tn: int
     fn: int
+    threshold: float = 0.5
 
     def to_dict(self) -> Dict[str, Any]:
         """Converts result to serializable dictionary for tabular reporting."""
         return {
             "Model": self.model_name,
+            "Threshold": f"{self.threshold:.3f}",
             "Accuracy": f"{self.accuracy:.4f}",
             "Precision": f"{self.precision:.4f}",
             "Recall": f"{self.recall:.4f}",
@@ -58,6 +60,21 @@ class EvaluationResult:
 
 class MetricsEvaluator:
     """Evaluates classification models with specific focus on imbalanced distributions."""
+
+    @staticmethod
+    def find_best_f1_threshold(y_true: np.ndarray, y_pred_proba: np.ndarray) -> float:
+        """Returns the decision threshold that maximizes F1 on the given (validation) data.
+
+        SMOTE shifts the training class prior from 0.17% to ~17% fraud, so the network's
+        probabilities are miscalibrated for the real distribution and 0.5 is rarely optimal.
+        The threshold must be tuned on validation data only, never on the test set.
+        """
+        y_true = np.asarray(y_true).ravel()
+        y_pred_proba = np.asarray(y_pred_proba).ravel()
+        precision, recall, thresholds = precision_recall_curve(y_true, y_pred_proba)
+        # precision/recall have one more element than thresholds; drop the final (recall=0) point
+        f1 = 2 * precision[:-1] * recall[:-1] / np.clip(precision[:-1] + recall[:-1], 1e-12, None)
+        return float(thresholds[int(np.argmax(f1))])
 
     @staticmethod
     def evaluate(
@@ -106,8 +123,8 @@ class MetricsEvaluator:
             pr = 0.0
 
         logger.info(
-            "[%s] Evaluation -> F1: %.4f, Recall: %.4f, Precision: %.4f, ROC-AUC: %.4f, PR-AUC: %.4f (TP=%d, FP=%d, FN=%d)",
-            model_name, f1, rec, prec, roc, pr, tp, fp, fn
+            "[%s] Evaluation (thr=%.3f) -> F1: %.4f, Recall: %.4f, Precision: %.4f, ROC-AUC: %.4f, PR-AUC: %.4f (TP=%d, FP=%d, FN=%d)",
+            model_name, threshold, f1, rec, prec, roc, pr, tp, fp, fn
         )
 
         return EvaluationResult(
@@ -122,5 +139,6 @@ class MetricsEvaluator:
             tp=int(tp),
             fp=int(fp),
             tn=int(tn),
-            fn=int(fn)
+            fn=int(fn),
+            threshold=float(threshold)
         )
