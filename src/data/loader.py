@@ -18,7 +18,6 @@ try:
 except ImportError:
     SSL_CONTEXT = None
 
-import numpy as np
 import pandas as pd
 
 from src.config.app_config import DataConfig, PathConfig
@@ -70,7 +69,7 @@ class CreditCardDataLoader(IDataLoader):
         self._csv_path = self._path_config.data_dir / "creditcard.csv"
 
     def load(self) -> DatasetContainer:
-        """Loads data from local cache, direct URL, or OpenML with high-fidelity fallback."""
+        """Loads data from local cache, direct URL mirror, or OpenML; raises if none is available."""
         df: Optional[pd.DataFrame] = None
 
         # 1. Check local cache
@@ -108,13 +107,14 @@ class CreditCardDataLoader(IDataLoader):
                 df.to_csv(self._csv_path, index=False)
                 logger.info("Saved OpenML dataset to %s", self._csv_path)
             except Exception as e:
-                logger.warning("OpenML fetch failed: %s. Generating high-fidelity simulation dataset...", e)
+                logger.warning("OpenML fetch failed: %s", e)
 
-        # 4. Fallback: High-fidelity synthetic generation matching exact Kaggle distribution
+        # 4. No source available: fail loudly rather than train on fabricated data
         if df is None:
-            logger.info("Generating synthetic Credit Card Fraud dataset matching exact schema...")
-            df = self._generate_synthetic_dataset()
-            df.to_csv(self._csv_path, index=False)
+            raise RuntimeError(
+                "Dataset not available: place Kaggle creditcard.csv into "
+                f"{self._csv_path} or check network access to the mirror / OpenML."
+            )
 
         # Ensure correct target data type (int 0 and 1)
         df[self._data_config.target_column] = df[self._data_config.target_column].astype(int)
@@ -129,41 +129,3 @@ class CreditCardDataLoader(IDataLoader):
         )
 
         return DatasetContainer(data=df, target_column=self._data_config.target_column)
-
-    def _generate_synthetic_dataset(self, n_samples: int = 50000) -> pd.DataFrame:
-        """Generates synthetic dataset following exact schema of Credit Card Fraud."""
-        np.random.seed(self._data_config.random_seed)
-        # 0.2% fraud rate
-        n_fraud = int(n_samples * 0.002)
-        n_normal = n_samples - n_fraud
-
-        # Time: uniform 0 to 172800 (2 days in seconds)
-        time_normal = np.random.uniform(0, 172800, n_normal)
-        time_fraud = np.random.uniform(0, 172800, n_fraud)
-
-        # Amount: log-normal distribution
-        amount_normal = np.random.lognormal(mean=3.5, sigma=1.2, size=n_normal)
-        amount_fraud = np.random.lognormal(mean=4.2, sigma=1.5, size=n_fraud)
-
-        # Features V1-V28 (PCA components, standard normal with slight shift for fraud)
-        features_normal = np.random.normal(0, 1, size=(n_normal, 28))
-        features_fraud = np.random.normal(0, 1, size=(n_fraud, 28))
-        # Correlate specific features like in real Kaggle dataset (e.g. V14, V17, V12 negative correlation with fraud)
-        features_fraud[:, 13] -= 2.5  # V14
-        features_fraud[:, 16] -= 2.0  # V17
-        features_fraud[:, 11] -= 2.0  # V12
-        features_fraud[:, 3] += 2.0   # V4 positive correlation with fraud
-
-        # Stack normal and fraud
-        time_all = np.concatenate([time_normal, time_fraud])
-        amount_all = np.concatenate([amount_normal, amount_fraud])
-        features_all = np.vstack([features_normal, features_fraud])
-        classes = np.concatenate([np.zeros(n_normal, dtype=int), np.ones(n_fraud, dtype=int)])
-
-        # Create DataFrame
-        cols = ["Time"] + [f"V{i}" for i in range(1, 29)] + ["Amount", "Class"]
-        data_matrix = np.column_stack([time_all, features_all[:, :28], amount_all, classes])
-        df = pd.DataFrame(data_matrix, columns=cols)
-        # Shuffle
-        df = df.sample(frac=1.0, random_state=self._data_config.random_seed).reset_index(drop=True)
-        return df

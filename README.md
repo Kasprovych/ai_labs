@@ -22,7 +22,9 @@ Building, optimizing, and evaluating deep learning models for credit card fraud 
 ```text
 ├── main.py                     # Application entry point / orchestrator
 ├── requirements.txt            # Python dependencies
-├── REPORT_LAB1.md              # Detailed laboratory report
+├── REPORT_LAB1.md              # Detailed laboratory report (source)
+├── report/                     # Printable report: REPORT_LAB1.docx, REPORT_LAB1.pdf
+├── scripts/build_report.py     # Markdown -> DOCX / PDF build (pandoc + headless Chrome)
 ├── src/
 │   ├── config/
 │   │   └── app_config.py       # Immutable dataclass configuration
@@ -40,6 +42,7 @@ Building, optimizing, and evaluating deep learning models for credit card fraud 
 │       └── plots.py            # Diagnostic charts generation
 └── artifacts/
     ├── plots/                  # Visual plots (EDA, learning curves, ROC/PR, confusion matrices)
+    ├── screenshots/            # Terminal screenshots of a real run
     ├── saved_models/           # Serialized .keras trained models
     └── metrics_summary.md      # Performance metrics table
 ```
@@ -70,4 +73,8 @@ pip install -r requirements.txt
 
 # 3. Run pipeline
 python main.py
+
+# 4. (Optional) Build printable report: report/REPORT_LAB1.docx and report/REPORT_LAB1.pdf
+#    Requires pandoc (brew install pandoc) and Google Chrome for the PDF.
+python scripts/build_report.py
 ```

@@ -118,12 +118,13 @@ class TrainingVisualizer:
         logger.info("Saved ROC and PR curves to %s", save_path)
         return save_path
 
-    def plot_confusion_matrices(self, results: List[ExperimentRunResult]) -> Path:
-        """Renders side-by-side heatmaps of confusion matrices."""
+    def plot_confusion_matrices(self, results: List[ExperimentRunResult], tuned: bool = False) -> Path:
+        """Renders a grid of test-set confusion matrices at threshold 0.5 or at the val-tuned threshold."""
         fig, axes = self._grid(len(results), cell_w=4.8, cell_h=4.2)
 
         for ax, res in zip(axes, results):
-            cm = res.test_metrics.confusion_matrix
+            metrics = res.test_metrics_tuned if tuned else res.test_metrics
+            cm = metrics.confusion_matrix
             sns.heatmap(
                 cm,
                 annot=True,
@@ -134,12 +135,15 @@ class TrainingVisualizer:
                 xticklabels=["Normal (0)", "Fraud (1)"],
                 yticklabels=["Normal (0)", "Fraud (1)"]
             )
-            ax.set_title(f"{res.model_name} (thr=0.5)\nF1={res.test_metrics.f1_score:.3f} | Recall={res.test_metrics.recall:.3f}", fontsize=10, weight="bold")
+            ax.set_title(f"{res.model_name} (thr={metrics.threshold:.3f})\n"
+                f"F1={metrics.f1_score:.3f} | P={metrics.precision:.3f} | R={metrics.recall:.3f}", fontsize=10, weight="bold")
             ax.set_xlabel("Predicted Label")
             ax.set_ylabel("True Label")
 
+        suffix = "tuned threshold (selected on validation)" if tuned else "threshold 0.5"
+        fig.suptitle(f"Test-set Confusion Matrices @ {suffix}", fontsize=14, weight="bold")
         plt.tight_layout()
-        save_path = self._output_dir / "confusion_matrices.png"
+        save_path = self._output_dir / ("confusion_matrices_tuned.png" if tuned else "confusion_matrices.png")
         fig.savefig(save_path, dpi=200)
         plt.close(fig)
         logger.info("Saved confusion matrices to %s", save_path)

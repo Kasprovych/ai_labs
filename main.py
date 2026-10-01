@@ -116,6 +116,7 @@ def main() -> None:
     metric_curves_path = visualizer.plot_metric_curves(experiment_results)
     roc_pr_path = visualizer.plot_roc_and_pr_curves(preprocessed_data.y_test, experiment_results)
     cm_path = visualizer.plot_confusion_matrices(experiment_results)
+    cm_tuned_path = visualizer.plot_confusion_matrices(experiment_results, tuned=True)
     bar_chart_path = visualizer.plot_metrics_comparison_bar(experiment_results)
 
     # 7. Step 11 & 12: Summary Report Generation
@@ -142,7 +143,8 @@ def main() -> None:
         f.write(f"- [Learning Curves (loss)](plots/{learning_curves_path.name})\n")
         f.write(f"- [Learning Curves (PR-AUC)](plots/{metric_curves_path.name})\n")
         f.write(f"- [ROC & PR Curves](plots/{roc_pr_path.name})\n")
-        f.write(f"- [Confusion Matrices](plots/{cm_path.name})\n")
+        f.write(f"- [Confusion Matrices @ 0.5](plots/{cm_path.name})\n")
+        f.write(f"- [Confusion Matrices @ tuned threshold](plots/{cm_tuned_path.name})\n")
         f.write(f"- [Metrics Comparison Bar Chart](plots/{bar_chart_path.name})\n")
 
     logger.info("Summary markdown table saved to %s", report_file)

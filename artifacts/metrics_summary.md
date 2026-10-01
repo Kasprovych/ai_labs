@@ -40,5 +40,6 @@ Seed: 42, epochs: 15, optimizer: adam, lr: 0.001, batch size: 512
 - [Learning Curves (loss)](plots/learning_curves_comparison.png)
 - [Learning Curves (PR-AUC)](plots/learning_curves_pr_auc.png)
 - [ROC & PR Curves](plots/roc_and_pr_curves.png)
-- [Confusion Matrices](plots/confusion_matrices.png)
+- [Confusion Matrices @ 0.5](plots/confusion_matrices.png)
+- [Confusion Matrices @ tuned threshold](plots/confusion_matrices_tuned.png)
 - [Metrics Comparison Bar Chart](plots/metrics_comparison_barchart.png)
