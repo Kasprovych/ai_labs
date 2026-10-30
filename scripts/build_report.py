@@ -1,10 +1,13 @@
-"""Builds printable versions of REPORT_LAB1.md: DOCX (pandoc) and PDF (pandoc HTML -> headless Chrome).
+"""Builds printable versions of the lab reports: DOCX (pandoc) and PDF (pandoc HTML -> headless Chrome).
 
-The Markdown title page uses HTML tags for GitHub rendering. DOCX ignores raw HTML, so for DOCX
-the title block is rewritten into pandoc custom-style divs (centered Word styles) plus a page break.
+lab1: REPORT_LAB1.md. The Markdown title page uses HTML tags for GitHub rendering. DOCX ignores raw
+      HTML, so for DOCX the title block is rewritten into pandoc custom-style divs plus a page break.
+lab2: REPORT_LAB2.md, formatted like the submitted Lab 1 report (Lviv Polytechnic style). The source
+      uses pandoc custom-style divs directly; DOCX takes its formatting from scripts/reference_lpnu.docx
+      (see make_reference_docx.py), PDF from scripts/report_lpnu.css. `<!-- pagebreak -->` marks a page break.
 
-Usage: python scripts/build_report.py
-Requires: pandoc; Google Chrome (for PDF).
+Usage: python scripts/build_report.py [lab1|lab2]   (default: lab1)
+Requires: pandoc; Google Chrome (for PDF); python-docx (lab2 DOCX post-processing).
 """
 
 import re
@@ -15,12 +18,19 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "REPORT_LAB1.md"
 OUT_DIR = ROOT / "report"
-CSS = Path(__file__).resolve().parent / "report.css"
+SCRIPTS = Path(__file__).resolve().parent
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
+REPORTS = {
+    "lab1": {"source": ROOT / "REPORT_LAB1.md", "css": SCRIPTS / "report.css", "title": "Звіт ЛР1"},
+    "lab2": {"source": ROOT / "REPORT_LAB2.md", "css": SCRIPTS / "report_lpnu.css", "title": "Звіт ЛР2",
+             "reference_docx": SCRIPTS / "reference_lpnu.docx", "pandoc_args": ["--syntax-highlighting=none"]},
+}
+
 PAGE_BREAK_DOCX = '```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```'
+PAGE_BREAK_HTML = '```{=html}\n<div class="page-break"></div>\n```'
+PAGE_BREAK_MARK = "<!-- pagebreak -->"
 
 
 def split_title_block(markdown: str) -> tuple[str, str]:
@@ -62,29 +72,64 @@ def run(cmd: list[str]) -> None:
     subprocess.run(cmd, check=True, cwd=ROOT)
 
 
-def build_docx(markdown: str) -> Path:
-    title_html, body = split_title_block(markdown)
-    docx_md = docx_title_page(title_lines(title_html)) + body
-    out = OUT_DIR / "REPORT_LAB1.docx"
+def pandoc_from_text(markdown: str, args: list[str]) -> None:
+    """Runs pandoc on an in-memory Markdown string (temp file in ROOT keeps relative image paths)."""
     with tempfile.NamedTemporaryFile("w", suffix=".md", dir=ROOT, delete=False, encoding="utf-8") as tmp:
-        tmp.write(docx_md)
+        tmp.write(markdown)
     try:
-        run(["pandoc", tmp.name, "-f", "markdown", "-o", str(out),
-             "--resource-path", str(ROOT), "--metadata", "lang=uk-UA"])
+        run(["pandoc", tmp.name, "-f", "markdown", "--resource-path", str(ROOT),
+             "--metadata", "lang=uk-UA", *args])
     finally:
         Path(tmp.name).unlink()
+
+
+def polish_lpnu_docx(path: Path) -> None:
+    """Table cells in 'Table Text' style with a bold header row; tables span the text width."""
+    from docx import Document
+    from docx.shared import Pt
+
+    doc = Document(str(path))
+    for table in doc.tables:
+        table.autofit = True
+        for row_idx, row in enumerate(table.rows):
+            for cell in row.cells:
+                for paragraph in cell.paragraphs:
+                    paragraph.style = doc.styles["Table Text"]
+                    for run_ in paragraph.runs:
+                        run_.font.size = Pt(11)
+                        if row_idx == 0:
+                            run_.bold = True
+        tbl_pr = table._tbl.tblPr
+        width = tbl_pr.find("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}tblW")
+        if width is not None:
+            width.set("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}type", "pct")
+            width.set("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}w", "5000")
+    doc.save(str(path))
+
+
+def build_docx(lab: str, markdown: str) -> Path:
+    spec = REPORTS[lab]
+    out = OUT_DIR / f"REPORT_{lab.upper()}.docx"
+    if lab == "lab1":
+        title_html, body = split_title_block(markdown)
+        pandoc_from_text(docx_title_page(title_lines(title_html)) + body, ["-o", str(out)])
+        return out
+    pandoc_from_text(markdown.replace(PAGE_BREAK_MARK, PAGE_BREAK_DOCX),
+                     ["-o", str(out), "--reference-doc", str(spec["reference_docx"]), "--syntax-highlighting=none"])
+    polish_lpnu_docx(out)
     return out
 
 
-def build_pdf() -> Path | None:
+def build_pdf(lab: str, markdown: str) -> Path | None:
     if not Path(CHROME).exists():
         print("Google Chrome not found, skipping PDF", file=sys.stderr)
         return None
-    html = OUT_DIR / "REPORT_LAB1.html"
-    pdf = OUT_DIR / "REPORT_LAB1.pdf"
-    run(["pandoc", str(SOURCE), "-f", "markdown", "-s", "--embed-resources",
-         "--css", str(CSS), "--resource-path", str(ROOT),
-         "--metadata", "pagetitle=Звіт ЛР1", "--metadata", "lang=uk-UA", "-o", str(html)])
+    spec = REPORTS[lab]
+    html = OUT_DIR / f"REPORT_{lab.upper()}.html"
+    pdf = OUT_DIR / f"REPORT_{lab.upper()}.pdf"
+    pandoc_from_text(markdown.replace(PAGE_BREAK_MARK, PAGE_BREAK_HTML),
+                     ["-s", "--embed-resources", "--css", str(spec["css"]), *spec.get("pandoc_args", []),
+                      "--metadata", f"pagetitle={spec['title']}", "-o", str(html)])
     run([CHROME, "--headless", "--disable-gpu", "--no-pdf-header-footer",
          f"--print-to-pdf={pdf}", html.as_uri()])
     html.unlink()
@@ -92,12 +137,15 @@ def build_pdf() -> Path | None:
 
 
 def main() -> None:
+    lab = sys.argv[1] if len(sys.argv) > 1 else "lab1"
+    if lab not in REPORTS:
+        sys.exit(f"Unknown report '{lab}', expected one of: {', '.join(REPORTS)}")
     if not shutil.which("pandoc"):
         sys.exit("pandoc is required: brew install pandoc")
     OUT_DIR.mkdir(exist_ok=True)
-    markdown = SOURCE.read_text(encoding="utf-8")
-    print("DOCX:", build_docx(markdown))
-    print("PDF: ", build_pdf())
+    markdown = REPORTS[lab]["source"].read_text(encoding="utf-8")
+    print("DOCX:", build_docx(lab, markdown))
+    print("PDF: ", build_pdf(lab, markdown))
 
 
 if __name__ == "__main__":

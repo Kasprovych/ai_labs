@@ -1,0 +1,286 @@
+2026-10-30 16:02:34 [INFO   ] Application                 : Initializing Laboratory Work #2 Deep Learning Pipeline (PyTorch 2.15.0)...
+2026-10-30 16:02:34 [INFO   ] Application                 : Configuration loaded: Epochs=15, BatchSize=512, LearningRate=0.0010, Seed=42, Device=cpu
+
+================================================================================
+ >>> STEP 2 & 3: DATA INGESTION AND EXPLORATORY DATA ANALYSIS (EDA)
+================================================================================
+
+2026-10-30 16:02:34 [INFO   ] src.data.loader             : Found cached dataset at /Users/rkasprovych/IdeaProjects/ai_labs/data/creditcard.csv
+2026-10-30 16:02:35 [INFO   ] src.data.loader             : Dataset ready: 284807 records, 30 features. Class balance: 0=284315, 1=492 (0.173% fraud)
+2026-10-30 16:02:35 [INFO   ] src.eda.analyzer            : Executing comprehensive EDA...
+2026-10-30 16:02:35 [INFO   ] src.eda.analyzer            : Dataset statistics: Rows=284807, Missing Values=0
+2026-10-30 16:02:35 [INFO   ] src.eda.analyzer            : Class distribution: {0: '284315 (99.827%)', 1: '492 (0.173%)'}
+2026-10-30 16:02:40 [INFO   ] src.eda.analyzer            : EDA completed. Plots saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots
+
+================================================================================
+ >>> STEP 4 & 5: PREPROCESSING, TRAIN/VAL/TEST SPLIT & SMOTE BALANCING
+================================================================================
+
+2026-10-30 16:02:40 [INFO   ] src.data.preprocessor       : Starting preprocessing pipeline on 284807 rows...
+2026-10-30 16:02:41 [INFO   ] src.data.preprocessor       : Removed 1081 duplicate rows (284807 -> 283726)
+2026-10-30 16:02:41 [INFO   ] src.data.preprocessor       : Dataset split completed: Train=198608, Val=42559, Test=42559 (Stratified)
+2026-10-30 16:02:41 [INFO   ] src.data.preprocessor       : Applying SMOTE oversampling to training set...
+2026-10-30 16:02:41 [INFO   ] src.data.preprocessor       : SMOTE applied: original 198608 samples -> resampled 237932 samples (positives: 39655)
+2026-10-30 16:02:41 [INFO   ] Application                 : Train=237932 (SMOTE), Val=42559, Test=42559, features=30
+
+================================================================================
+ >>> STEP 6 & 7: NEURAL NETWORK ARCHITECTURE & ACTIVATION SETUP (PYTORCH)
+================================================================================
+
+2026-10-30 16:02:41 [INFO   ] Application                 : Configured 6 distinct model experiments for training.
+2026-10-30 16:02:41 [INFO   ] Application                 : Baseline_FFN_relu architecture:
+FeedForwardNet(
+  (layers): Sequential(
+    (0): Linear(in_features=30, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=64, out_features=32, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+2026-10-30 16:02:41 [INFO   ] Application                 : Regularized_BN_Dropout_L2_relu architecture:
+FeedForwardNet(
+  (layers): Sequential(
+    (0): Linear(in_features=30, out_features=64, bias=False)
+    (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, bias=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.3, inplace=False)
+    (4): Linear(in_features=64, out_features=32, bias=False)
+    (5): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, bias=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout(p=0.3, inplace=False)
+    (8): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+
+================================================================================
+ >>> STEP 8 & 9: MODEL TRAINING (FIXED EPOCHS) & INDEPENDENT TEST SET EVALUATION
+================================================================================
+
+2026-10-30 16:02:41 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:02:41 [INFO   ] src.training.torch_trainer  : Starting experiment: Baseline_FFN_relu (Activation: relu)
+2026-10-30 16:02:41 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:02:41 [INFO   ] src.training.torch_trainer  : Parameters: 4097 trainable, 0 non-trainable (BN running stats)
+2026-10-30 16:02:41 [INFO   ] src.training.torch_trainer  : Fitting Baseline_FFN_relu for 15 epochs (batch_size=512, lr=0.0010, device=cpu)...
+2026-10-30 16:02:42 [INFO   ] src.training.torch_trainer  : Epoch  1/15 - 1.2s - loss: 0.0712 - pr_auc: 0.9756 - val_loss: 0.0148 - val_auc: 0.9622 - val_pr_auc: 0.7123
+2026-10-30 16:02:43 [INFO   ] src.training.torch_trainer  : Epoch  2/15 - 0.8s - loss: 0.0180 - pr_auc: 0.9984 - val_loss: 0.0099 - val_auc: 0.9597 - val_pr_auc: 0.8039
+2026-10-30 16:02:44 [INFO   ] src.training.torch_trainer  : Epoch  3/15 - 0.8s - loss: 0.0092 - pr_auc: 0.9993 - val_loss: 0.0079 - val_auc: 0.9580 - val_pr_auc: 0.7980
+2026-10-30 16:02:45 [INFO   ] src.training.torch_trainer  : Epoch  4/15 - 0.9s - loss: 0.0060 - pr_auc: 0.9995 - val_loss: 0.0082 - val_auc: 0.9586 - val_pr_auc: 0.8095
+2026-10-30 16:02:45 [INFO   ] src.training.torch_trainer  : Epoch  5/15 - 0.8s - loss: 0.0043 - pr_auc: 0.9996 - val_loss: 0.0068 - val_auc: 0.9574 - val_pr_auc: 0.7821
+2026-10-30 16:02:46 [INFO   ] src.training.torch_trainer  : Epoch  6/15 - 0.8s - loss: 0.0036 - pr_auc: 0.9997 - val_loss: 0.0072 - val_auc: 0.9577 - val_pr_auc: 0.8089
+2026-10-30 16:02:47 [INFO   ] src.training.torch_trainer  : Epoch  7/15 - 0.9s - loss: 0.0032 - pr_auc: 0.9997 - val_loss: 0.0076 - val_auc: 0.9591 - val_pr_auc: 0.8152
+2026-10-30 16:02:48 [INFO   ] src.training.torch_trainer  : Epoch  8/15 - 0.8s - loss: 0.0024 - pr_auc: 0.9998 - val_loss: 0.0090 - val_auc: 0.9576 - val_pr_auc: 0.7733
+2026-10-30 16:02:49 [INFO   ] src.training.torch_trainer  : Epoch  9/15 - 0.8s - loss: 0.0023 - pr_auc: 0.9998 - val_loss: 0.0076 - val_auc: 0.9583 - val_pr_auc: 0.8192
+2026-10-30 16:02:49 [INFO   ] src.training.torch_trainer  : Epoch 10/15 - 0.9s - loss: 0.0018 - pr_auc: 0.9999 - val_loss: 0.0083 - val_auc: 0.9575 - val_pr_auc: 0.7783
+2026-10-30 16:02:50 [INFO   ] src.training.torch_trainer  : Epoch 11/15 - 1.0s - loss: 0.0015 - pr_auc: 0.9999 - val_loss: 0.0086 - val_auc: 0.9584 - val_pr_auc: 0.7771
+2026-10-30 16:02:51 [INFO   ] src.training.torch_trainer  : Epoch 12/15 - 0.8s - loss: 0.0016 - pr_auc: 0.9999 - val_loss: 0.0086 - val_auc: 0.9587 - val_pr_auc: 0.7981
+2026-10-30 16:02:52 [INFO   ] src.training.torch_trainer  : Epoch 13/15 - 0.9s - loss: 0.0021 - pr_auc: 0.9998 - val_loss: 0.0093 - val_auc: 0.9593 - val_pr_auc: 0.7917
+2026-10-30 16:02:53 [INFO   ] src.training.torch_trainer  : Epoch 14/15 - 0.8s - loss: 0.0015 - pr_auc: 0.9999 - val_loss: 0.0097 - val_auc: 0.9606 - val_pr_auc: 0.7900
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Epoch 15/15 - 0.8s - loss: 0.0013 - pr_auc: 0.9999 - val_loss: 0.0098 - val_auc: 0.9599 - val_pr_auc: 0.7597
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Training finished in 12.7s
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : F1-optimal threshold on validation set: 0.886
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Evaluating Baseline_FFN_relu on independent Test set...
+2026-10-30 16:02:54 [INFO   ] src.training.evaluator      : [Baseline_FFN_relu] Evaluation (thr=0.500) -> F1: 0.7586, Recall: 0.7746, Precision: 0.7432, ROC-AUC: 0.9525, PR-AUC: 0.7757 (TP=55, FP=19, FN=16)
+2026-10-30 16:02:54 [INFO   ] src.training.evaluator      : [Baseline_FFN_relu] Evaluation (thr=0.886) -> F1: 0.7692, Recall: 0.7042, Precision: 0.8475, ROC-AUC: 0.9525, PR-AUC: 0.7757 (TP=50, FP=9, FN=21)
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Model saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/saved_models/Baseline_FFN_relu.pt
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Starting experiment: Baseline_FFN_leaky_relu (Activation: leaky_relu)
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Parameters: 4097 trainable, 0 non-trainable (BN running stats)
+2026-10-30 16:02:54 [INFO   ] src.training.torch_trainer  : Fitting Baseline_FFN_leaky_relu for 15 epochs (batch_size=512, lr=0.0010, device=cpu)...
+2026-10-30 16:02:55 [INFO   ] src.training.torch_trainer  : Epoch  1/15 - 0.9s - loss: 0.0734 - pr_auc: 0.9736 - val_loss: 0.0181 - val_auc: 0.9612 - val_pr_auc: 0.7202
+2026-10-30 16:02:55 [INFO   ] src.training.torch_trainer  : Epoch  2/15 - 0.8s - loss: 0.0268 - pr_auc: 0.9966 - val_loss: 0.0133 - val_auc: 0.9591 - val_pr_auc: 0.7896
+2026-10-30 16:02:56 [INFO   ] src.training.torch_trainer  : Epoch  3/15 - 0.9s - loss: 0.0144 - pr_auc: 0.9988 - val_loss: 0.0089 - val_auc: 0.9577 - val_pr_auc: 0.8110
+2026-10-30 16:02:57 [INFO   ] src.training.torch_trainer  : Epoch  4/15 - 0.8s - loss: 0.0094 - pr_auc: 0.9992 - val_loss: 0.0099 - val_auc: 0.9576 - val_pr_auc: 0.8073
+2026-10-30 16:02:58 [INFO   ] src.training.torch_trainer  : Epoch  5/15 - 0.9s - loss: 0.0071 - pr_auc: 0.9993 - val_loss: 0.0075 - val_auc: 0.9555 - val_pr_auc: 0.8013
+2026-10-30 16:02:59 [INFO   ] src.training.torch_trainer  : Epoch  6/15 - 0.9s - loss: 0.0061 - pr_auc: 0.9994 - val_loss: 0.0082 - val_auc: 0.9562 - val_pr_auc: 0.7662
+2026-10-30 16:03:00 [INFO   ] src.training.torch_trainer  : Epoch  7/15 - 0.8s - loss: 0.0061 - pr_auc: 0.9992 - val_loss: 0.0076 - val_auc: 0.9564 - val_pr_auc: 0.8174
+2026-10-30 16:03:01 [INFO   ] src.training.torch_trainer  : Epoch  8/15 - 0.9s - loss: 0.0043 - pr_auc: 0.9995 - val_loss: 0.0069 - val_auc: 0.9544 - val_pr_auc: 0.8065
+2026-10-30 16:03:01 [INFO   ] src.training.torch_trainer  : Epoch  9/15 - 0.9s - loss: 0.0037 - pr_auc: 0.9996 - val_loss: 0.0079 - val_auc: 0.9566 - val_pr_auc: 0.8237
+2026-10-30 16:03:02 [INFO   ] src.training.torch_trainer  : Epoch 10/15 - 0.8s - loss: 0.0048 - pr_auc: 0.9993 - val_loss: 0.0069 - val_auc: 0.9550 - val_pr_auc: 0.7892
+2026-10-30 16:03:03 [INFO   ] src.training.torch_trainer  : Epoch 11/15 - 0.9s - loss: 0.0033 - pr_auc: 0.9996 - val_loss: 0.0072 - val_auc: 0.9550 - val_pr_auc: 0.8047
+2026-10-30 16:03:04 [INFO   ] src.training.torch_trainer  : Epoch 12/15 - 0.9s - loss: 0.0040 - pr_auc: 0.9994 - val_loss: 0.0105 - val_auc: 0.9554 - val_pr_auc: 0.7588
+2026-10-30 16:03:05 [INFO   ] src.training.torch_trainer  : Epoch 13/15 - 0.9s - loss: 0.0031 - pr_auc: 0.9996 - val_loss: 0.0071 - val_auc: 0.9567 - val_pr_auc: 0.8082
+2026-10-30 16:03:06 [INFO   ] src.training.torch_trainer  : Epoch 14/15 - 0.8s - loss: 0.0023 - pr_auc: 0.9998 - val_loss: 0.0110 - val_auc: 0.9557 - val_pr_auc: 0.7348
+2026-10-30 16:03:06 [INFO   ] src.training.torch_trainer  : Epoch 15/15 - 0.9s - loss: 0.0028 - pr_auc: 0.9997 - val_loss: 0.0078 - val_auc: 0.9547 - val_pr_auc: 0.7865
+2026-10-30 16:03:06 [INFO   ] src.training.torch_trainer  : Training finished in 12.7s
+2026-10-30 16:03:06 [INFO   ] src.training.torch_trainer  : F1-optimal threshold on validation set: 0.805
+2026-10-30 16:03:06 [INFO   ] src.training.torch_trainer  : Evaluating Baseline_FFN_leaky_relu on independent Test set...
+2026-10-30 16:03:07 [INFO   ] src.training.evaluator      : [Baseline_FFN_leaky_relu] Evaluation (thr=0.500) -> F1: 0.6918, Recall: 0.7746, Precision: 0.6250, ROC-AUC: 0.9463, PR-AUC: 0.7392 (TP=55, FP=33, FN=16)
+2026-10-30 16:03:07 [INFO   ] src.training.evaluator      : [Baseline_FFN_leaky_relu] Evaluation (thr=0.805) -> F1: 0.7338, Recall: 0.7183, Precision: 0.7500, ROC-AUC: 0.9463, PR-AUC: 0.7392 (TP=51, FP=17, FN=20)
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : Model saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/saved_models/Baseline_FFN_leaky_relu.pt
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : Starting experiment: Baseline_FFN_gelu (Activation: gelu)
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : Parameters: 4097 trainable, 0 non-trainable (BN running stats)
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : Fitting Baseline_FFN_gelu for 15 epochs (batch_size=512, lr=0.0010, device=cpu)...
+2026-10-30 16:03:07 [INFO   ] src.training.torch_trainer  : Epoch  1/15 - 0.9s - loss: 0.0847 - pr_auc: 0.9688 - val_loss: 0.0144 - val_auc: 0.9620 - val_pr_auc: 0.7497
+2026-10-30 16:03:08 [INFO   ] src.training.torch_trainer  : Epoch  2/15 - 0.9s - loss: 0.0200 - pr_auc: 0.9981 - val_loss: 0.0099 - val_auc: 0.9557 - val_pr_auc: 0.8098
+2026-10-30 16:03:09 [INFO   ] src.training.torch_trainer  : Epoch  3/15 - 1.0s - loss: 0.0104 - pr_auc: 0.9993 - val_loss: 0.0089 - val_auc: 0.9530 - val_pr_auc: 0.7919
+2026-10-30 16:03:10 [INFO   ] src.training.torch_trainer  : Epoch  4/15 - 0.9s - loss: 0.0067 - pr_auc: 0.9996 - val_loss: 0.0095 - val_auc: 0.9536 - val_pr_auc: 0.7976
+2026-10-30 16:03:11 [INFO   ] src.training.torch_trainer  : Epoch  5/15 - 0.9s - loss: 0.0048 - pr_auc: 0.9997 - val_loss: 0.0082 - val_auc: 0.9508 - val_pr_auc: 0.7671
+2026-10-30 16:03:12 [INFO   ] src.training.torch_trainer  : Epoch  6/15 - 0.9s - loss: 0.0040 - pr_auc: 0.9998 - val_loss: 0.0092 - val_auc: 0.9506 - val_pr_auc: 0.7924
+2026-10-30 16:03:13 [INFO   ] src.training.torch_trainer  : Epoch  7/15 - 0.9s - loss: 0.0033 - pr_auc: 0.9998 - val_loss: 0.0093 - val_auc: 0.9533 - val_pr_auc: 0.8069
+2026-10-30 16:03:14 [INFO   ] src.training.torch_trainer  : Epoch  8/15 - 0.9s - loss: 0.0026 - pr_auc: 0.9999 - val_loss: 0.0096 - val_auc: 0.9496 - val_pr_auc: 0.7744
+2026-10-30 16:03:15 [INFO   ] src.training.torch_trainer  : Epoch  9/15 - 0.8s - loss: 0.0022 - pr_auc: 0.9999 - val_loss: 0.0096 - val_auc: 0.9516 - val_pr_auc: 0.7724
+2026-10-30 16:03:16 [INFO   ] src.training.torch_trainer  : Epoch 10/15 - 1.0s - loss: 0.0020 - pr_auc: 0.9999 - val_loss: 0.0099 - val_auc: 0.9505 - val_pr_auc: 0.7758
+2026-10-30 16:03:17 [INFO   ] src.training.torch_trainer  : Epoch 11/15 - 0.9s - loss: 0.0017 - pr_auc: 0.9999 - val_loss: 0.0104 - val_auc: 0.9492 - val_pr_auc: 0.7769
+2026-10-30 16:03:18 [INFO   ] src.training.torch_trainer  : Epoch 12/15 - 0.8s - loss: 0.0016 - pr_auc: 0.9999 - val_loss: 0.0104 - val_auc: 0.9492 - val_pr_auc: 0.7854
+2026-10-30 16:03:18 [INFO   ] src.training.torch_trainer  : Epoch 13/15 - 0.9s - loss: 0.0015 - pr_auc: 0.9999 - val_loss: 0.0109 - val_auc: 0.9499 - val_pr_auc: 0.7851
+2026-10-30 16:03:20 [INFO   ] src.training.torch_trainer  : Epoch 14/15 - 1.1s - loss: 0.0013 - pr_auc: 0.9999 - val_loss: 0.0114 - val_auc: 0.9497 - val_pr_auc: 0.7938
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Epoch 15/15 - 1.0s - loss: 0.0013 - pr_auc: 0.9999 - val_loss: 0.0119 - val_auc: 0.9494 - val_pr_auc: 0.7663
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Training finished in 14.1s
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : F1-optimal threshold on validation set: 0.978
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Evaluating Baseline_FFN_gelu on independent Test set...
+2026-10-30 16:03:21 [INFO   ] src.training.evaluator      : [Baseline_FFN_gelu] Evaluation (thr=0.500) -> F1: 0.7105, Recall: 0.7606, Precision: 0.6667, ROC-AUC: 0.9438, PR-AUC: 0.7009 (TP=54, FP=27, FN=17)
+2026-10-30 16:03:21 [INFO   ] src.training.evaluator      : [Baseline_FFN_gelu] Evaluation (thr=0.978) -> F1: 0.7879, Recall: 0.7324, Precision: 0.8525, ROC-AUC: 0.9438, PR-AUC: 0.7009 (TP=52, FP=9, FN=19)
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Model saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/saved_models/Baseline_FFN_gelu.pt
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Starting experiment: Regularized_BN_Dropout_L2_relu (Activation: relu)
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Parameters: 4193 trainable, 192 non-trainable (BN running stats)
+2026-10-30 16:03:21 [INFO   ] src.training.torch_trainer  : Fitting Regularized_BN_Dropout_L2_relu for 15 epochs (batch_size=512, lr=0.0010, device=cpu)...
+2026-10-30 16:03:22 [INFO   ] src.training.torch_trainer  : Epoch  1/15 - 1.6s - loss: 0.1266 - pr_auc: 0.9507 - val_loss: 0.0284 - val_auc: 0.9790 - val_pr_auc: 0.7031
+2026-10-30 16:03:24 [INFO   ] src.training.torch_trainer  : Epoch  2/15 - 1.4s - loss: 0.0559 - pr_auc: 0.9882 - val_loss: 0.0201 - val_auc: 0.9761 - val_pr_auc: 0.6940
+2026-10-30 16:03:25 [INFO   ] src.training.torch_trainer  : Epoch  3/15 - 1.3s - loss: 0.0385 - pr_auc: 0.9946 - val_loss: 0.0181 - val_auc: 0.9691 - val_pr_auc: 0.6971
+2026-10-30 16:03:26 [INFO   ] src.training.torch_trainer  : Epoch  4/15 - 1.3s - loss: 0.0292 - pr_auc: 0.9969 - val_loss: 0.0158 - val_auc: 0.9610 - val_pr_auc: 0.6861
+2026-10-30 16:03:28 [INFO   ] src.training.torch_trainer  : Epoch  5/15 - 1.4s - loss: 0.0249 - pr_auc: 0.9973 - val_loss: 0.0143 - val_auc: 0.9559 - val_pr_auc: 0.6764
+2026-10-30 16:03:29 [INFO   ] src.training.torch_trainer  : Epoch  6/15 - 1.3s - loss: 0.0216 - pr_auc: 0.9978 - val_loss: 0.0134 - val_auc: 0.9515 - val_pr_auc: 0.6948
+2026-10-30 16:03:30 [INFO   ] src.training.torch_trainer  : Epoch  7/15 - 1.4s - loss: 0.0190 - pr_auc: 0.9981 - val_loss: 0.0133 - val_auc: 0.9582 - val_pr_auc: 0.7029
+2026-10-30 16:03:32 [INFO   ] src.training.torch_trainer  : Epoch  8/15 - 1.6s - loss: 0.0170 - pr_auc: 0.9984 - val_loss: 0.0116 - val_auc: 0.9518 - val_pr_auc: 0.7130
+2026-10-30 16:03:34 [INFO   ] src.training.torch_trainer  : Epoch  9/15 - 1.8s - loss: 0.0154 - pr_auc: 0.9984 - val_loss: 0.0115 - val_auc: 0.9557 - val_pr_auc: 0.7327
+2026-10-30 16:03:35 [INFO   ] src.training.torch_trainer  : Epoch 10/15 - 1.3s - loss: 0.0141 - pr_auc: 0.9988 - val_loss: 0.0122 - val_auc: 0.9549 - val_pr_auc: 0.7156
+2026-10-30 16:03:36 [INFO   ] src.training.torch_trainer  : Epoch 11/15 - 1.3s - loss: 0.0137 - pr_auc: 0.9986 - val_loss: 0.0117 - val_auc: 0.9569 - val_pr_auc: 0.7332
+2026-10-30 16:03:38 [INFO   ] src.training.torch_trainer  : Epoch 12/15 - 1.5s - loss: 0.0128 - pr_auc: 0.9989 - val_loss: 0.0115 - val_auc: 0.9539 - val_pr_auc: 0.7433
+2026-10-30 16:03:40 [INFO   ] src.training.torch_trainer  : Epoch 13/15 - 1.6s - loss: 0.0127 - pr_auc: 0.9988 - val_loss: 0.0117 - val_auc: 0.9564 - val_pr_auc: 0.7689
+2026-10-30 16:03:41 [INFO   ] src.training.torch_trainer  : Epoch 14/15 - 1.4s - loss: 0.0116 - pr_auc: 0.9990 - val_loss: 0.0123 - val_auc: 0.9610 - val_pr_auc: 0.7212
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Epoch 15/15 - 1.4s - loss: 0.0117 - pr_auc: 0.9988 - val_loss: 0.0117 - val_auc: 0.9625 - val_pr_auc: 0.7610
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Training finished in 21.6s
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : F1-optimal threshold on validation set: 0.980
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Evaluating Regularized_BN_Dropout_L2_relu on independent Test set...
+2026-10-30 16:03:42 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_relu] Evaluation (thr=0.500) -> F1: 0.7205, Recall: 0.8169, Precision: 0.6444, ROC-AUC: 0.9508, PR-AUC: 0.7326 (TP=58, FP=32, FN=13)
+2026-10-30 16:03:42 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_relu] Evaluation (thr=0.980) -> F1: 0.8235, Recall: 0.7887, Precision: 0.8615, ROC-AUC: 0.9508, PR-AUC: 0.7326 (TP=56, FP=9, FN=15)
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Model saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/saved_models/Regularized_BN_Dropout_L2_relu.pt
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Starting experiment: Regularized_BN_Dropout_L2_leaky_relu (Activation: leaky_relu)
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Parameters: 4193 trainable, 192 non-trainable (BN running stats)
+2026-10-30 16:03:42 [INFO   ] src.training.torch_trainer  : Fitting Regularized_BN_Dropout_L2_leaky_relu for 15 epochs (batch_size=512, lr=0.0010, device=cpu)...
+2026-10-30 16:03:44 [INFO   ] src.training.torch_trainer  : Epoch  1/15 - 1.4s - loss: 0.1239 - pr_auc: 0.9483 - val_loss: 0.0338 - val_auc: 0.9787 - val_pr_auc: 0.6864
+2026-10-30 16:03:45 [INFO   ] src.training.torch_trainer  : Epoch  2/15 - 1.4s - loss: 0.0696 - pr_auc: 0.9801 - val_loss: 0.0241 - val_auc: 0.9789 - val_pr_auc: 0.7027
+2026-10-30 16:03:47 [INFO   ] src.training.torch_trainer  : Epoch  3/15 - 2.0s - loss: 0.0550 - pr_auc: 0.9880 - val_loss: 0.0216 - val_auc: 0.9727 - val_pr_auc: 0.7002
+2026-10-30 16:03:49 [INFO   ] src.training.torch_trainer  : Epoch  4/15 - 1.7s - loss: 0.0456 - pr_auc: 0.9918 - val_loss: 0.0195 - val_auc: 0.9682 - val_pr_auc: 0.6936
+2026-10-30 16:03:50 [INFO   ] src.training.torch_trainer  : Epoch  5/15 - 1.4s - loss: 0.0403 - pr_auc: 0.9937 - val_loss: 0.0162 - val_auc: 0.9628 - val_pr_auc: 0.6842
+2026-10-30 16:03:52 [INFO   ] src.training.torch_trainer  : Epoch  6/15 - 1.3s - loss: 0.0364 - pr_auc: 0.9948 - val_loss: 0.0168 - val_auc: 0.9614 - val_pr_auc: 0.6962
+2026-10-30 16:03:53 [INFO   ] src.training.torch_trainer  : Epoch  7/15 - 1.4s - loss: 0.0323 - pr_auc: 0.9958 - val_loss: 0.0155 - val_auc: 0.9622 - val_pr_auc: 0.7005
+2026-10-30 16:03:54 [INFO   ] src.training.torch_trainer  : Epoch  8/15 - 1.4s - loss: 0.0306 - pr_auc: 0.9960 - val_loss: 0.0137 - val_auc: 0.9570 - val_pr_auc: 0.6897
+2026-10-30 16:03:56 [INFO   ] src.training.torch_trainer  : Epoch  9/15 - 1.2s - loss: 0.0290 - pr_auc: 0.9964 - val_loss: 0.0154 - val_auc: 0.9637 - val_pr_auc: 0.6972
+2026-10-30 16:03:57 [INFO   ] src.training.torch_trainer  : Epoch 10/15 - 1.8s - loss: 0.0275 - pr_auc: 0.9967 - val_loss: 0.0132 - val_auc: 0.9552 - val_pr_auc: 0.6839
+2026-10-30 16:03:59 [INFO   ] src.training.torch_trainer  : Epoch 11/15 - 1.5s - loss: 0.0266 - pr_auc: 0.9966 - val_loss: 0.0146 - val_auc: 0.9555 - val_pr_auc: 0.6989
+2026-10-30 16:04:00 [INFO   ] src.training.torch_trainer  : Epoch 12/15 - 1.3s - loss: 0.0248 - pr_auc: 0.9971 - val_loss: 0.0132 - val_auc: 0.9553 - val_pr_auc: 0.6940
+2026-10-30 16:04:02 [INFO   ] src.training.torch_trainer  : Epoch 13/15 - 1.4s - loss: 0.0248 - pr_auc: 0.9971 - val_loss: 0.0144 - val_auc: 0.9596 - val_pr_auc: 0.6922
+2026-10-30 16:04:03 [INFO   ] src.training.torch_trainer  : Epoch 14/15 - 1.4s - loss: 0.0237 - pr_auc: 0.9972 - val_loss: 0.0132 - val_auc: 0.9552 - val_pr_auc: 0.6957
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Epoch 15/15 - 1.4s - loss: 0.0232 - pr_auc: 0.9973 - val_loss: 0.0132 - val_auc: 0.9573 - val_pr_auc: 0.7056
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Training finished in 22.0s
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : F1-optimal threshold on validation set: 0.966
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Evaluating Regularized_BN_Dropout_L2_leaky_relu on independent Test set...
+2026-10-30 16:04:04 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_leaky_relu] Evaluation (thr=0.500) -> F1: 0.6519, Recall: 0.8310, Precision: 0.5364, ROC-AUC: 0.9561, PR-AUC: 0.6939 (TP=59, FP=51, FN=12)
+2026-10-30 16:04:04 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_leaky_relu] Evaluation (thr=0.966) -> F1: 0.7914, Recall: 0.7746, Precision: 0.8088, ROC-AUC: 0.9561, PR-AUC: 0.6939 (TP=55, FP=13, FN=16)
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Model saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/saved_models/Regularized_BN_Dropout_L2_leaky_relu.pt
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Starting experiment: Regularized_BN_Dropout_L2_gelu (Activation: gelu)
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : ==================================================
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Parameters: 4193 trainable, 192 non-trainable (BN running stats)
+2026-10-30 16:04:04 [INFO   ] src.training.torch_trainer  : Fitting Regularized_BN_Dropout_L2_gelu for 15 epochs (batch_size=512, lr=0.0010, device=cpu)...
+2026-10-30 16:04:06 [INFO   ] src.training.torch_trainer  : Epoch  1/15 - 1.5s - loss: 0.1356 - pr_auc: 0.9482 - val_loss: 0.0309 - val_auc: 0.9769 - val_pr_auc: 0.7006
+2026-10-30 16:04:07 [INFO   ] src.training.torch_trainer  : Epoch  2/15 - 1.5s - loss: 0.0584 - pr_auc: 0.9872 - val_loss: 0.0233 - val_auc: 0.9702 - val_pr_auc: 0.6871
+2026-10-30 16:04:09 [INFO   ] src.training.torch_trainer  : Epoch  3/15 - 1.5s - loss: 0.0423 - pr_auc: 0.9935 - val_loss: 0.0208 - val_auc: 0.9616 - val_pr_auc: 0.6681
+2026-10-30 16:04:10 [INFO   ] src.training.torch_trainer  : Epoch  4/15 - 1.4s - loss: 0.0335 - pr_auc: 0.9960 - val_loss: 0.0188 - val_auc: 0.9576 - val_pr_auc: 0.6917
+2026-10-30 16:04:12 [INFO   ] src.training.torch_trainer  : Epoch  5/15 - 1.8s - loss: 0.0285 - pr_auc: 0.9969 - val_loss: 0.0163 - val_auc: 0.9531 - val_pr_auc: 0.6890
+2026-10-30 16:04:14 [INFO   ] src.training.torch_trainer  : Epoch  6/15 - 1.6s - loss: 0.0247 - pr_auc: 0.9975 - val_loss: 0.0145 - val_auc: 0.9502 - val_pr_auc: 0.7165
+2026-10-30 16:04:15 [INFO   ] src.training.torch_trainer  : Epoch  7/15 - 1.3s - loss: 0.0215 - pr_auc: 0.9980 - val_loss: 0.0141 - val_auc: 0.9547 - val_pr_auc: 0.7250
+2026-10-30 16:04:17 [INFO   ] src.training.torch_trainer  : Epoch  8/15 - 1.5s - loss: 0.0193 - pr_auc: 0.9984 - val_loss: 0.0129 - val_auc: 0.9494 - val_pr_auc: 0.7229
+2026-10-30 16:04:18 [INFO   ] src.training.torch_trainer  : Epoch  9/15 - 1.5s - loss: 0.0171 - pr_auc: 0.9984 - val_loss: 0.0129 - val_auc: 0.9489 - val_pr_auc: 0.7453
+2026-10-30 16:04:20 [INFO   ] src.training.torch_trainer  : Epoch 10/15 - 1.5s - loss: 0.0157 - pr_auc: 0.9989 - val_loss: 0.0140 - val_auc: 0.9497 - val_pr_auc: 0.7178
+2026-10-30 16:04:21 [INFO   ] src.training.torch_trainer  : Epoch 11/15 - 1.3s - loss: 0.0147 - pr_auc: 0.9988 - val_loss: 0.0124 - val_auc: 0.9506 - val_pr_auc: 0.7508
+2026-10-30 16:04:22 [INFO   ] src.training.torch_trainer  : Epoch 12/15 - 1.6s - loss: 0.0136 - pr_auc: 0.9991 - val_loss: 0.0124 - val_auc: 0.9505 - val_pr_auc: 0.7754
+2026-10-30 16:04:24 [INFO   ] src.training.torch_trainer  : Epoch 13/15 - 1.6s - loss: 0.0138 - pr_auc: 0.9990 - val_loss: 0.0128 - val_auc: 0.9506 - val_pr_auc: 0.7870
+2026-10-30 16:04:26 [INFO   ] src.training.torch_trainer  : Epoch 14/15 - 1.5s - loss: 0.0132 - pr_auc: 0.9990 - val_loss: 0.0132 - val_auc: 0.9555 - val_pr_auc: 0.7474
+2026-10-30 16:04:27 [INFO   ] src.training.torch_trainer  : Epoch 15/15 - 1.5s - loss: 0.0127 - pr_auc: 0.9990 - val_loss: 0.0133 - val_auc: 0.9484 - val_pr_auc: 0.7622
+2026-10-30 16:04:27 [INFO   ] src.training.torch_trainer  : Training finished in 22.6s
+2026-10-30 16:04:27 [INFO   ] src.training.torch_trainer  : F1-optimal threshold on validation set: 0.980
+2026-10-30 16:04:27 [INFO   ] src.training.torch_trainer  : Evaluating Regularized_BN_Dropout_L2_gelu on independent Test set...
+2026-10-30 16:04:27 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_gelu] Evaluation (thr=0.500) -> F1: 0.6298, Recall: 0.8028, Precision: 0.5182, ROC-AUC: 0.9596, PR-AUC: 0.7409 (TP=57, FP=53, FN=14)
+2026-10-30 16:04:27 [INFO   ] src.training.evaluator      : [Regularized_BN_Dropout_L2_gelu] Evaluation (thr=0.980) -> F1: 0.7852, Recall: 0.7465, Precision: 0.8281, ROC-AUC: 0.9596, PR-AUC: 0.7409 (TP=53, FP=11, FN=18)
+2026-10-30 16:04:27 [INFO   ] src.training.torch_trainer  : Model saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/saved_models/Regularized_BN_Dropout_L2_gelu.pt
+
+================================================================================
+ >>> STEP 10: GENERATING PUBLICATION-QUALITY PLOTS
+================================================================================
+
+2026-10-30 16:04:28 [INFO   ] src.visualization.plots     : Saved Training vs Validation Loss (Binary Cross-Entropy) to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/learning_curves_comparison.png
+2026-10-30 16:04:28 [INFO   ] src.visualization.plots     : Saved Training vs Validation PR-AUC to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/learning_curves_pr_auc.png
+2026-10-30 16:04:28 [INFO   ] src.visualization.plots     : Saved ROC and PR curves to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/roc_and_pr_curves.png
+2026-10-30 16:04:29 [INFO   ] src.visualization.plots     : Saved confusion matrices to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/confusion_matrices.png
+2026-10-30 16:04:30 [INFO   ] src.visualization.plots     : Saved confusion matrices to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/confusion_matrices_tuned.png
+2026-10-30 16:04:30 [INFO   ] src.visualization.plots     : Saved metrics comparison bar chart to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/metrics_comparison_barchart.png
+
+================================================================================
+ >>> STEP 11 & 12: MODEL COMPARISON AND TENSORFLOW VS PYTORCH
+================================================================================
+
+
+Test metrics @ threshold 0.5:
+| Model                                |   Threshold |   Accuracy |   Precision |   Recall |   F1-Score |   ROC-AUC |   PR-AUC (AP) |   TP |   FP |    TN |   FN |
+|:-------------------------------------|------------:|-----------:|------------:|---------:|-----------:|----------:|--------------:|-----:|-----:|------:|-----:|
+| Baseline_FFN_relu                    |         0.5 |     0.9992 |      0.7432 |   0.7746 |     0.7586 |    0.9525 |        0.7757 |   55 |   19 | 42469 |   16 |
+| Baseline_FFN_leaky_relu              |         0.5 |     0.9988 |      0.625  |   0.7746 |     0.6918 |    0.9463 |        0.7392 |   55 |   33 | 42455 |   16 |
+| Baseline_FFN_gelu                    |         0.5 |     0.999  |      0.6667 |   0.7606 |     0.7105 |    0.9438 |        0.7009 |   54 |   27 | 42461 |   17 |
+| Regularized_BN_Dropout_L2_relu       |         0.5 |     0.9989 |      0.6444 |   0.8169 |     0.7205 |    0.9508 |        0.7326 |   58 |   32 | 42456 |   13 |
+| Regularized_BN_Dropout_L2_leaky_relu |         0.5 |     0.9985 |      0.5364 |   0.831  |     0.6519 |    0.9561 |        0.6939 |   59 |   51 | 42437 |   12 |
+| Regularized_BN_Dropout_L2_gelu       |         0.5 |     0.9984 |      0.5182 |   0.8028 |     0.6298 |    0.9596 |        0.7409 |   57 |   53 | 42435 |   14 |
+
+Test metrics @ F1-optimal threshold (tuned on validation):
+| Model                                |   Threshold |   Accuracy |   Precision |   Recall |   F1-Score |   ROC-AUC |   PR-AUC (AP) |   TP |   FP |    TN |   FN |
+|:-------------------------------------|------------:|-----------:|------------:|---------:|-----------:|----------:|--------------:|-----:|-----:|------:|-----:|
+| Baseline_FFN_relu                    |       0.886 |     0.9993 |      0.8475 |   0.7042 |     0.7692 |    0.9525 |        0.7757 |   50 |    9 | 42479 |   21 |
+| Baseline_FFN_leaky_relu              |       0.805 |     0.9991 |      0.75   |   0.7183 |     0.7338 |    0.9463 |        0.7392 |   51 |   17 | 42471 |   20 |
+| Baseline_FFN_gelu                    |       0.978 |     0.9993 |      0.8525 |   0.7324 |     0.7879 |    0.9438 |        0.7009 |   52 |    9 | 42479 |   19 |
+| Regularized_BN_Dropout_L2_relu       |       0.98  |     0.9994 |      0.8615 |   0.7887 |     0.8235 |    0.9508 |        0.7326 |   56 |    9 | 42479 |   15 |
+| Regularized_BN_Dropout_L2_leaky_relu |       0.966 |     0.9993 |      0.8088 |   0.7746 |     0.7914 |    0.9561 |        0.6939 |   55 |   13 | 42475 |   16 |
+| Regularized_BN_Dropout_L2_gelu       |       0.98  |     0.9993 |      0.8281 |   0.7465 |     0.7852 |    0.9596 |        0.7409 |   53 |   11 | 42477 |   18 |
+
+Over/underfitting diagnostics:
+| Model                                |   Final train loss |   Final val loss |   Best val loss |   Best epoch | Val loss rise after best   |   Final val PR-AUC |
+|:-------------------------------------|-------------------:|-----------------:|----------------:|-------------:|:---------------------------|-------------------:|
+| Baseline_FFN_relu                    |             0.0013 |           0.0098 |          0.0068 |            5 | +44.0%                     |             0.7597 |
+| Baseline_FFN_leaky_relu              |             0.0028 |           0.0078 |          0.0069 |           10 | +13.1%                     |             0.7865 |
+| Baseline_FFN_gelu                    |             0.0013 |           0.0119 |          0.0082 |            5 | +44.0%                     |             0.7663 |
+| Regularized_BN_Dropout_L2_relu       |             0.0117 |           0.0117 |          0.0115 |           12 | +2.0%                      |             0.761  |
+| Regularized_BN_Dropout_L2_leaky_relu |             0.0232 |           0.0132 |          0.0132 |           14 | +0.5%                      |             0.7056 |
+| Regularized_BN_Dropout_L2_gelu       |             0.0127 |           0.0133 |          0.0124 |           11 | +7.4%                      |             0.7622 |
+
+2026-10-30 16:04:30 [INFO   ] src.comparison.framework_comparison: Saved framework comparison chart to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/plots/framework_comparison.png
+
+TensorFlow (Lab 1) vs PyTorch (Lab 2) @ tuned threshold:
+| Model                                |   TF F1 |   PT F1 |   ΔF1 (PT-TF) |   TF PR-AUC |   PT PR-AUC |   TF ROC-AUC |   PT ROC-AUC | TF TP/FP/FN   | PT TP/FP/FN   |
+|:-------------------------------------|--------:|--------:|--------------:|------------:|------------:|-------------:|-------------:|:--------------|:--------------|
+| Baseline_FFN_relu                    |  0.75   |  0.7692 |        0.0192 |      0.7503 |      0.7757 |       0.957  |       0.9525 | 51/14/20      | 50/9/21       |
+| Baseline_FFN_leaky_relu              |  0.7737 |  0.7338 |       -0.0399 |      0.7675 |      0.7392 |       0.9527 |       0.9463 | 53/13/18      | 51/17/20      |
+| Baseline_FFN_gelu                    |  0.7647 |  0.7879 |        0.0232 |      0.761  |      0.7009 |       0.9456 |       0.9438 | 52/13/19      | 52/9/19       |
+| Regularized_BN_Dropout_L2_relu       |  0.7794 |  0.8235 |        0.0441 |      0.7585 |      0.7326 |       0.959  |       0.9508 | 53/12/18      | 56/9/15       |
+| Regularized_BN_Dropout_L2_leaky_relu |  0.7971 |  0.7914 |       -0.0057 |      0.7047 |      0.6939 |       0.9565 |       0.9561 | 55/12/16      | 55/13/16      |
+| Regularized_BN_Dropout_L2_gelu       |  0.7761 |  0.7852 |        0.0091 |      0.7674 |      0.7409 |       0.9584 |       0.9596 | 52/11/19      | 53/11/18      |
+
+Wall-clock time per experiment:
+| Model                                |   TF experiment, s |   PT experiment, s |   PT training loop, s |
+|:-------------------------------------|-------------------:|-------------------:|----------------------:|
+| Baseline_FFN_relu                    |                  8 |                 13 |                  12.7 |
+| Baseline_FFN_leaky_relu              |                  8 |                 13 |                  12.7 |
+| Baseline_FFN_gelu                    |                 11 |                 14 |                  14.1 |
+| Regularized_BN_Dropout_L2_relu       |                 12 |                 21 |                  21.6 |
+| Regularized_BN_Dropout_L2_leaky_relu |                 12 |                 22 |                  22   |
+| Regularized_BN_Dropout_L2_gelu       |                 15 |                 23 |                  22.6 |
+
+2026-10-30 16:04:30 [INFO   ] Application                 : Summary markdown table saved to /Users/rkasprovych/IdeaProjects/ai_labs/artifacts/lab2/metrics_summary.md
+2026-10-30 16:04:30 [INFO   ] Application                 : All tasks completed successfully!

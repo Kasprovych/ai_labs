@@ -1,6 +1,6 @@
-# AI Deep Learning Models: Laboratory Work #1 (TensorFlow)
+# AI Deep Learning Models: Laboratory Works #1 (TensorFlow) and #2 (PyTorch)
 
-Building, optimizing, and evaluating deep learning models for credit card fraud detection with severe class imbalance using **TensorFlow / Keras**.
+Building, optimizing, and evaluating deep learning models for credit card fraud detection with severe class imbalance using **TensorFlow / Keras** (Lab 1) and **PyTorch** (Lab 2), followed by a TensorFlow vs PyTorch comparison.
 
 ## 📌 Project Overview
 - **Dataset**: Kaggle Credit Card Fraud Detection (284,807 transactions, 0.173% fraud class).
@@ -77,4 +77,35 @@ python main.py
 # 4. (Optional) Build printable report: report/REPORT_LAB1.docx and report/REPORT_LAB1.pdf
 #    Requires pandoc (brew install pandoc) and Google Chrome for the PDF.
 python scripts/build_report.py
+```
+
+## 🔥 Laboratory Work #2 (PyTorch)
+
+Same dataset, preprocessing, split, architectures (Baseline FFN / BN + Dropout + L2), activations and hyperparameters as Lab 1, reimplemented in **PyTorch** (explicit training loop, explicit L2 penalty, Keras defaults aligned: Glorot init, BN momentum/epsilon, LeakyReLU slope 0.3, Adam epsilon). Results are compared with the persisted TensorFlow results of Lab 1.
+
+- `main_lab2.py` — Lab 2 pipeline; outputs go to `artifacts/lab2/` (plots, `.pt` models, `metrics_summary.md`, `run_output.txt`, screenshots).
+- `src/models/torch_builder.py`, `src/training/torch_trainer.py` — PyTorch builders and trainer.
+- `src/comparison/framework_comparison.py` — TensorFlow vs PyTorch tables and chart.
+- `REPORT_LAB2.md` → `report/REPORT_LAB2.docx` / `.pdf` (Lviv Polytechnic report format).
+
+Test metrics at the F1-optimal threshold tuned on validation (TF = Lab 1, PT = Lab 2):
+
+| Model | F1 TF | F1 PT | PR-AUC TF | PR-AUC PT | ROC-AUC TF | ROC-AUC PT |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Baseline_FFN_relu | 0.750 | 0.769 | 0.750 | 0.776 | 0.957 | 0.953 |
+| Baseline_FFN_leaky_relu | 0.774 | 0.734 | 0.768 | 0.739 | 0.953 | 0.946 |
+| Baseline_FFN_gelu | 0.765 | 0.788 | 0.761 | 0.701 | 0.946 | 0.944 |
+| Regularized_BN_Dropout_L2_relu | 0.779 | **0.824** | 0.759 | 0.733 | 0.959 | 0.951 |
+| Regularized_BN_Dropout_L2_leaky_relu | **0.797** | 0.791 | 0.705 | 0.694 | 0.957 | 0.956 |
+| Regularized_BN_Dropout_L2_gelu | 0.776 | 0.785 | 0.767 | 0.741 | 0.958 | 0.960 |
+
+> Both frameworks reach the same quality within single-run noise (mean F1 0.774 vs 0.782); TensorFlow is ≈1.6× faster on CPU for this small MLP.
+
+```bash
+pip install -r requirements.txt   # TensorFlow is not needed for Lab 2
+python main_lab2.py
+
+# Printable Lab 2 report (pandoc, Google Chrome, python-docx)
+python scripts/make_reference_docx.py   # only if the Word styles need regenerating
+python scripts/build_report.py lab2
 ```

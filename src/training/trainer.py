@@ -2,10 +2,9 @@
 and Single Responsibility Principle (SRP).
 """
 
-from dataclasses import dataclass
 import logging
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List
 
 import numpy as np
 import tensorflow as tf
@@ -14,42 +13,10 @@ from tensorflow.keras.optimizers import Adam, SGD, RMSprop
 from src.config.app_config import TrainingConfig
 from src.data.preprocessor import PreprocessedData
 from src.models.builder import IModelBuilder
-from src.training.evaluator import EvaluationResult, MetricsEvaluator
+from src.training.evaluator import MetricsEvaluator
+from src.training.results import ExperimentRunResult
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass(frozen=True)
-class ExperimentRunResult:
-    """Immutable result bundle from a single model experiment."""
-    model_name: str
-    activation: str
-    history: Dict[str, List[float]]
-    test_metrics: EvaluationResult
-    test_predictions: np.ndarray
-    # Test metrics at the F1-optimal threshold tuned on the validation set
-    test_metrics_tuned: EvaluationResult
-    tuned_threshold: float
-
-    @property
-    def best_val_loss_epoch(self) -> int:
-        """1-based epoch with the lowest validation loss (later epochs = overfitting)."""
-        return int(np.argmin(self.history["val_loss"])) + 1
-
-    @property
-    def overfitting_summary(self) -> Dict[str, Any]:
-        """Train/val loss diagnostics used to judge over- and underfitting."""
-        val_loss = self.history["val_loss"]
-        best = self.best_val_loss_epoch
-        return {
-            "Model": self.model_name,
-            "Final train loss": f"{self.history['loss'][-1]:.4f}",
-            "Final val loss": f"{val_loss[-1]:.4f}",
-            "Best val loss": f"{min(val_loss):.4f}",
-            "Best epoch": best,
-            "Val loss rise after best": f"{(val_loss[-1] - min(val_loss)) / min(val_loss) * 100:+.1f}%",
-            "Final val PR-AUC": f"{self.history['val_pr_auc'][-1]:.4f}",
-        }
 
 
 class ModelTrainer:

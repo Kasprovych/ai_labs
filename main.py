@@ -19,7 +19,8 @@ from src.data.loader import CreditCardDataLoader
 from src.data.preprocessor import DataPreprocessor, SmoteBalancingStrategy
 from src.eda.analyzer import EdaAnalyzer
 from src.models.builder import BaselineModelBuilder, RegularizedModelBuilder, IModelBuilder
-from src.training.trainer import ModelTrainer, ExperimentRunResult
+from src.training.trainer import ModelTrainer
+from src.training.results import ExperimentRunResult
 from src.visualization.plots import TrainingVisualizer
 
 

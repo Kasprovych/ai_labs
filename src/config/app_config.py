@@ -1,4 +1,4 @@
-"""Configuration module for Laboratory Work #1 (TensorFlow Deep Learning).
+"""Configuration module for Laboratory Works #1 (TensorFlow) and #2 (PyTorch).
 
 Contains immutable configuration settings for data, training, paths, and experiments.
 """
@@ -37,16 +37,20 @@ class TrainingConfig:
     random_seed: int = 42
     # Default decision threshold; a second, F1-optimal threshold is tuned on the validation set
     default_threshold: float = 0.5
+    # PyTorch only (Lab 2): CPU keeps runs deterministic and is fast enough for a small MLP
+    device: str = "cpu"
 
 
 @dataclass(frozen=True)
 class PathConfig:
     """Centralized path management for artifacts, logs, datasets, and outputs."""
     project_root: Path = field(default_factory=lambda: Path(__file__).resolve().parent.parent.parent)
+    # Per-lab output folder inside artifacts/ ("" = artifacts/ itself, used by Lab 1)
+    artifacts_subdir: str = ""
 
     @property
     def artifacts_dir(self) -> Path:
-        path = self.project_root / "artifacts"
+        path = self.project_root / "artifacts" / self.artifacts_subdir
         path.mkdir(parents=True, exist_ok=True)
         return path
 

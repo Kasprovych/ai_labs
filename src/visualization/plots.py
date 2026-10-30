@@ -14,7 +14,7 @@ import seaborn as sns
 from sklearn.metrics import precision_recall_curve, roc_curve
 
 from src.training.evaluator import EvaluationResult
-from src.training.trainer import ExperimentRunResult
+from src.training.results import ExperimentRunResult
 
 logger = logging.getLogger(__name__)
 
@@ -22,8 +22,10 @@ logger = logging.getLogger(__name__)
 class TrainingVisualizer:
     """Generates comparative visualizations for neural network training and evaluation."""
 
-    def __init__(self, output_dir: Path) -> None:
+    def __init__(self, output_dir: Path, title_suffix: str = "") -> None:
         self._output_dir = output_dir
+        # Appended to figure titles, e.g. " [PyTorch]", to tell the labs' plots apart
+        self._title_suffix = title_suffix
         self._output_dir.mkdir(parents=True, exist_ok=True)
 
     def _grid(self, n: int, cell_w: float = 5.5, cell_h: float = 4.2):
@@ -50,7 +52,7 @@ class TrainingVisualizer:
             ax.set_ylabel(ylabel)
             ax.grid(True, linestyle=":", alpha=0.6)
             ax.legend(fontsize=8, loc="best")
-        fig.suptitle(title, fontsize=14, weight="bold")
+        fig.suptitle(title + self._title_suffix, fontsize=14, weight="bold")
         plt.tight_layout()
         save_path = self._output_dir / filename
         fig.savefig(save_path, dpi=200)
@@ -96,7 +98,7 @@ class TrainingVisualizer:
 
         # Baseline reference diagonals
         ax_roc.plot([0, 1], [0, 1], "k--", lw=1.2, label="Random Guess (0.50)")
-        ax_roc.set_title("Receiver Operating Characteristic (ROC) Curves", fontsize=13, weight="bold")
+        ax_roc.set_title("Receiver Operating Characteristic (ROC) Curves" + self._title_suffix, fontsize=13, weight="bold")
         ax_roc.set_xlabel("False Positive Rate (1 - Specificity)", fontsize=11)
         ax_roc.set_ylabel("True Positive Rate (Recall / Sensitivity)", fontsize=11)
         ax_roc.legend(loc="lower right", fontsize=8)
@@ -105,7 +107,7 @@ class TrainingVisualizer:
         # Baseline for PR curve is the prevalence of positive class
         baseline_pr = float(np.mean(y_true))
         ax_pr.plot([0, 1], [baseline_pr, baseline_pr], "k--", lw=1.2, label=f"No-skill Baseline ({baseline_pr:.4f})")
-        ax_pr.set_title("Precision-Recall (PR) Curves [Primary Imbalance Metric]", fontsize=13, weight="bold")
+        ax_pr.set_title("Precision-Recall (PR) Curves [Primary Imbalance Metric]" + self._title_suffix, fontsize=13, weight="bold")
         ax_pr.set_xlabel("Recall (Coverage)", fontsize=11)
         ax_pr.set_ylabel("Precision (Purity)", fontsize=11)
         ax_pr.legend(loc="lower left", fontsize=8)
@@ -141,7 +143,7 @@ class TrainingVisualizer:
             ax.set_ylabel("True Label")
 
         suffix = "tuned threshold (selected on validation)" if tuned else "threshold 0.5"
-        fig.suptitle(f"Test-set Confusion Matrices @ {suffix}", fontsize=14, weight="bold")
+        fig.suptitle(f"Test-set Confusion Matrices @ {suffix}{self._title_suffix}", fontsize=14, weight="bold")
         plt.tight_layout()
         save_path = self._output_dir / ("confusion_matrices_tuned.png" if tuned else "confusion_matrices.png")
         fig.savefig(save_path, dpi=200)
@@ -187,7 +189,7 @@ class TrainingVisualizer:
         ax.set_xticks(x)
         ax.set_xticklabels(metrics_names, fontsize=11, weight="bold")
         ax.set_ylabel("Score [0.0 - 1.0]", fontsize=11)
-        ax.set_title("Test Metrics @ threshold 0.5 — All Architectures & Activation Functions", fontsize=13, weight="bold")
+        ax.set_title("Test Metrics @ threshold 0.5 — All Architectures & Activation Functions" + self._title_suffix, fontsize=13, weight="bold")
         ax.set_ylim(0, 1.2)
         ax.legend(loc="upper center", ncol=3, frameon=True, fontsize=8)
         ax.grid(axis="y", linestyle=":", alpha=0.7)
