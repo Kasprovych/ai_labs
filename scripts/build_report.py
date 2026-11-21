@@ -2,11 +2,11 @@
 
 lab1: REPORT_LAB1.md. The Markdown title page uses HTML tags for GitHub rendering. DOCX ignores raw
       HTML, so for DOCX the title block is rewritten into pandoc custom-style divs plus a page break.
-lab2: REPORT_LAB2.md, formatted like the submitted Lab 1 report (Lviv Polytechnic style). The source
+lab2-lab4: REPORT_LAB2.md ... REPORT_LAB4.md, formatted like the submitted Lab 1 report (Lviv Polytechnic style). The source
       uses pandoc custom-style divs directly; DOCX takes its formatting from scripts/reference_lpnu.docx
       (see make_reference_docx.py), PDF from scripts/report_lpnu.css. `<!-- pagebreak -->` marks a page break.
 
-Usage: python scripts/build_report.py [lab1|lab2]   (default: lab1)
+Usage: python scripts/build_report.py [lab1|lab2|lab3|lab4]   (default: lab1)
 Requires: pandoc; Google Chrome (for PDF); python-docx (lab2 DOCX post-processing).
 """
 
@@ -25,6 +25,10 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 REPORTS = {
     "lab1": {"source": ROOT / "REPORT_LAB1.md", "css": SCRIPTS / "report.css", "title": "Звіт ЛР1"},
     "lab2": {"source": ROOT / "REPORT_LAB2.md", "css": SCRIPTS / "report_lpnu.css", "title": "Звіт ЛР2",
+             "reference_docx": SCRIPTS / "reference_lpnu.docx", "pandoc_args": ["--syntax-highlighting=none"]},
+    "lab3": {"source": ROOT / "REPORT_LAB3.md", "css": SCRIPTS / "report_lpnu.css", "title": "Звіт ЛР3",
+             "reference_docx": SCRIPTS / "reference_lpnu.docx", "pandoc_args": ["--syntax-highlighting=none"]},
+    "lab4": {"source": ROOT / "REPORT_LAB4.md", "css": SCRIPTS / "report_lpnu.css", "title": "Звіт ЛР4",
              "reference_docx": SCRIPTS / "reference_lpnu.docx", "pandoc_args": ["--syntax-highlighting=none"]},
 }
 

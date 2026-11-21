@@ -1,0 +1,3970 @@
+[
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Зазвичай вважається, що батьком-засновником генетичних алгоритмів є Джон Холт. Він розробив цю концепцію у 1960-х роках, натхненний еволюційною біологією та роботою з еволюційним програмуванням. Його фундаментальною книгою, яка заклала основи генетичних алгоритмів, є \"Genesis: On the Origin of Species by Simulation\" (1966). У цій роботі Холт використовував еволюційні методи для розв’язування задач оптимізації, що стало початком розвитку генетичних алгоритмів як потужного інструменту в різних областях.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.0,
+  "accuracy": 4,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.2500004231696948e-07,
+  "generation_seconds": 4.446782916999837,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "Комп'ютер Deep Blue переміг Гаррі Каспарова у шаховій партії 1997 року. Він досяг цієї перемоги завдяки потужному обчислювальному процесору, який дозволяв йому аналізувати приблизно 200 позицій за секунду. Це значно перевищувало можливості будь-якого індивідуального шахіста того часу, що стало переломним моментом у розвитку штучного інтелекту та шахових програм. Deep Blue використовував комбінацію алгоритмів пошуку та глибокого аналізу для вибору найкращої ходи.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.5,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 4.2000465327873826e-08,
+  "generation_seconds": 2.6014902920005625,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію матчів проти професійного гонконгського шахіста Лі Седана з рахунком 4:1. Це була перша офіційна перемога штучного інтелекту над професійним шахістом у історії. У цих матчах AlphaGo продемонструвала вражаючу здатність до навчання та адаптації до стратегій суперника. Перемога AlphaGo стала знаковим моментом у розвитку штучного інтелекту та глибокого навчання.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.5,
+  "accuracy": 2,
+  "completeness": 1,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.5000008463393897e-07,
+  "generation_seconds": 2.2914225839995197,
+  "judge_output": "```json\n{\"accuracy\": 2, \"completeness\": 1, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга був запропонований Аланом Тюрінггом у своїй статті \"Computing Machinery and Intelligence\" (1950). У цій праці він запропонував спосіб перевірки здатності машини до штучного інтелекту, заснований на тому, чи зможе машина обмінятися з людиною словами в такий спосіб, що людина не зможе розрізнити відповіді машини та людини. Тюрінг запропонував провести тест, в якому людина спілкується з машиною та людиною через текстові повідомлення, не знаючи, хто з них є машиною. Якщо людина не зможе визначити, хто з них є машиною, то машина вважається успішною в проходженні тесту.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.6666666666666666,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.91999640467111e-07,
+  "generation_seconds": 3.1398681670007136,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (LSTM) запропонували в 1997 році Себастьян Гудман, Юнь Чен та Ромен Тао в статті \"Neural Network Possibilities with Long Short-Term Memory\".  Вони розробили цю архітектуру як вирішення проблеми зникнення градієнтів у традиційних рекурентних нейронних мережах, що ускладнювало навчання на послідовностях з довготривалими залежностями. LSTM використовує механізми \"вентилів\" для контролю потоку інформації, дозволяючи мережі запам'ятовувати важливі дані на тривалий час і ігнорувати нерелевантну інформацію. Це стало значним кроком у розвитку обробки природної мови та інших задач, що потребують розуміння контексту.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.3333333333333333,
+  "accuracy": 1,
+  "completeness": 1,
+  "coherence": 3,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.0900006347801536e-07,
+  "generation_seconds": 3.5238600829998177,
+  "judge_output": "```json\n{\"accuracy\": 1, \"completeness\": 1, \"coherence\": 3}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі **уваги (attention)**, який дозволяє моделі зосереджуватися на різних частинах вхідної послідовності при обробці кожного елемента. На відміну від рекурентних мереж, трансформери не потребують послідовної обробки даних, що робить їх більш паралельними та ефективними. Ця архітектура була запропонована у статті \"Attention is All You Need\" (Vaswani et al., 2017). Трансформери широко використовуються в сучасних моделях обробки природної мови, таких як BERT та GPT.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.6666666666666666,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.5000008463393897e-07,
+  "generation_seconds": 2.797000874999867,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT (Bidirectional Encoder Representations from Transformers) розроблено Google Research у 2018 році, і її створили Махарія Маттієс, Йім Девіс, Джекі Чен та інші. BERT використовує архітектуру Transformer для розуміння контексту слів у реченні з обох боків. Базовий варіант BERT має 110 мільйонів параметрів, а великий – 340 мільйонів. Це дозволило моделі досягти значних результатів у різних завданнях обробки природної мови.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.2500004231696948e-07,
+  "generation_seconds": 2.45901587499975,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі штучного інтелекту – це ситуація, коли модель занадто добре \"запам'ятовує\" навчальні дані, втрачаючи здатність узагальнювати та працювати з новими, невідомими прикладами. Це призводить до поганої продуктивності на тестових даних. Щоб уникнути перенавчання, часто використовують такі методики: регуляризація (L1, L2), зменшення складності моделі (зменшення кількості параметрів), крос-валідація для оцінки продуктивності на різних наборах даних, а також раннє зупинення навчання (early stopping), коли навчання припиняється, коли продуктивність на валідаційному наборі даних перестає покращуватися.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.4,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.7500012695090845e-07,
+  "generation_seconds": 4.367500915999699,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація в сфері штучного інтелекту – це явище, коли мовна модель генерує інформацію, яка є неправдивою, безглуздою або не має жодного зв'язку з наданим контекстом. Це відбувається через те, що моделі навчаються на величезних обсягах даних, які можуть містити помилки та суперечності.  Внаслідок цього, модель може \"вигадувати\" факти, історії або навіть цілі сценарії, які не відповідають реальності. Важливо пам'ятати, що галюцинації – це не помилки в коді, а радше прояв обмеженого розуміння моделі світу.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.6666666666666666,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.5000008463393897e-07,
+  "generation_seconds": 3.149001041999327,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних – це тип бази даних, який зберігає дані у вигляді векторів, що представляють їх у багатовимірному просторі. Ці вектори генеруються за допомогою моделей машинного навчання, які перетворюють текст, зображення або інші дані на числові представлення. Векторні бази даних зазвичай використовують алгоритми пошуку на основі подібності, такі як Approximate Nearest Neighbor (ANN) та HNSW (Hierarchical Navigable Small World), щоб швидко знаходити найближчі вектори до заданого запиту. Це дозволяє здійснювати семантичний пошук, коли результати базуються на змісті даних, а не на точній відповідності ключовим словам.  Вони особливо корисні для завдань, що потребують розуміння контексту та знаходження схожих даних.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.0900006347801536e-07,
+  "generation_seconds": 3.4582021659998645,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон, як модель штучного нейрона, був запропонований Френком Розенблаттом у 1958 році. Він прагнув створити машину, здатну розпізнавати образи, аналогічно тому, як це робить людський мозок. Першим у світі нейрокомп'ютером, що використовував перцептрон, став \"SNARC\" (Stochastic Neural Analog Reinforcement Computer), розроблений в 1958 році в Массачусетському технологічному інституті. Цей пристрій був розроблений для навчання розпізнавати прості геометричні фігури.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.3333333333333333,
+  "accuracy": 4,
+  "completeness": 4,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.5000008463393897e-07,
+  "generation_seconds": 2.7413380420002795,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 4, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI. Це велика багатомодна модель штучного інтелекту, яка значно перевершує попередню версію GPT-3.5 в багатьох тестах та завданнях, зокрема в здатності генерувати складний текст, розпізнавати зображення та виконувати більш складні інструкції. OpenAI заявляє, що GPT-4 розроблена з урахуванням безпеки та етичних міркувань.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.7500012695090845e-07,
+  "generation_seconds": 2.674595665999732,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання – це метод машинного навчання, де алгоритм навчається на розмічених даних, тобто даних, для яких відомі правильні відповіді. На відміну від цього, некероване навчання працює з нерозміченими даними, де алгоритм повинен самостійно знаходити закономірності та структуру без попереднього визначення бажаних результатів.  Таким чином, кероване навчання вимагає чіткого вхідного сигналу, а некероване – дозволяє моделі досліджувати дані більш гнучко.  Це робить кероване навчання ефективним для задач класифікації та регресії, а некероване – для задач кластеризації та виявлення прихованих закономірностей.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.670005076448433e-07,
+  "generation_seconds": 3.606713082999704,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GAN) були вперше запропоновані у 2014 році Джимом Корнеліусом та Йоргосом Бургуса. Вони базуються на ідеї конкуренції між двома нейронними мережами: генератором, який створює нові дані, і дискримінатором, який намагається розрізнити справжні дані та дані, згенеровані генератором. Нечітка логіка (fuzzy logic) була розроблена у 1960-х роках Луїгі Маттіаті, щоб моделювати неповну або невизначену інформацію, що дозволяє обробляти інформацію, яка не є чіткою та однозначною. Таким чином, GAN використовують принципи машинного навчання, а не нечітку логіку безпосередньо, хоча іноді GAN можуть використовувати нечітку логіку для певних аспектів обробки даних.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.25,
+  "accuracy": 2,
+  "completeness": 1,
+  "coherence": 3,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.5000008463393897e-07,
+  "generation_seconds": 4.93078045799939,
+  "judge_output": "```json\n{\"accuracy\": 2, \"completeness\": 1, \"coherence\": 3}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "Французька компанія Mistral AI випустила мовну модель Mistral 7B. Це відкрита модель, яка базується на архітектурі Transformer і має 7 мільярдів параметрів. Mistral 7B розроблена для ефективної роботи на обладнанні з обмеженими ресурсами, зберігаючи при цьому високу якість перекладів та генерації тексту. Модель доступна для використання за ліцензією Apache 2.0.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 2.9100010578986257e-07,
+  "generation_seconds": 2.1923724579992268,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "A: LLM without RAG",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "Нобелівська премія з фізики 2024 року у галузі штучних нейронних мереж присуджена Йену Лекуну, Джеффері Хінтону та Шорі Стенлі Чен. Їхній внесок полягає у розробці та розвитку глибокого навчання – методу, що використовує багатошарові нейронні мережі для аналізу складних даних. Цей прогрес значно розширив можливості штучного інтелекту в таких сферах, як комп'ютерний зір, обробка природної мови та багато інших. Їхні дослідження стали ключовими для розвитку сучасних систем машинного навчання.",
+  "retrieved_ids": [],
+  "retrieved_scores": [],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 2.5000008463393897e-07,
+  "generation_seconds": 3.1492066669998167,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Джон Голланд вважається «батьком-засновником» генетичних алгоритмів [1][2]. Його фундаментальна книга під назвою «Адаптація в природних і штучних системах» (англ. Adaptation in Natural and Artificial Systems) [1][2] є основою цієї галузі досліджень. Дослідження Голанда були засновані на експериментах з клітинними автоматами та його роботах в університеті Мічигану [2].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#2",
+   "Генетичний алгоритм#1"
+  ],
+  "retrieved_scores": [
+   0.9003,
+   0.8583,
+   0.85
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.6532384169995566,
+  "generation_seconds": 6.864528791000339,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг Гаррі Каспарова [1, 2]. Він міг обчислювати 200 000 000 позицій на секунду [1, 2].",
+  "retrieved_ids": [
+   "Deep Blue#0",
+   "Deep Blue#2",
+   "Deep Blue#1"
+  ],
+  "retrieved_scores": [
+   0.9053,
+   0.8956,
+   0.8907
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.37484295800004475,
+  "generation_seconds": 4.477545042000202,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію з п’яти матчів проти південно-корейського професійного гравця 9-го дану Лі Седола, і перемогла з рахунком 1–4 [1]. Це було перше, коли комп’ютерна програма перемогла професійного гравця в ґо на класичній дошці в грі на рівних [1]. AlphaGo використовувала пошук по дереву Монте Карло, керований за допомогою технології поглибленої нейронної мережі для оцінки позиції та пошуку найбільш вдалих ходів [3]. Програма спочатку вчилась грати на записаних партіях професійних гравців, а потім почала грати проти себе для подальшого вдосконалення [3].",
+  "retrieved_ids": [
+   "AlphaGo#1",
+   "AlphaGo#0",
+   "AlphaGo#2"
+  ],
+  "retrieved_scores": [
+   0.8791,
+   0.8693,
+   0.8453
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.2841872919998423,
+  "generation_seconds": 6.104045667000719,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга був запропонований Аланом Тюрінгом у статті «Обчислювальні машини та розум», опублікованій у 1950 році у філософському журналі «Mind» [2]. У 1980 році Джон Серль висунув аргумент проти тесту Тюрінга, стверджуючи, що програми можуть проходити тест, не маючи розуміння [1]. Існують три основні варіанти тесту Тюрінга, і дискусія триває щодо відповідності сучасного варіанту оригінальним ідеям Тюрінга [3].",
+  "retrieved_ids": [
+   "Тест Тюрінга#9",
+   "Тест Тюрінга#0",
+   "Тест Тюрінга#17"
+  ],
+  "retrieved_scores": [
+   0.9024,
+   0.8944,
+   0.8924
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.4022845839999718,
+  "generation_seconds": 6.198862124999323,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (ДКЧП) запропонували Зепп Хохрайтер та Юрген Шмідгубер у 1997 році [2]. Це рекурентна нейронна мережа, яка вирішує проблему згасання градієнту і здатна обробляти послідовності з часовими затримками різної частоти [2]. Її використовують для розпізнавання мовлення, синтезу мовлення з тексту та генерації фотореалістичних аватарок/відео облич [1].",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#26",
+   "Довга короткочасна пам'ять#0",
+   "Штучна нейронна мережа#9"
+  ],
+  "retrieved_scores": [
+   0.8337,
+   0.8301,
+   0.8278
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.33143699999982346,
+  "generation_seconds": 6.8329964999993535,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги, запропонованому в статті 2017 року «Увага — це все, що вам треба» [1]. Ця архітектура не має рекурентних вузлів і використовується для тренування великих мовних моделей на великих наборах даних, таких як корпуси Вікіпедії та Common Crawl [1]. Також, архітектуру трансформера було втілено в TensorFlow та PyTorch [2], а також призвела до розробки таких систем, як GPT та BERT [3].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#11",
+   "Трансформер (архітектура глибокого навчання)#1"
+  ],
+  "retrieved_scores": [
+   0.8658,
+   0.8602,
+   0.859
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.09090283400018961,
+  "generation_seconds": 5.299362124999789,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT (Bidirectional Encoder Representations from Transformers) була створена Джейкобом Девліном та його колегами з Google у 2018 році [1]. Базовий варіант BERT має 12 шарів, 768 прихованих, 12 голови та 110 мільйонів параметрів [1]. Великий варіант BERT має 24 шари, 1024 прихованих, 16 голови та 340 мільйонів параметрів [1].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#3",
+   "BERT (мовна модель)#2"
+  ],
+  "retrieved_scores": [
+   0.902,
+   0.8595,
+   0.8531
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.4161586250002074,
+  "generation_seconds": 6.194524333000118,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі – це ситуація, коли модель занадто сильно реагує на деталі тренувальних даних, втрачаючи здатність узагальнювати на нових даних [2]. Це відбувається, коли модель стає занадто складною та «запам'ятовує» тренувальні дані замість того, щоб вивчати закономірності [2]. Щоб уникнути перенавчання, використовуються різні методики, такі як перехресне затвердження, регуляризація, рання зупинка, обрізка та порівняння моделей [1]. Ці методики допомагають моделі уникати занадто складних моделей або перевіряти її здатність до узагальнення на невідомих даних [1].",
+  "retrieved_ids": [
+   "Перенавчання#2",
+   "Перенавчання#0",
+   "Перенавчання#8"
+  ],
+  "retrieved_scores": [
+   0.8988,
+   0.8844,
+   0.8826
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.26814337500036345,
+  "generation_seconds": 6.672565916999702,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту — це згенерована ШІ відповідь, яка містить неправдиву або оманливу інформацію, подану як факт [1]. Це може бути вигадана сума доходу компанії або інша неправдива інформація [1]. Також галюцинацією можна назвати будь-яку впевнену відповідь ШІ, яка не обґрунтована навчальними даними [2]. Дослідники зазначають, що ШІ-галюцинації є однією з основних проблем технології LLM, і чат-боти можуть галюцинувати до 27% часу [1].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#16",
+   "Галюцинація (штучний інтелект)#4"
+  ],
+  "retrieved_scores": [
+   0.8902,
+   0.8856,
+   0.8834
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3064845829994738,
+  "generation_seconds": 7.158062208000047,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори, що є математичними представленнями даних у багатовимірному просторі. Вона зазвичай втілює алгоритми наближено найближчих сусідів (ANN), що дозволяє здійснювати пошук за подібністю [1]. Векторні бази даних використовуються для різних задач, таких як пошук за подібністю, мультимодальний пошук та покращення відповідей великих мовних моделей за допомогою методу Retrieval-Augmented Generation (RAG) [2].",
+  "retrieved_ids": [
+   "Векторна база даних#0",
+   "Векторна база даних#1",
+   "Довга короткочасна пам'ять#4"
+  ],
+  "retrieved_scores": [
+   0.9117,
+   0.91,
+   0.8425
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05516566599999351,
+  "generation_seconds": 7.163285125000584,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон був запропонований Френком Розенблатом у 1957 році. У 1960 році в Корнельському університеті було продемонстровано перший нейрокомп'ютер «Марк-1» [1, 2]. Перцептрон моделював процес людського сприйняття, передаючи сигнали від фотоелементів до електромеханічних елементів пам'яті [2].",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#2",
+   "Перцептрон#1"
+  ],
+  "retrieved_scores": [
+   0.9027,
+   0.8854,
+   0.8677
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.28594066699952236,
+  "generation_seconds": 6.05851629100016,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI [1]. Модель доступна для користувачів платної версії ChatGPT — ChatGPT Plus [1]. Також GPT-4 було випущено у різних версіях, зокрема GPT-4.1 та GPT-4.5 [2]. Доступ до GPT-4.1 можна отримати через OpenAI API або OpenAI Developer Playground [2].",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "ChatGPT#8",
+   "GPT-4#3"
+  ],
+  "retrieved_scores": [
+   0.9009,
+   0.8598,
+   0.8593
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05716179199953331,
+  "generation_seconds": 4.968894874999933,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання відрізняється від некерованого тим, що в керованому навчанні модель тренують на мічених даних, тобто даних з вказаним бажаним виходом [2]. У некерованому навчанні алгоритми навчаються виключно на немічених даних, намагаючись виявити закономірності та структуру в даних [1]. У керованому навчанні алгоритм намагається правильно визначити значення виходу для нових даних, а в некерованому – імітувати вхідні дані [1]. Хоча існують перехідні підходи, що використовують обидва методи [3].",
+  "retrieved_ids": [
+   "Некероване навчання#0",
+   "Кероване навчання#0",
+   "Некероване навчання#1"
+  ],
+  "retrieved_scores": [
+   0.9,
+   0.8857,
+   0.8792
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.050285916000575526,
+  "generation_seconds": 5.81063983399963,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GANs) були запроваджені Яном Ґудфелоу у 2014 році [1][2]. Спочатку концепцію змагального навчання запропонували Лі, Гаучі та Гросом у 2013 році, що було узагальненням генеративної змагальної мережі [3]. Юрген Шмідхубер у 1992 році запропонував ідею змагального навчання в більш ранніх роботах [3]. «Штучна цікавість» – це принцип, коли друга мережа навчається градієнтним спуском передбачати реакцію середовища на образи першої мережі [2].",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Штучна нейронна мережа#8",
+   "Генеративна змагальна мережа#2"
+  ],
+  "retrieved_scores": [
+   0.8682,
+   0.855,
+   0.8525
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 4,
+  "completeness": 3,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.35627970799941977,
+  "generation_seconds": 6.653301041000304,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 3, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "Велика мовна модель#0",
+   "GPT-4#1"
+  ],
+  "retrieved_scores": [
+   0.8516,
+   0.844,
+   0.8321
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.4514575830007743,
+  "generation_seconds": 3.7581260840006507,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "B: 200w, k=3, cosine (base)",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#2",
+   "Штучний інтелект#2",
+   "Штучний інтелект#27"
+  ],
+  "retrieved_scores": [
+   0.8566,
+   0.8556,
+   0.8522
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.08733445799953188,
+  "generation_seconds": 4.695748416000242,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Джон Голланд вважається «батьком-засновником» генетичних алгоритмів [1]. Він є автором фундаментальної книги «Адаптація в природних і штучних системах» [1], яка є основою досліджень у цій галузі. Генетичні алгоритми базуються на принципах біологічної еволюції, зокрема на операції «схрещення», що імітує процес розмноження в живій природі [1]. Ці алгоритми використовуються для вирішення задач оптимізації та моделювання [1].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0"
+  ],
+  "retrieved_scores": [
+   0.9003
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05785679099972185,
+  "generation_seconds": 3.780212874999961,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг чемпіона світу з шахів Гаррі Каспарова [1]. Він міг обчислювати приблизно 200 позицій за секунду [1]. Після цієї перемоги акції компанії IBM зросли на 18 мільярдів [1].",
+  "retrieved_ids": [
+   "Deep Blue#0"
+  ],
+  "retrieved_scores": [
+   0.9053
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.046231874999648426,
+  "generation_seconds": 2.4419937499997104,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію з п’яти матчів з південно-корейським професійним гравцем 9-го дану Лі Седолом, і перемогла з рахунком 1–4 [1]. Це було перше змагання, в якому комп’ютерна програма перемогла професійного гравця в ґо на класичній дошці в грі на рівних [1].",
+  "retrieved_ids": [
+   "AlphaGo#1"
+  ],
+  "retrieved_scores": [
+   0.8791
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.046876500000507804,
+  "generation_seconds": 3.9605566250002084,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга був запропонований Аланом Тюрінгом у 1950 році в статті «Обчислювальні машини й розум» [1]. Джон Серль у 1980 році в статті «Розум, мозок і програми» висунув аргумент проти тесту Тюрінга, відомий як «Китайська кімната», стверджуючи, що програми можуть обійти тест, не маючи розуміння символів [1]. У 1990 році відбувся колоквіум Тюрінга в Університеті Сассекса, присвячений обговоренню тесту Тюрінга з різних точок зору [1]. Також у 1990 році було засновано щорічне змагання на здобуття премії Льобнера [1].",
+  "retrieved_ids": [
+   "Тест Тюрінга#9"
+  ],
+  "retrieved_scores": [
+   0.9024
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 4,
+  "completeness": 3,
+  "coherence": 3,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.31266004200006137,
+  "generation_seconds": 5.124545374999798,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 3, \"coherence\": 3}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#26"
+  ],
+  "retrieved_scores": [
+   0.8337
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 0.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05028970800049137,
+  "generation_seconds": 1.6350116670000716,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги [1]. Цю архітектуру було запропоновано в статті 2017 року «Увага — це все, що вам треба» [1]. Трансформер не має рекурентних вузлів і використовується для тренування великих мовних моделей на великих наборах даних, таких як корпус Вікіпедії та Common Crawl [1].  Вона базується на механізмі уваги на основі softmax, запропонованому Багдановим у 2014 році [1].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0"
+  ],
+  "retrieved_scores": [
+   0.8658
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05230141700030799,
+  "generation_seconds": 4.225584499999968,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT (Bidirectional Encoder Representations from Transformers) була створена Джейкобом Девліном та його колегами з Google у 2018 році [1]. Це методика машинного навчання, що ґрунтується на трансформерах, для попереднього тренування обробки природної мови. Базовий варіант BERTBASE має 12 шарів, 768 прихованих, 12 голови та 110 мільйонів параметрів [1]. BERTLARGE, великий варіант, має 24 шари, 1024 приховані, 16 голови та 340 мільйонів параметрів [1].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0"
+  ],
+  "retrieved_scores": [
+   0.902
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.055710458000248764,
+  "generation_seconds": 4.210300374999861,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі виникає, коли модель занадто добре запам'ятовує тренувальні дані, втрачаючи здатність узагальнювати на нових даних [1]. Щоб уникнути цього, використовуються методики, такі як перехресне затвердження, регуляризація, рання зупинка, обрізка та баєсові апріорні параметри [1]. Ці методики або штрафують за складні моделі, або перевіряють здатність моделі до узагальнення на даних, які не використовувалися для тренування [1]. Аналогією є ситуація з дитиною, яка занадто уважно вивчає окремі вікна і робить помилкові висновки про всі вікна [1].",
+  "retrieved_ids": [
+   "Перенавчання#2"
+  ],
+  "retrieved_scores": [
+   0.8988
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05486162499983038,
+  "generation_seconds": 4.7162343750005675,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту – це згенерована ШІ відповідь, що містить неправдиву або оманливу інформацію, подану як факт [1]. Наприклад, чат-бот може видати вигадану фінансову інформацію, наприклад, нереальний дохід компанії [1]. ШІ-галюцинації відрізняються від людських галюцинацій тим, що викликані не помилковим сприйняттям, а необґрунтованими відповідями або переконаннями [1]. У 2023 році аналітики вважають часті ШІ-галюцинації основною проблемою великих мовних моделей (LLM), які галюцинують до 27% часу [1].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0"
+  ],
+  "retrieved_scores": [
+   0.8902
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.22551845900034095,
+  "generation_seconds": 4.908601250000174,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори, що є математичними представленнями даних у високовимірному просторі [1]. Ці вектори представляють характеристики даних, обчислюються за допомогою методів машинного навчання, таких як алгоритми виділення ознак або вкладання слів [1]. Векторні бази даних зазвичай втілюють один або декілька алгоритмів наближено найближчих сусідів (ANN), що дозволяє здійснювати пошук за подібністю [1]. Їх використовують для різних задач, таких як пошук за подібністю, мультимодальний пошук та рекомендаційні рушії [1].",
+  "retrieved_ids": [
+   "Векторна база даних#0"
+  ],
+  "retrieved_scores": [
+   0.9117
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.03824216700013494,
+  "generation_seconds": 4.345706374999281,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон був запропонований Френком Розенблатом у 1957 році [1]. Першим у світі нейрокомп'ютером, реалізованим на основі перцептрона, став «Марк-1» у 1960 році [1]. Перцептрон є математичною моделлю, що імітує сприйняття інформацією мозком, і здатний навчатися розв’язувати складні завдання, зокрема лінійно розділяти нелінійні множини [1]. Він складається з трьох типів елементів: сигнали від давачів, асоціативні елементи та реагуючі [1].",
+  "retrieved_ids": [
+   "Перцептрон#0"
+  ],
+  "retrieved_scores": [
+   0.9027
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.06253241700051149,
+  "generation_seconds": 4.570395458999883,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року [1]. Цю мультимодальну велику мовну модель створила компанія OpenAI [1]. Модель була попередньо навчена для прогнозування наступного токену, використовуючи як загальнодоступні дані, так і ліцензовані сторонніми постачальниками [1]. Допрацювання моделі було здійснено за допомогою навчання з підкріпленням на основі відгуків людей [1].",
+  "retrieved_ids": [
+   "GPT-4#0"
+  ],
+  "retrieved_scores": [
+   0.9009
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.344710207999924,
+  "generation_seconds": 2.9488792080001076,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "У наданих документах немає відповіді на це запитання.\n\nКероване навчання відрізняється від некерованого тим, що в керованому навчанні алгоритми навчаються на мічених даних, тобто даних, для яких відомі правильні відповіді [1]. На відміну від цього, в некерованому навчанні алгоритми навчаються виключно з немічених даних, не маючи жодних вказівок щодо того, що саме вони повинні передбачати [1]. Це робить некероване навчання більш гнучким у обробці даних з обмеженою кількістю інформації [1].",
+  "retrieved_ids": [
+   "Некероване навчання#0"
+  ],
+  "retrieved_scores": [
+   0.9
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": true,
+  "answerable": true,
+  "retrieval_seconds": 0.05675549999978102,
+  "generation_seconds": 3.1465015829999174,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GANs) — це алгоритми штучного інтелекту, які використовують систему двох нейронних мереж, що змагаються між собою [1]. Їх запровадив Ян Ґудфелоу у 2014 році [1]. Ці мережі використовуються в некерованому навчанні для створення зображень, які виглядають реалістично [1]. У наданих документах немає відповіді на питання про нечітку логіку.",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0"
+  ],
+  "retrieved_scores": [
+   0.8682
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 5,
+  "completeness": 1,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": true,
+  "answerable": true,
+  "retrieval_seconds": 0.07467670900041412,
+  "generation_seconds": 3.0681298330000573,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 1, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0"
+  ],
+  "retrieved_scores": [
+   0.8516
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.051180667000153335,
+  "generation_seconds": 1.6470199169998523,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "C: 200w, k=1, cosine",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#2"
+  ],
+  "retrieved_scores": [
+   0.8566
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.044009250000272004,
+  "generation_seconds": 2.1222624580004776,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Джон Голланд вважається «батьком-засновником» генетичних алгоритмів, і його фундаментальна книга називається «Адаптація в природних і штучних системах» [1, 2]. Дослідження Голланда були засновані на експериментах з клітинними автоматами та його роботах, що були написані в університеті Мічигану [2].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#2",
+   "Генетичний алгоритм#1",
+   "Генетичний алгоритм#3",
+   "Генетичний алгоритм#5"
+  ],
+  "retrieved_scores": [
+   0.9003,
+   0.8583,
+   0.85,
+   0.849,
+   0.8444
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.04850329200053238,
+  "generation_seconds": 7.547276416999921,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг Гаррі Каспарова [1][2]. Він міг обчислювати 200 000 000 позицій на секунду [3].",
+  "retrieved_ids": [
+   "Deep Blue#0",
+   "Deep Blue#2",
+   "Deep Blue#1",
+   "Deep Blue#4",
+   "Deep Blue#3"
+  ],
+  "retrieved_scores": [
+   0.9053,
+   0.8956,
+   0.8907,
+   0.8901,
+   0.887
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.055910750000293774,
+  "generation_seconds": 4.968932832999599,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "AlphaGo зіграла серію матчів у березні 2016 року проти південно-корейського професійного гравця 9-го дану Лі Седоля, з рахунком 1–4 на користь AlphaGo [1]. Це була серія з п’яти матчів [1]. AlphaGo стала першою програмою, яка перемогла професійного гравця в ґо на класичній дошці [1].",
+  "retrieved_ids": [
+   "AlphaGo#1",
+   "AlphaGo#0",
+   "AlphaGo#2",
+   "AlphaGo#3",
+   "Deep Blue#5"
+  ],
+  "retrieved_scores": [
+   0.8791,
+   0.8693,
+   0.8453,
+   0.8357,
+   0.8326
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.40664908300004754,
+  "generation_seconds": 4.732972791000066,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга був запропонований Аланом Тюрінгом у 1950 році в статті «Обчислювальні машини і розум» [1, 2]. Метою тесту було визначення здатності машини проявляти інтелектуально обумовлену поведінку, що тотожна до поведінки людини [2]. У цьому тесті один або кілька людей ставлять запитання двом таємним співрозмовникам і на підставі відповідей визначають, хто з них машина, а хто людина [2]. [5]",
+  "retrieved_ids": [
+   "Тест Тюрінга#9",
+   "Тест Тюрінга#0",
+   "Тест Тюрінга#17",
+   "Тест Тюрінга#14",
+   "Алан Тюрінг#15"
+  ],
+  "retrieved_scores": [
+   0.9024,
+   0.8944,
+   0.8924,
+   0.8903,
+   0.8898
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.044534000000567175,
+  "generation_seconds": 7.709892834000129,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (LSTM) запропонували Зепп Хохрайтер та Юрген Шмідхубер у 1997 році [1][2][4]. Вони розробили цю архітектуру рекурентних нейронних мереж для вирішення проблеми зникання градієнту та для навчання задачам «дуже глибокого навчання», які вимагають спогадів про події, що відбулися за тисячі дискретних часових кроків [1][2][4]. «Стандартну ДКЧП» із забувальним вентилем запропонували Фелікс Ґерс, Шмідхубер та Фред Каммінс у 1999 році [2].",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#26",
+   "Довга короткочасна пам'ять#0",
+   "Штучна нейронна мережа#9",
+   "Глибоке навчання#12",
+   "Трансформер (архітектура глибокого навчання)#2"
+  ],
+  "retrieved_scores": [
+   0.8337,
+   0.8301,
+   0.8278,
+   0.8224,
+   0.819
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.0517439999994167,
+  "generation_seconds": 9.798809292000442,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги, запропонованому в статті 2017 року «Увага — це все, що вам треба» [1]. Трансформер не має рекурентних вузлів і використовується для тренування великих мовних моделей на великих наборах даних, таких як корпуси Вікіпедії та Common Crawl [1]. Вона також привела до розробки попередньо натренованих систем, таких як GPT та BERT [3].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#11",
+   "Трансформер (архітектура глибокого навчання)#1",
+   "Трансформер (архітектура глибокого навчання)#3",
+   "Трансформер (архітектура глибокого навчання)#19"
+  ],
+  "retrieved_scores": [
+   0.8658,
+   0.8602,
+   0.859,
+   0.8522,
+   0.8511
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3424375829999917,
+  "generation_seconds": 7.13602204199924,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT була створена Джейкобом Девліном та його колегами з Google у 2018 році [1]. Базовий варіант BERT має 110 мільйонів параметрів, а великий – 340 мільйонів параметрів [1]. 25 жовтня 2019 року Пошук Google анонсував використання BERT для пошукових запитів англійською мовою в США [2].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#3",
+   "BERT (мовна модель)#2",
+   "BERT (мовна модель)#1",
+   "BERT (мовна модель)#4"
+  ],
+  "retrieved_scores": [
+   0.902,
+   0.8595,
+   0.8531,
+   0.8493,
+   0.8425
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.40325804199983395,
+  "generation_seconds": 6.011082084000009,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі – це ситуація, коли статистична модель занадто сильно реагує на другорядні відхилення в тренувальних даних, замість того, щоб «вчитися» узагальненню з тенденції [2]. Це відбувається, коли модель є занадто складною і має занадто багато параметрів відносно числа спостережень [2]. Для уникнення перенавчання використовуються різні методики, такі як перехресне затверджування, регуляризація, рання зупинка, обрізка та порівняння моделей [1]. Також важливо враховувати, що перенавчання може призвести до поганої передбачувальної продуктивності та потребувати додаткових витрат на збір даних [4].",
+  "retrieved_ids": [
+   "Перенавчання#2",
+   "Перенавчання#0",
+   "Перенавчання#8",
+   "Перенавчання#6",
+   "Перенавчання#5"
+  ],
+  "retrieved_scores": [
+   0.8988,
+   0.8844,
+   0.8826,
+   0.875,
+   0.8733
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.38118937500075845,
+  "generation_seconds": 7.73278449999998,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту — це згенерована ШІ відповідь, яка містить неправдиву або оманливу інформацію, подану як факт [1]. Це може бути вигадана інформація, як-от неправдиві фінансові показники, або навіть вигадки про історію, наприклад, про те, що динозаври будували цивілізацію [4]. Також галюцинації можуть виникати в інших сферах ШІ, наприклад, у споживчих гаджетах або автоматизованому керуванні транспортними засобами, де вони можуть призвести до катастрофічних наслідків [2]. Дослідники виявили, що галюцинації можуть бути викликані різними факторами, включаючи розбіжності в даних, помилкове декодування з трансформера та системні помилки в моделі [3].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#16",
+   "Галюцинація (штучний інтелект)#4",
+   "Галюцинація (штучний інтелект)#7",
+   "Штучний інтелект#0"
+  ],
+  "retrieved_scores": [
+   0.8902,
+   0.8856,
+   0.8834,
+   0.8823,
+   0.8805
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.36188054099966394,
+  "generation_seconds": 8.90155279099963,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори (списки чисел фіксованої довжини), разом з іншими елементами даних [1]. Вона зазвичай втілює один або декілька алгоритмів наближено найближчих сусідів (ННС, англ. Approximate Nearest Neighbor, ANN), що дозволяє здійснювати пошук за допомогою вектора запиту, знаходячи найближчі відповідні записи [1]. Ці вектори є математичними поданням даних у високовимірному просторі, що дозволяє представляти складні дані [1]. Векторні бази даних використовуються для пошуку за подібністю, мультимодального пошуку, рекомендаційних рушіїв та втілення доповненого пошуком породжування (RAG) для покращення відповідей великих мовних моделей [2].",
+  "retrieved_ids": [
+   "Векторна база даних#0",
+   "Векторна база даних#1",
+   "Довга короткочасна пам'ять#4",
+   "Інженерія запитів#9",
+   "Генетичний алгоритм#0"
+  ],
+  "retrieved_scores": [
+   0.9117,
+   0.91,
+   0.8425,
+   0.8411,
+   0.8394
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.32846662499923696,
+  "generation_seconds": 9.284478083999602,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон запропонував Френк Розенблат у 1957 році. Перший у світі нейрокомп'ютер, «Марк-1», було продемонстровано 23 червня 1960 року в Корнельському університеті [1][2]. Він був створений на основі моделювання процесу людського сприйняття та використовував спеціальний ітераційний метод навчання проб і помилок [1][2].",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#2",
+   "Перцептрон#1",
+   "Штучна нейронна мережа#3",
+   "Перцептрон#3"
+  ],
+  "retrieved_scores": [
+   0.9027,
+   0.8854,
+   0.8677,
+   0.8569,
+   0.8551
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.39008887500040146,
+  "generation_seconds": 7.652919041000132,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI [1]. Доступ до моделі почав надаватися через ChatGPT Plus та Pro, а також через OpenAI API та OpenAI Developer Playground [1][2]. У квітні 2025 року було випущено GPT-4.1 [2], а 7 серпня 2025 року – GPT-5 [2].",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "ChatGPT#8",
+   "GPT-4#3",
+   "ChatGPT#0",
+   "GPT-4#1"
+  ],
+  "retrieved_scores": [
+   0.9009,
+   0.8598,
+   0.8593,
+   0.8498,
+   0.8467
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.33359262500016484,
+  "generation_seconds": 6.1889842919999865,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання відрізняється від некерованого тим, що в керованому навчанні модель тренують з об'єктами входу та їх бажаними виходами, наданими «вчителем» [2]. У некерованому навчанні алгоритм навчається виключно з немічених даних, не маючи жодних міток [1]. Метою керованого навчання є навчитися загального правила, що відображає входи на виходи, тоді як некероване навчання зосереджується на виявленні прихованих закономірностей у даних [4].",
+  "retrieved_ids": [
+   "Некероване навчання#0",
+   "Кероване навчання#0",
+   "Некероване навчання#1",
+   "Машинне навчання#11",
+   "Машинне навчання#14"
+  ],
+  "retrieved_scores": [
+   0.9,
+   0.8857,
+   0.8792,
+   0.8777,
+   0.8693
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.059598208000352315,
+  "generation_seconds": 7.315120374999424,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GANs) були запроваджені Яном Ґудфелоу у 2014 році зі співавторами [1, 2]. У той же час Юрген Шмідхубер у 1992 році запропонував ідею змагального навчання, яка стала основою для GANs [2, 3]. Нечітку логіку, що базується на концепції «штучної цікавості», було вперше використано в 2014 році, коли Ян Ґудфелоу зі співавторами застосував цей принцип до породжувальної змагальної мережі [2].",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Штучна нейронна мережа#8",
+   "Генеративна змагальна мережа#2",
+   "Глибоке навчання#11",
+   "Генетичний алгоритм#1"
+  ],
+  "retrieved_scores": [
+   0.8682,
+   0.855,
+   0.8525,
+   0.8497,
+   0.8474
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05329029199947399,
+  "generation_seconds": 8.056493500000215,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "Велика мовна модель#0",
+   "GPT-4#1",
+   "Глибоке навчання#32",
+   "Велика мовна модель#1"
+  ],
+  "retrieved_scores": [
+   0.8516,
+   0.844,
+   0.8321,
+   0.8321,
+   0.8307
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.3418612909999865,
+  "generation_seconds": 5.659291791000214,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "D: 200w, k=5, cosine",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#2",
+   "Штучний інтелект#2",
+   "Штучний інтелект#27",
+   "Перцептрон#0",
+   "Штучна нейронна мережа#4"
+  ],
+  "retrieved_scores": [
+   0.8566,
+   0.8556,
+   0.8522,
+   0.8462,
+   0.8462
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.422870458000034,
+  "generation_seconds": 6.805287708999458,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "«Батьком-засновником» генетичних алгоритмів вважається Джон Голланд [1][2]. Його фундаментальна книга, яка заклала основи цієї галузі досліджень, називається «Адаптація в природних і штучних системах» (англ. Adaptation in Natural and Artificial Systems) [1][2]. Голланд використовував експерименти з клітинними автоматами та Теорему схем для формалізації підходу до передбачення якості наступного покоління [2]. Дослідження Голанда були написані в університеті Мічигану [2].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#4",
+   "Генетичний алгоритм#2"
+  ],
+  "retrieved_scores": [
+   0.9003,
+   0.8606,
+   0.8597
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3035812090001855,
+  "generation_seconds": 4.878840790999675,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг Гаррі Каспарова [1][2]. Він міг обчислювати 200 000 000 позицій на секунду [3]. Deep Blue використовував грубу обчислювальну потужність, що базувалася на 30-вузловій системі RS/6000 з 480 спеціалізованими шаховими процесорами VLSI [3].",
+  "retrieved_ids": [
+   "Deep Blue#2",
+   "Deep Blue#0",
+   "Deep Blue#1"
+  ],
+  "retrieved_scores": [
+   0.9104,
+   0.9053,
+   0.8945
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3992235410005378,
+  "generation_seconds": 5.028690874999484,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію матчів з південно-корейським професійним гравцем 9-го дану Лі Седолом, яка закінчилася з рахунком 1–4 на користь AlphaGo [1]. Це було перше змагання, в якому комп'ютерна програма перемогла професійного гравця в ґо на класичній дошці в грі на рівних [1][2]. До того, AlphaGo перемогла професійного гравця в ґо Фаня Хуея з рахунком 5:0 [3].",
+  "retrieved_ids": [
+   "AlphaGo#3",
+   "AlphaGo#0",
+   "AlphaGo#2"
+  ],
+  "retrieved_scores": [
+   0.8986,
+   0.8693,
+   0.8651
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.15137691699965217,
+  "generation_seconds": 4.151455208999323,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга був запропонований Аланом Тюрінг у 1950 році у статті «Обчислювальні машини та розум», опублікованій у філософському журналі «Mind» [1][3]. У 1952 році Тюрінг запропонував третю версію тесту, яку обговорив в ефірі радіо Бі-Бі-Сі [3]. У 1950 році, в рамках конкурсу на здобуття премії Льобнера, Товариство вивчення штучного інтелекту і моделювання поведінки провело симпозіум, де обговорювався тест Тюрінга [2]. У цій версії тесту комп'ютер має змусити значну частину членів журі повірити, що він людина [3].",
+  "retrieved_ids": [
+   "Тест Тюрінга#0",
+   "Тест Тюрінга#32",
+   "Тест Тюрінга#12"
+  ],
+  "retrieved_scores": [
+   0.9104,
+   0.9029,
+   0.9007
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.04363945899967803,
+  "generation_seconds": 5.686389084000439,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (ДКЧП) запропонували Зепп Хохрайтер та Юрген Шмідгубер у 1997 році [1][3]. Це рекурентна нейронна мережа, яка вирішує проблему згасання градієнта та підходить для обробки послідовностей з часовими затримками [1][2]. «Стандартну ДКЧП» з забувальним вентилем розробили Фелікс Ґерс, Шмідхубер та Фред Каммінс у 1999 році [3].  ДКЧП стала найцитованішою нейронною мережею XX століття [3].",
+  "retrieved_ids": [
+   "Довга короткочасна пам'ять#0",
+   "Штучна нейронна мережа#52",
+   "Глибоке навчання#29"
+  ],
+  "retrieved_scores": [
+   0.8923,
+   0.8572,
+   0.8508
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.062381834000007075,
+  "generation_seconds": 5.523786124999788,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги, запропонованому в статті 2017 року «Увага — це все, що вам треба» [2]. Трансформер не має рекурентних вузлів і використовує паралельну обробку вхідного тексту, що дозволяє підсилювати сигнал для ключових токенів [2][3]. Механізм уваги базується на softmax, запропонованому Багдановим у 2014 році для машинного перекладу [3].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#34",
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#1"
+  ],
+  "retrieved_scores": [
+   0.8768,
+   0.8755,
+   0.8727
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.07695337499990273,
+  "generation_seconds": 4.88791937499991,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT була створена Джейкобом Девліном та його колегами з Google у 2018 році [1]. Оригінальна англомовна модель BERT постачається у двох наперед натренованих варіантах: BERTBASE з 12 шарами та 110 мільйонами параметрів [2], та BERTLARGE з 24 шарами та 340 мільйонами параметрів [2]. Обидві моделі були натреновані на BooksCorpus та англійській Вікіпедії [2].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#1",
+   "BERT (мовна модель)#5"
+  ],
+  "retrieved_scores": [
+   0.8934,
+   0.8929,
+   0.8777
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3887698749995252,
+  "generation_seconds": 3.913054624999859,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі виникає, коли модель занадто тісно відповідає набору тренувальних даних, втрачаючи здатність узагальнювати на нових даних [1][2][3]. Це може призвести до того, що модель добре працює на тренувальних даних, але погано – на даних, які вона ніколи не бачила [3]. Щоб уникнути перенавчання, використовуються методики, такі як регуляризація, рання зупинка, обрізка та порівняння моделей [1][2]. Також важливо оцінювати продуктивність моделі на наборі даних, що не використовувався для тренування, щоб перевірити її здатність до узагальнення [1][3].",
+  "retrieved_ids": [
+   "Перенавчання#4",
+   "Перенавчання#3",
+   "Перенавчання#5"
+  ],
+  "retrieved_scores": [
+   0.9076,
+   0.9012,
+   0.897
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.6,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.041976500000600936,
+  "generation_seconds": 5.1033219159999135,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту – це згенерована ШІ відповідь, що містить неправдиву або оманливу інформацію, подану як факт [1]. Це може бути вигадана сума доходу компанії або твердження про неіснуюче [1]. Поняття «галюцинація» застосовується до будь-якої впевненої відповіді ШІ, яка не обґрунтована навчальними даними [2]. ШІ-галюцинації можуть призвести до катастрофічних наслідків у таких сферах, як автоматизоване керування транспортними засобами [2]. Моделі штучного інтелекту, такі як ChatGPT, іноді породжують проблеми у наукових дослідженнях через посилання на неправдиві або неіснуючі джерела інформації [3].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#34",
+   "Галюцинація (штучний інтелект)#23"
+  ],
+  "retrieved_scores": [
+   0.9138,
+   0.9106,
+   0.8954
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.03861833400060277,
+  "generation_seconds": 6.077367374999994,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори (списки чисел фіксованої довжини), що є математичними представленнями даних у високовимірному просторі [1][2]. Вона використовується для пошуку за подібністю, мультимодального пошуку та інших завдань, зокрема для покращення відповідей великих мовних моделей за допомогою методу Retrieval-Augmented Generation (RAG) [1]. Векторні бази даних зазвичай втілюють один або декілька алгоритмів наближено найближчих сусідів (ANN), що дозволяє здійснювати пошук за вектором запиту та знаходити найближчі відповідні записи [2].",
+  "retrieved_ids": [
+   "Векторна база даних#2",
+   "Векторна база даних#0",
+   "Векторна база даних#1"
+  ],
+  "retrieved_scores": [
+   0.9104,
+   0.9093,
+   0.9016
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.20579674999953568,
+  "generation_seconds": 5.163036750000174,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон був запропонований Френком Розенблатом у 1957 році [1][3]. Першим у світі нейрокомп'ютером, що був спроектований на основі перцептрона, став «Марк-1», продемонстрований у Корнелському університеті 23 червня 1960 року [2]. Він був створений на основі принципів конекціонізму, коли комірки з'єднувалися між собою випадковим чином [1][2]. Для навчання перцептрона використовувався метод проб і помилок, що нагадував процес навчання людини [2]. [3]",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#5",
+   "Перцептрон#4"
+  ],
+  "retrieved_scores": [
+   0.9208,
+   0.8904,
+   0.8888
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.33073166600024706,
+  "generation_seconds": 5.009777208999367,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI [1]. Модель розроблена як мультимодальна велика мовна модель, яка попередньо навчена для прогнозування наступного токену та допрацьована за допомогою навчання з підкріпленням на базі відгуків людей [1]. Доступ до GPT-4 надається через ChatGPT Plus та OpenAI API [1, 2].  GPT-4.1 було випущено 14 квітня 2025 року [2].",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "ChatGPT#18",
+   "ChatGPT#0"
+  ],
+  "retrieved_scores": [
+   0.9009,
+   0.8599,
+   0.8588
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.07324316600079328,
+  "generation_seconds": 4.321162167000693,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання відрізняється від некерованого тим, що алгоритми керованого навчання навчаються на даних, які містять як входи, так і бажані виходи [2]. У некерованому навчанні алгоритми навчаються виключно на немічених даних, намагаючись виявити приховані закономірності [1]. Хоча розрізнювальні завдання часто використовують кероване навчання, некероване навчання також може застосовуватися для таких задач, як кластеризація об'єктів [3]. Таким чином, обидва підходи можуть застосовуватися до одного завдання, змінюючись з часом [3].",
+  "retrieved_ids": [
+   "Некероване навчання#0",
+   "Машинне навчання#24",
+   "Некероване навчання#1"
+  ],
+  "retrieved_scores": [
+   0.9,
+   0.892,
+   0.8907
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.18379575000017212,
+  "generation_seconds": 4.79742245899979,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GANs) були запроваджені Яном Ґудфелоу в 2014 році [1]. Ідея конкурентного навчання, що лежить в основі GANs, була запропонована Лі, Гаучі та Гросом в 2013 році [2][3]. Навчання по Тюрінгу, що є узагальненням GANs, було запропоновано Лі, Гаучі та Гросом в 2013 році [3]. Шмідхубер запропонував ідею змагального навчання в більш ранніх роботах у 1992 році [3].",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Генеративна змагальна мережа#2",
+   "Генеративна змагальна мережа#3"
+  ],
+  "retrieved_scores": [
+   0.8682,
+   0.8533,
+   0.8525
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 4,
+  "completeness": 3,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.41282124999997905,
+  "generation_seconds": 5.221245332999388,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 3, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "BERT (мовна модель)#1",
+   "Велика мовна модель#0",
+   "Глибоке навчання#70"
+  ],
+  "retrieved_scores": [
+   0.8613,
+   0.8412,
+   0.8358
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.3861578329997428,
+  "generation_seconds": 2.5704217910006264,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "E: 100w, k=3, cosine",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#6",
+   "Штучна нейронна мережа#5",
+   "Штучна нейронна мережа#20"
+  ],
+  "retrieved_scores": [
+   0.8621,
+   0.8604,
+   0.8593
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.20631662499999948,
+  "generation_seconds": 2.7650589169998057,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Джон Голланд вважається «батьком-засновником» генетичних алгоритмів, і його фундаментальна книга називається «Адаптація в природних і штучних системах» [1]. Він ввів формалізований підхід для передбачення якості наступного покоління, відомий як Теорема схем [1]. Дослідження в області генетичних алгоритмів залишалось більше теоретичним до середини 80-х років, коли була, нарешті, проведена Перша міжнародна конференція з генетичних алгоритмів [1].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#1",
+   "Генетичний алгоритм#2"
+  ],
+  "retrieved_scores": [
+   0.9003,
+   0.8539,
+   0.845
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.06272641599935014,
+  "generation_seconds": 7.694099334000384,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг Гаррі Каспарова [1][2]. Він міг обчислювати 200 000 000 позицій на секунду [2].",
+  "retrieved_ids": [
+   "Deep Blue#0",
+   "Deep Blue#1",
+   "Deep Blue#3"
+  ],
+  "retrieved_scores": [
+   0.9053,
+   0.8934,
+   0.8901
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.36410925000018324,
+  "generation_seconds": 4.402250125000137,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію з п’яти матчів проти південно-корейського професійного гравця 9-го дану Лі Седола, і перемогла з рахунком 1–4 [1]. Це було перше, коли комп’ютерна програма перемогла професійного гравця в ґо на класичній дошці в грі на рівних [1]. AlphaGo використовувала пошук по дереву Монте Карло, керований за допомогою технології поглибленої нейронної мережі для оцінки позиції та пошуку найбільш вдалих ходів [3]. Програма спочатку вчилась грати на записаних партіях професійних гравців, а потім почала грати проти себе для подальшого вдосконалення [3].",
+  "retrieved_ids": [
+   "AlphaGo#1",
+   "AlphaGo#0",
+   "AlphaGo#2"
+  ],
+  "retrieved_scores": [
+   0.8791,
+   0.8693,
+   0.8453
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05487866700059385,
+  "generation_seconds": 5.859389709000425,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга був запропонований Аланом Тюрінгом у статті «Обчислювальні машини й розум», опублікованій у 1950 році [1]. У 1990 році відбулася сорокова річниця публікації статті Тюрінга, що відновила інтерес до цього тесту [3].",
+  "retrieved_ids": [
+   "Тест Тюрінга#0",
+   "Тест Тюрінга#9",
+   "Тест Тюрінга#5"
+  ],
+  "retrieved_scores": [
+   0.8944,
+   0.8924,
+   0.8828
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 4,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.37476445799984504,
+  "generation_seconds": 6.229977582999709,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 4, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (ДКЧП, англ. long short-term memory, LSTM) запропонували Зепп Хохрайтер та Юрген Шмідгубер у 1997 році [1][2]. Хохрайтер визначив і проаналізував проблему зникання градієнту та запропонував для її розв'язання рекурентні залишкові з'єднання, що призвело до появи методу глибокого навчання, названого ДКЧП [2].",
+  "retrieved_ids": [
+   "Довга короткочасна пам'ять#0",
+   "Глибоке навчання#8",
+   "Штучна нейронна мережа#5"
+  ],
+  "retrieved_scores": [
+   0.8299,
+   0.8235,
+   0.8233
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.42205445899980987,
+  "generation_seconds": 9.478323917000125,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги, запропонованому в статті 2017 року «Увага — це все, що вам треба» [1]. Трансформер не має рекурентних вузлів і використовується для тренування великих мовних моделей на великих наборах даних, таких як корпуси Вікіпедії та Common Crawl [1].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#6",
+   "Трансформер (архітектура глибокого навчання)#10"
+  ],
+  "retrieved_scores": [
+   0.8669,
+   0.8602,
+   0.8543
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3688652499995442,
+  "generation_seconds": 6.346733624999615,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT (Bidirectional Encoder Representations from Transformers) була створена Джейкобом Девліном та його колегами з Google у 2018 році [1]. Базовий варіант BERT має 12 шарів, 768 прихованих, 12 голови та 110 мільйонів параметрів [1]. Великий варіант BERT має 24 шари, 1024 прихованих, 16 голови та 340 мільйонів параметрів [1].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#3",
+   "BERT (мовна модель)#2"
+  ],
+  "retrieved_scores": [
+   0.902,
+   0.8595,
+   0.8531
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.33609720799995557,
+  "generation_seconds": 5.519453290999991,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі виникає, коли статистична модель або алгоритм машинного навчання не може схопити тенденцію, що лежить в основі даних, і демонструє низьку дисперсію, але високий зсув [1]. Це відбувається, коли модель є занадто складною і «запам'ятовує» тренувальні дані замість того, щоб узагальнювати [2]. Для уникнення перенавчання використовують різні методики, такі як перехресне затверджування, регуляризація, ранню зупинку, обрізку та порівняння моделей [3]. Ці методики допомагають моделі краще узагальнюватись на нових даних, уникаючи занадто сильного реагування на другорядні відхилення в тренувальних даних.",
+  "retrieved_ids": [
+   "Перенавчання#5",
+   "Перенавчання#0",
+   "Перенавчання#3"
+  ],
+  "retrieved_scores": [
+   0.8826,
+   0.8749,
+   0.8748
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.06529599999976199,
+  "generation_seconds": 8.19321170799958,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту — це згенерована ШІ відповідь, яка містить неправдиву або оманливу інформацію, подану як факт [1]. Це може бути вигадана сума доходу компанії або неіснуюче твердження [1]. Також галюцинацією можна назвати будь-яку впевнену відповідь ШІ, яка не обґрунтована навчальними даними [2]. У деяких сферах, таких як споживчі гаджети або автоматизоване керування транспортними засобами, ШІ-галюцинації можуть призвести до катастрофічних наслідків [2].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#9",
+   "Галюцинація (штучний інтелект)#7"
+  ],
+  "retrieved_scores": [
+   0.8902,
+   0.8839,
+   0.8833
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.31942391699976724,
+  "generation_seconds": 6.52570999999989,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори (списки чисел фіксованої довжини), разом з іншими елементами даних [1]. Вона зазвичай втілює один або декілька алгоритмів наближено найближчих сусідів (ННС, англ. Approximate Nearest Neighbor, ANN), що дозволяє здійснювати пошук за подібністю [1]. Ці вектори є математичними поданнями даних у високовимірному просторі, що дозволяє представляти складні дані [1]. Векторні бази даних використовуються для різних задач, таких як пошук за подібністю, мультимодальний пошук та покращення відповідей великих мовних моделей за допомогою RAG [1].",
+  "retrieved_ids": [
+   "Векторна база даних#0",
+   "Довга короткочасна пам'ять#2",
+   "Генетичний алгоритм#0"
+  ],
+  "retrieved_scores": [
+   0.9054,
+   0.846,
+   0.8394
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.2882840000002034,
+  "generation_seconds": 7.357273665999855,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон запропонував Френк Розенблат у 1957 році [1, 2]. Перший у світі нейрокомп'ютер, «Марк-1», було продемонстровано 23 червня 1960 року в Корнельському університеті [1, 2]. Перцептрон був створений на основі ідей Воррена Маккалоха та Волтера Пітта (1943) та Дональда Гебба (1949) [2].",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#1",
+   "Штучна нейронна мережа#2"
+  ],
+  "retrieved_scores": [
+   0.8985,
+   0.8854,
+   0.8577
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.39051166600074794,
+  "generation_seconds": 8.990063625000403,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI [1, 2]. Модель розроблена як мультимодальна велика мовна модель, яка доступна для користувачів ChatGPT Plus та через API [1, 2]. Microsoft інтегрувала GPT-4 у свої продукти, такі як Bing та Microsoft 365 Copilot [2]. Також було створено AI-алгоритм на базі GPT-4, який представили на міжнародній виставці цифрового мистецтва у Лондоні [2].",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "GPT-4#3",
+   "GPT-4#1"
+  ],
+  "retrieved_scores": [
+   0.9009,
+   0.8593,
+   0.8467
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.32463258400002815,
+  "generation_seconds": 4.704345166999701,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання використовує об’єкти входу та бажане значення виходу для тренування моделі [2]. У цьому випадку алгоритм будує функцію, яка відображає нові дані на очікувані значення виходу [2]. На відміну від цього, некероване навчання навчається виключно з немічених даних [1]. У некерованому навчанні нейронні мережі намагаються імітувати дані, використовуючи похибку для виправлення своїх ваг [3].",
+  "retrieved_ids": [
+   "Некероване навчання#0",
+   "Кероване навчання#0",
+   "Некероване навчання#1"
+  ],
+  "retrieved_scores": [
+   0.9,
+   0.8857,
+   0.8704
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.4071282080003584,
+  "generation_seconds": 6.116831917000127,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GANs) були запроваджені Яном Ґудфелоу в 2014 році [1]. Нечітка логіка, що базується на ідеях конкурентного навчання, була запропонована Лі, Гаучі та Гросом в 2013 році [3], а також у більш ранніх роботах, таких як стаття Шмідхубера (1992) [3]. Ці методи використовуються для висновків поведінки, що нагадує тест Тюрінга [3].",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Штучна нейронна мережа#5",
+   "Генеративна змагальна мережа#1"
+  ],
+  "retrieved_scores": [
+   0.8682,
+   0.8535,
+   0.8499
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 5,
+  "completeness": 4,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3801240000002508,
+  "generation_seconds": 7.5155963329998485,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 4, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "Велика мовна модель#0",
+   "Трансформер (архітектура глибокого навчання)#2"
+  ],
+  "retrieved_scores": [
+   0.8516,
+   0.844,
+   0.8323
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.06356895800036,
+  "generation_seconds": 4.912446291999913,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "F: 400w, k=3, cosine",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#2",
+   "Перцептрон#0",
+   "Штучний інтелект#14"
+  ],
+  "retrieved_scores": [
+   0.859,
+   0.8442,
+   0.8415
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.055318624999927124,
+  "generation_seconds": 7.317888541999309,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Джон Голланд вважається «батьком-засновником» генетичних алгоритмів [1][2]. Його фундаментальна книга під назвою «Адаптація в природних і штучних системах» (англ. Adaptation in Natural and Artificial Systems) [1][2] є основою цієї галузі досліджень. Дослідження Голанда були засновані на експериментах з клітинними автоматами та його роботах в університеті Мічигану [2].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#2",
+   "Генетичний алгоритм#1"
+  ],
+  "retrieved_scores": [
+   1.0,
+   0.939,
+   0.9359
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 11.070328458999938,
+  "generation_seconds": 8.924525750000612,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг Гаррі Каспарова [1, 2]. Він міг обчислювати 200 000 000 позицій на секунду [1].",
+  "retrieved_ids": [
+   "Deep Blue#1",
+   "Deep Blue#0",
+   "AlphaGo#1"
+  ],
+  "retrieved_scores": [
+   0.9996,
+   0.9995,
+   0.9687
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 4.570933209000032,
+  "generation_seconds": 5.567308416000742,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію матчів з південно-корейським професійним гравцем 9-го дану Лі Седолем, і рахунок змагань закінчився з рахунком 1–4 на користь AlphaGo [1]. Це було перше змагання, коли комп'ютерна програма перемогла професійного гравця в ґо на класичній дошці в грі на рівних [1]. Дослідники вважають гру ґо кращим засобом для оцінки інтелектуальних можливостей комп'ютера, ніж шахи [2].",
+  "retrieved_ids": [
+   "AlphaGo#1",
+   "Deep Blue#5",
+   "AlphaGo#0"
+  ],
+  "retrieved_scores": [
+   0.998,
+   0.7998,
+   0.0981
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.366568790999736,
+  "generation_seconds": 5.4347105830001965,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга запропонував Алан Тюрінг у 1950 році в статті «Обчислювальні машини і розум» [1, 2]. Метою цього тесту було визначення здатності машини проявляти інтелектуально обумовлену поведінку, що тотожна до поведінки людини, і яку неможливо відрізнити від поведінки людини [2]. Він використовувався для перевірки, чи є комп'ютер розумним у людському сенсі слова [1, 2].",
+  "retrieved_ids": [
+   "Алан Тюрінг#15",
+   "Тест Тюрінга#0",
+   "Алан Тюрінг#14"
+  ],
+  "retrieved_scores": [
+   0.9998,
+   0.9998,
+   0.9978
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.7573934590000135,
+  "generation_seconds": 6.445976040999994,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (ДКЧП, англ. long short-term memory, LSTM) запропонували Зепп Хохрайтер та Юрген Шмідгубер у 1997 році [1][2]. Хохрайтер виявив та проаналізував проблему зникання градієнту, а для її вирішення запропонував рекурентні залишкові з'єднання, що призвело до появи ДКЧП [2]. «Стандартну ДКЧП» із забувальним вентилем запропонували у 1999 році Фелікс Ґерс, Шмідхубер та Фред Каммінс [2].",
+  "retrieved_ids": [
+   "Довга короткочасна пам'ять#0",
+   "Штучна нейронна мережа#9",
+   "Глибоке навчання#12"
+  ],
+  "retrieved_scores": [
+   0.9996,
+   0.9836,
+   0.946
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.7711912499999016,
+  "generation_seconds": 8.406464916000004,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги, запропонованому в статті «Увага — це все, що вам треба» [1]. Трансформер не має рекурентних вузлів і використовує паралельний механізм уваги для підсилення важливих токенів і пригнічення менш важливих [1]. Ця архітектура була розроблена з метою заміни рекурентних нейронних мереж, таких як ДКЧП, і тепер використовується в різних областях, включаючи обробку природної мови та комп'ютерне бачення [1].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#4",
+   "Трансформер (архітектура глибокого навчання)#19"
+  ],
+  "retrieved_scores": [
+   0.9997,
+   0.9311,
+   0.9202
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.6666666666666666,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.399169374999474,
+  "generation_seconds": 7.215666917000817,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT була створена Джейкобом Девліном та його колегами з Google у 2018 році [1]. Базовий варіант BERT має 12 шарів, 768 прихованих, 12 голови та 110 мільйонів параметрів [1]. Великий варіант BERT має 24 шари, 1024 приховані, 16 голови та 340 мільйонів параметрів [1].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#3",
+   "Штучна нейронна мережа#7"
+  ],
+  "retrieved_scores": [
+   0.9983,
+   0.4909,
+   0.4473
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.820065916999738,
+  "generation_seconds": 6.089724542000113,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі виникає, коли модель занадто сильно «запам'ятовує» тренувальні дані, замість того, щоб узагальнювати закономірності [1][2][3]. Це призводить до поганої передбачувальної продуктивності на нових, небачених даних. Щоб уникнути перенавчання, використовуються різні методики, такі як перехресне затверджування, регуляризація, рання зупинка, обрізка та баєсові апріорні параметри [1][2]. Ці методики допомагають моделі уникнути реагування на другорядні відхилення в тренувальних даних та зосередитися на виявленні справжніх закономірностей [1][2][3].",
+  "retrieved_ids": [
+   "Перенавчання#2",
+   "Перенавчання#1",
+   "Перенавчання#0"
+  ],
+  "retrieved_scores": [
+   0.999,
+   0.9988,
+   0.9767
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.0640623339995727,
+  "generation_seconds": 7.3084931670000515,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту — це згенерована ШІ відповідь, яка містить неправдиву або оманливу інформацію, подану як факт [1]. Це може бути вигадана сума доходу компанії або інша неправдива інформація [1]. Також галюцинацією можна назвати будь-яку впевнену відповідь ШІ, яка не обґрунтована навчальними даними [2]. Дослідники зазначають, що ШІ-галюцинації є однією з основних проблем технології LLM, і чат-боти можуть галюцинувати до 27% часу [1].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#16",
+   "Галюцинація (штучний інтелект)#4"
+  ],
+  "retrieved_scores": [
+   0.9999,
+   0.9983,
+   0.9924
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.564414708000186,
+  "generation_seconds": 6.9016467089995785,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори, що є математичними представленнями даних у багатовимірному просторі. Ці вектори обчислюються на основі методів машинного навчання, таких як вкладання слів чи мережі глибокого навчання, щоб відобразити семантичну подібність даних [1]. Векторні бази даних зазвичай втілюють алгоритми наближено найближчих сусідів (ННС), що дозволяє здійснювати пошук за подібністю [1][2]. Вони використовуються для різних задач, таких як пошук за подібністю, мультимодальний пошук, рекомендаційні рушії та впровадження доповненого пошуком породжування (RAG) для великих мовних моделей [2].",
+  "retrieved_ids": [
+   "Векторна база даних#0",
+   "Векторна база даних#1",
+   "Інженерія запитів#9"
+  ],
+  "retrieved_scores": [
+   1.0,
+   0.9996,
+   0.3742
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.3189519999996264,
+  "generation_seconds": 7.409473374999834,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон запропонував Френк Розенблат у 1957 році [1][2]. Перший у світі нейрокомп'ютер, «Марк-1», було продемонстровано в Корнельському університеті 23 червня 1960 року [1][2]. Він був створений на основі моделювання процесу людського сприйняття та використовував електромеханічні елементи пам'яті для передачі сигналів [1][2].",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#2",
+   "Штучна нейронна мережа#3"
+  ],
+  "retrieved_scores": [
+   0.9997,
+   0.9997,
+   0.9419
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.1415719999995417,
+  "generation_seconds": 6.8730379169992375,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI [1, 2]. Модель доступна для користувачів ChatGPT Plus та через API [1, 2]. Microsoft інтегрувала GPT-4 у свої продукти, зокрема в Bing та Microsoft 365 Copilot [2]. Також, український художник Олег Жинтичкою на базі GPT-4 було створено AI-картину, яка представила на міжнародній виставці цифрового мистецтва у Лондоні [2].",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "GPT-4#3",
+   "ChatGPT#5"
+  ],
+  "retrieved_scores": [
+   0.9994,
+   0.8458,
+   0.7664
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.197465917000045,
+  "generation_seconds": 5.060049708000406,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання відрізняється від некерованого тим, що в керованому навчанні алгоритм навчається на даних, які містять як входи, так і бажані виходи, надані «вчителем» [1]. У некерованому навчанні алгоритм навчається лише на немічених даних, не отримуючи жодних міток чи керівних сигналів [2]. Це дозволяє алгоритму самостійно знаходити структуру у даних або використовувати їх для інших цілей, таких як виявлення прихованих закономірностей [2].",
+  "retrieved_ids": [
+   "Машинне навчання#11",
+   "Некероване навчання#0",
+   "Некероване навчання#1"
+  ],
+  "retrieved_scores": [
+   0.9965,
+   0.9923,
+   0.9917
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.7686812500005544,
+  "generation_seconds": 5.8992738749993805,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GANs) були запроваджені Яном Ґудфелоу у 2014 році [1][2]. Нечітка логіка – це новий напрям, що використовує логічний підхід для кращої виразності, його назва – нечітка логіка [2]. Юрген Шмідхубер опублікував змагальні нейронні мережі у 2014 році [2].",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Штучний інтелект#9",
+   "Штучна нейронна мережа#8"
+  ],
+  "retrieved_scores": [
+   0.9895,
+   0.3158,
+   0.2316
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 4,
+  "completeness": 3,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.2814871669997956,
+  "generation_seconds": 5.689555333000499,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 3, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Велика мовна модель#0",
+   "BERT (мовна модель)#0",
+   "Велика мовна модель#1"
+  ],
+  "retrieved_scores": [
+   0.8624,
+   0.4662,
+   0.0227
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 2.3202289580003708,
+  "generation_seconds": 3.8794682090001515,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "G: 200w, k=3, re-ranker",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#3",
+   "Штучна нейронна мережа#2",
+   "Перцептрон#0"
+  ],
+  "retrieved_scores": [
+   0.6074,
+   0.5328,
+   0.4414
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 2.425754792000589,
+  "generation_seconds": 4.822652083000321,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Джон Голланд вважається «батьком-засновником» генетичних алгоритмів, і його фундаментальною книгою є «Адаптація в природних і штучних системах» [1][3]. Він ввів формалізований підхід для передбачення якості наступного покоління, відомий як Теорема схем [3]. Дослідження Голланда були засновані на експериментах з клітинними автоматами та роботах в університеті Мічигану [3].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#1",
+   "Генетичний алгоритм#4",
+   "Генетичний алгоритм#2",
+   "Генетичний алгоритм#3"
+  ],
+  "retrieved_scores": [
+   1.0,
+   0.9551,
+   0.9415,
+   0.6275,
+   0.4845
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.4426893750005547,
+  "generation_seconds": 5.932032415999856,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році комп'ютер Deep Blue переміг Гаррі Каспарова [1][2][3]. Він міг обчислювати 200 000 000 позицій на секунду [3].",
+  "retrieved_ids": [
+   "Deep Blue#0",
+   "Deep Blue#2",
+   "Deep Blue#1",
+   "AlphaGo#1",
+   "Deep Blue#7"
+  ],
+  "retrieved_scores": [
+   0.9995,
+   0.9975,
+   0.9975,
+   0.9673,
+   0.8093
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.5819681250004578,
+  "generation_seconds": 5.157575249999354,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "У березні 2016 року AlphaGo зіграла серію матчів проти південно-корейського професійного гравця 9-го дану Лі Седоля, в результаті чого програла з рахунком 1–4 [1, 2]. Це було перше змагання між програмою штучного інтелекту та професійним гравцем у грі ґо на класичній дошці [1]. [4]",
+  "retrieved_ids": [
+   "AlphaGo#3",
+   "Deep Blue#8",
+   "AlphaGo#2",
+   "AlphaGo#0",
+   "AlphaGo#4"
+  ],
+  "retrieved_scores": [
+   0.9997,
+   0.7998,
+   0.6792,
+   0.0981,
+   0.0215
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.07806037499995,
+  "generation_seconds": 4.905186125,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга запропонував Алан Тюрінг у 1950 році у статті «Обчислювальні машини і розум». Метою тесту було визначити, чи може машина проявляти інтелектуально обумовлену поведінку, що тотожна до поведінки людини [1][2][5]. Він запропонував ідею, коли суддя взаємодіє з комп'ютером і людиною, і на основі відповідей визначає, з ким він розмовляє [1]. До 1956 року британські вчені вже протягом 10 років досліджували «машинний інтелект», а Тюрінг займався цією проблемою щонайменше з 1941 року [5].",
+  "retrieved_ids": [
+   "Тест Тюрінга#0",
+   "Алан Тюрінг#30",
+   "Тест Тюрінга#7",
+   "Тест Тюрінга#13",
+   "Тест Тюрінга#6"
+  ],
+  "retrieved_scores": [
+   0.9999,
+   0.9995,
+   0.9923,
+   0.9876,
+   0.9796
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.9095248749999882,
+  "generation_seconds": 6.86316508300024,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Архітектуру довгої короткочасної пам'яті (ДКЧП, англ. long short-term memory, LSTM) запропонували Зепп Хохрайтер та Юрген Шмідгубер у 1997 році [1][3]. Це система глибокого навчання, яка запобігає проблемі зникання градієнту, на відміну від традиційних рекурентних нейронних мереж [4]. Хохрайтер також визначив і проаналізував проблему зникання градієнту та запропонував для її розв'язання рекурентні залишкові з'єднання [3]. [5]",
+  "retrieved_ids": [
+   "Довга короткочасна пам'ять#0",
+   "Глибоке навчання#29",
+   "Глибоке навчання#28",
+   "Рекурентна нейронна мережа#18",
+   "Штучна нейронна мережа#18"
+  ],
+  "retrieved_scores": [
+   0.9999,
+   0.9868,
+   0.9722,
+   0.965,
+   0.9559
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.8963943329999893,
+  "generation_seconds": 6.781932374999997,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Архітектура трансформера ґрунтується на механізмі багатоголової уваги, запропонованому в статті «Увага — це все, що вам треба» [1][2]. Трансформер не має рекурентних вузлів і використовує паралельний механізм уваги для підсилення важливих токенів і пригнічення менш важливих [2].  [3]",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#1",
+   "Трансформер (архітектура глибокого навчання)#8",
+   "Трансформер (архітектура глибокого навчання)#34",
+   "Трансформер (архітектура глибокого навчання)#39"
+  ],
+  "retrieved_scores": [
+   0.9996,
+   0.9963,
+   0.9587,
+   0.9344,
+   0.927
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.6666666666666666,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.5041790000004767,
+  "generation_seconds": 5.784459208000044,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT (Bidirectional Encoder Representations from Transformers) була створена Джейкобом Девліном та його колегами з Google у 2018 році [1][2]. Модель BERTBASE має 110 мільйонів параметрів, а BERT LARGE – 340 мільйонів параметрів [2]. Обидві моделі були натреновані на BooksCorpus з 800 мільйонами слів та одній з версій англійської Вікіпедії з 2 500 мільйонами слів [2]. Трансформер, на якому базується BERT, був запропонований Ашишем Васвані зі співавт. у 2017 році [4].",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#1",
+   "BERT (мовна модель)#6",
+   "Штучна нейронна мережа#16",
+   "Трансформер (архітектура глибокого навчання)#2"
+  ],
+  "retrieved_scores": [
+   0.9926,
+   0.9323,
+   0.4248,
+   0.1782,
+   0.1755
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.2131454999998823,
+  "generation_seconds": 6.570111249999172,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання моделі виникає, коли статистична модель описує випадкову похибку або шум, замість взаємозв'язку, що лежить в основі даних [2]. Модель стає занадто складною, коли має занадто багато параметрів відносно числа спостережень [2]. Перенавчена модель має погану передбачувальну продуктивність, оскільки вона занадто сильно реагує на другорядні відхилення в тренувальних даних [2][4]. Щоб уникати перенавчання, можна використовувати методики, такі як перехресне затверджування, регуляризація, ранню зупинку, обрізку або баєсові апріорні параметри [3]. Ці методики допомагають або штрафувати занадто складні моделі, або перевіряти здатність моделі до узагальнення на наборі даних, не використаному для тренування [3].",
+  "retrieved_ids": [
+   "Перенавчання#3",
+   "Перенавчання#0",
+   "Перенавчання#4",
+   "Перенавчання#1",
+   "Перенавчання#2"
+  ],
+  "retrieved_scores": [
+   0.9966,
+   0.9648,
+   0.9574,
+   0.9553,
+   0.9508
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.8803608749994964,
+  "generation_seconds": 7.396934958999736,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту — це згенерована ШІ відповідь, яка містить неправдиву або оманливу інформацію, подану як факт [1]. Це може бути вигадана сума доходу компанії або будь-яка інша неправда [1]. Поняття «галюцинація» застосовується до будь-якої впевненої відповіді ШІ, яка не обґрунтована навчальними даними [2]. Галюцинації можуть виникати через різні причини, включаючи помилки в кодуванні, системні помилки в генерації тексту або жорстко зашиті знання в моделі [3][4][5].",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#34",
+   "Галюцинація (штучний інтелект)#5",
+   "Галюцинація (штучний інтелект)#9",
+   "Галюцинація (штучний інтелект)#4"
+  ],
+  "retrieved_scores": [
+   0.9999,
+   0.9987,
+   0.9968,
+   0.9963,
+   0.9944
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 2.432392708000407,
+  "generation_seconds": 7.987537459000123,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних — це база даних, яка зберігає вектори, що є математичними представленнями даних у високовимірному просторі [1][3]. Вона зазвичай використовує алгоритми наближено найближчих сусідів (ANN) для пошуку відповідних записів у базі даних на основі вектора запиту [1]. Вектори призначені для представлення семантично подібних елементів даних [2].",
+  "retrieved_ids": [
+   "Векторна база даних#0",
+   "Векторна база даних#2",
+   "Векторна база даних#1",
+   "Векторна база даних#3",
+   "Інженерія запитів#19"
+  ],
+  "retrieved_scores": [
+   1.0,
+   0.9993,
+   0.9865,
+   0.9058,
+   0.2653
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 3.143405165999866,
+  "generation_seconds": 5.31137070800014,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон був запропонований Френком Розенблатом у 1957 році [1][3][4]. Перший у світі нейрокомп'ютер, «Марк-1», було продемонстровано в Корнельському університеті 23 червня 1960 року [2][3]. Він був створений на основі моделі людського сприйняття та використовував метод навчання проб і помилок [2].",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#5",
+   "Перцептрон#4",
+   "Штучна нейронна мережа#6",
+   "Штучна нейронна мережа#7"
+  ],
+  "retrieved_scores": [
+   0.9999,
+   0.9946,
+   0.9934,
+   0.9786,
+   0.9746
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.394192750000002,
+  "generation_seconds": 5.5129011250000985,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року компанією OpenAI [1][4]. Доступ до моделі спочатку був лише для користувачів ChatGPT Plus, а пізніше через OpenAI API та Developer Playground [2][3]. Згодом було випущено GPT-4.1 та GPT-5 [3][5].",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "GPT-4#5",
+   "ChatGPT#18",
+   "ChatGPT#10",
+   "ChatGPT#19"
+  ],
+  "retrieved_scores": [
+   0.9994,
+   0.6975,
+   0.6638,
+   0.399,
+   0.3816
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.3128785419994529,
+  "generation_seconds": 4.2731003750004675,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "У керованому навчанні алгоритм навчається на наборі даних, що містить як входи, так і бажані виходи, надані «вчителем» [1, 5]. На відміну від цього, в некерованому навчанні алгоритм навчається виключно з немічених даних, не отримуючи жодних міток [2, 4]. Некероване навчання може бути метою саме по собі, виявляючи приховані закономірності у даних, або використовуватися як засіб для навчання ознак [1, 5].",
+  "retrieved_ids": [
+   "Машинне навчання#23",
+   "Некероване навчання#0",
+   "Некероване навчання#1",
+   "Некероване навчання#17",
+   "Машинне навчання#24"
+  ],
+  "retrieved_scores": [
+   0.9956,
+   0.9923,
+   0.9895,
+   0.9891,
+   0.9841
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.2285896670000511,
+  "generation_seconds": 5.491558583999904,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "Генеративні змагальні мережі (GAN) були запроваджені Яном Ґудфелоу у 2014 році [1, 5]. Нечітка логіка з'явилася у 1991 році, коли Юрген Шмідхубер опублікував змагальні нейронні мережі [2]. У нечіткій логіці існують перехідні величини, на відміну від булевої алгебри, де є лише 0 та 1 [4].",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Глибоке навчання#26",
+   "Генеративна змагальна мережа#3",
+   "Нечітка логіка#3",
+   "Глибоке навчання#27"
+  ],
+  "retrieved_scores": [
+   0.9895,
+   0.1362,
+   0.0738,
+   0.0651,
+   0.025
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.5,
+  "accuracy": 4,
+  "completeness": 3,
+  "coherence": 4,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 1.9856447500005743,
+  "generation_seconds": 5.906128458999774,
+  "judge_output": "```json\n{\"accuracy\": 4, \"completeness\": 3, \"coherence\": 4}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Велика мовна модель#0",
+   "BERT (мовна модель)#1",
+   "Велика мовна модель#1",
+   "BERT (мовна модель)#0",
+   "Тест Тюрінга#40"
+  ],
+  "retrieved_scores": [
+   0.875,
+   0.2183,
+   0.1155,
+   0.0197,
+   0.0153
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 1.3147716249995938,
+  "generation_seconds": 3.496402916000079,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "H: 100w, k=5, re-ranker",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#6",
+   "Штучна нейронна мережа#7",
+   "Штучна нейронна мережа#5",
+   "Некероване навчання#6",
+   "Штучна нейронна мережа#0"
+  ],
+  "retrieved_scores": [
+   0.6149,
+   0.5684,
+   0.5154,
+   0.4262,
+   0.3536
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 2.0596706249998533,
+  "generation_seconds": 4.643938042000627,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q01",
+  "question": "Хто вважається «батьком-засновником» генетичних алгоритмів і як називається його фундаментальна книга?",
+  "answer": "Вважається Джоном Голландом. Його фундаментальна книга називається «Адаптація в природних і штучних системах» [1][2].",
+  "retrieved_ids": [
+   "Генетичний алгоритм#0",
+   "Генетичний алгоритм#2",
+   "Генетичний алгоритм#1"
+  ],
+  "retrieved_scores": [
+   0.9003,
+   0.8583,
+   0.85
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.5028287909999563,
+  "generation_seconds": 6.216982333999113,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q02",
+  "question": "У якому році комп'ютер Deep Blue переміг Гаррі Каспарова і скільки позицій за секунду він міг обчислювати?",
+  "answer": "У 1997 році Deep Blue переміг Гаррі Каспарова. За підсумками, система міг обчислювати 200 000 000 позицій за секунду. [1][2][3]",
+  "retrieved_ids": [
+   "Deep Blue#0",
+   "Deep Blue#2",
+   "Deep Blue#1"
+  ],
+  "retrieved_scores": [
+   0.9053,
+   0.8956,
+   0.8907
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3931072919995131,
+  "generation_seconds": 4.1572184579999885,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q03",
+  "question": "Проти кого і з яким рахунком AlphaGo зіграла серію матчів у березні 2016 року?",
+  "answer": "AlphaGo зіграла серію матчів проти південно-корейського професійного гравця 9-го дану Лі Седола. Рахунком був 4:1 в свою підсвітку.",
+  "retrieved_ids": [
+   "AlphaGo#1",
+   "AlphaGo#0",
+   "AlphaGo#2"
+  ],
+  "retrieved_scores": [
+   0.8791,
+   0.8693,
+   0.8453
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05430599999999686,
+  "generation_seconds": 3.1669648750003034,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q04",
+  "question": "Хто, коли і в якій статті запропонував тест Тюрінга?",
+  "answer": "Тест Тюрінга запропонував Алан Тюрінг в статті «Обчислювальні машини й розум», опублікованій в 1950 році. [1]",
+  "retrieved_ids": [
+   "Тест Тюрінга#9",
+   "Тест Тюрінга#0",
+   "Тест Тюрінга#17"
+  ],
+  "retrieved_scores": [
+   0.9024,
+   0.8944,
+   0.8924
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.06944579099945258,
+  "generation_seconds": 4.202495250000538,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q05",
+  "question": "Хто і коли запропонував архітектуру довгої короткочасної пам'яті (LSTM)?",
+  "answer": "Запрошення відповіді на це запитання ми знайшли в [2]. Запропонував архітектуру Довгої короткочасної пам'яті (LSTM) Зепп Хохрайтер та Юрген Шмідгубер в 1997 році.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#26",
+   "Довга короткочасна пам'ять#0",
+   "Штучна нейронна мережа#9"
+  ],
+  "retrieved_scores": [
+   0.8337,
+   0.8301,
+   0.8278
+  ],
+  "first_relevant_rank": 2,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.14495587500005058,
+  "generation_seconds": 4.873423541999728,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q06",
+  "question": "На якому механізмі ґрунтується архітектура трансформера і в якій статті її було запропоновано?",
+  "answer": "Механізм, ґрунтується архітектура трансформера, ґрунтується на механізмі багатоголової уваги, який було запропоновано в статті 2017 року \"Увага — це все, що вам треба\" [1].",
+  "retrieved_ids": [
+   "Трансформер (архітектура глибокого навчання)#0",
+   "Трансформер (архітектура глибокого навчання)#11",
+   "Трансформер (архітектура глибокого навчання)#1"
+  ],
+  "retrieved_scores": [
+   0.8658,
+   0.8602,
+   0.859
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.2752451670003211,
+  "generation_seconds": 3.776557375000266,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q07",
+  "question": "Хто і коли створив модель BERT та скільки параметрів мають її базовий і великий варіанти?",
+  "answer": "Модель BERT створено Джейкобом Девліним і його колегами з Google в 2018 році. [1][2][3]\n\nБазова версія BERT має 12 шарів, 768 прихованих рівнях і 12 головних. [1]\n\nВелика версія BERT має 24 шарів, 1024 прихованих рівнях і 16 головних. [1]",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "BERT (мовна модель)#3",
+   "BERT (мовна модель)#2"
+  ],
+  "retrieved_scores": [
+   0.902,
+   0.8595,
+   0.8531
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.6,
+  "accuracy": 4,
+  "completeness": 3,
+  "coherence": 3,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.14515833399946132,
+  "generation_seconds": 5.361719708000237,
+  "judge_output": "```json\n{\n  \"accuracy\": 4,\n  \"completeness\": 3,\n  \"coherence\": 3\n}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q08",
+  "question": "Що таке перенавчання моделі і які методики допомагають його уникати?",
+  "answer": "Перенавчання - це ситуація, коли модель тренується так, що вона зазначає відхилення з тренувальних даних як існуючі відхилення зібратих даних. Це винятися з-підходом, при якому модель тренується шляхом максимізації продуктивності на тренувальних даних, а не на небачених. Методики, які допомагають уникати перенавчання: перехресне затверджування, регуляризація, рання зупинка, обрізка, баєсові апріорні параметри або порівняння моделей. [1][2]",
+  "retrieved_ids": [
+   "Перенавчання#2",
+   "Перенавчання#0",
+   "Перенавчання#8"
+  ],
+  "retrieved_scores": [
+   0.8988,
+   0.8844,
+   0.8826
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 0.8,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.393813957999555,
+  "generation_seconds": 5.995242541000152,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q09",
+  "question": "Що таке галюцинація у сфері штучного інтелекту?",
+  "answer": "Галюцинація у сфері штучного інтелекту — це відповідь штучного інтелекту, яка містить неправдиву або оманливу інформацію, подану як факт. Такі відповіді або твердження про неіснуючу або неправду називають «галюцинаціями». У сфері обробки природної мови галюцинації часто виникають з кількох причин: незначні розбіжності в вихідних даних, навчання з тренувальними наборами даних, а також залежно від способу навчання моделі. У 2022 році термін «ШІ-галюцинація» набув популярності після появи великих мовних моделей, таких як ChatGPT.",
+  "retrieved_ids": [
+   "Галюцинація (штучний інтелект)#0",
+   "Галюцинація (штучний інтелект)#16",
+   "Галюцинація (штучний інтелект)#4"
+  ],
+  "retrieved_scores": [
+   0.8902,
+   0.8856,
+   0.8834
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.2548852079999051,
+  "generation_seconds": 7.00614270799997,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q10",
+  "question": "Що таке векторна база даних і які алгоритми пошуку вона зазвичай втілює?",
+  "answer": "Векторна база даних (ВБД) — це система, яка зберігає вектори (списки чисел фіксованої довжини) з іншими елементами даних. Вона втілює один або декілька алгоритмів найближчих сусідів (ННС) для пошуку базою даних за допомогою вектора запиту. Алгоритми ННС допоміжують знайти найближчі відповідні записи бази даних. У векторних базах даних вектори є математичними поданнями даних у високовимірному просторі.",
+  "retrieved_ids": [
+   "Векторна база даних#0",
+   "Векторна база даних#1",
+   "Довга короткочасна пам'ять#4"
+  ],
+  "retrieved_scores": [
+   0.9117,
+   0.91,
+   0.8425
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.357000624999273,
+  "generation_seconds": 6.254868042000453,
+  "judge_output": "```json\n{\n  \"accuracy\": 5,\n  \"completeness\": 5,\n  \"coherence\": 5\n}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q11",
+  "question": "Хто і коли запропонував перцептрон та як називався перший у світі нейрокомп'ютер?",
+  "answer": "Перцептрон запропонував Френк Розенблат в 1957 році. Перший нейрокомп'ютер в світі назвався «Марк-1», і навчався в 1960 році. [1][2]",
+  "retrieved_ids": [
+   "Перцептрон#0",
+   "Перцептрон#2",
+   "Перцептрон#1"
+  ],
+  "retrieved_scores": [
+   0.9027,
+   0.8854,
+   0.8677
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.05987175000063871,
+  "generation_seconds": 4.563292208000348,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q12",
+  "question": "Коли було випущено GPT-4 і яка компанія його створила?",
+  "answer": "GPT-4 було випущено 14 березня 2023 року. Компанія, яка його створила, — OpenAI.",
+  "retrieved_ids": [
+   "GPT-4#0",
+   "ChatGPT#8",
+   "GPT-4#3"
+  ],
+  "retrieved_scores": [
+   0.9009,
+   0.8598,
+   0.8593
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.2837130000007164,
+  "generation_seconds": 3.459862458999851,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q13",
+  "question": "Чим кероване навчання відрізняється від некерованого?",
+  "answer": "Кероване навчання відрізняється від некерованого навчання тим, що в першому використовують тренувальні дані з міченими людиною керівними сигналами, а в другому — неміченими даними.",
+  "retrieved_ids": [
+   "Некероване навчання#0",
+   "Кероване навчання#0",
+   "Некероване навчання#1"
+  ],
+  "retrieved_scores": [
+   0.9,
+   0.8857,
+   0.8792
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 1.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": false,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.32350483300069754,
+  "generation_seconds": 4.120397167000192,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q14",
+  "question": "Хто і коли запровадив генеративні змагальні мережі, а хто і коли — нечітку логіку?",
+  "answer": "У наданих документів немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Генеративна змагальна мережа#0",
+   "Штучна нейронна мережа#8",
+   "Генеративна змагальна мережа#2"
+  ],
+  "retrieved_scores": [
+   0.8682,
+   0.855,
+   0.8525
+  ],
+  "first_relevant_rank": 1,
+  "evidence_recall": 0.5,
+  "fact_coverage": 0.0,
+  "accuracy": 1,
+  "completeness": 1,
+  "coherence": 1,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": true,
+  "retrieval_seconds": 0.3257871249998061,
+  "generation_seconds": 3.372028333000344,
+  "judge_output": "```json\n{\"accuracy\": 1, \"completeness\": 1, \"coherence\": 1}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q15",
+  "question": "Яку мовну модель випустила французька компанія Mistral AI і скільки параметрів вона має?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "BERT (мовна модель)#0",
+   "Велика мовна модель#0",
+   "GPT-4#1"
+  ],
+  "retrieved_scores": [
+   0.8516,
+   0.844,
+   0.8321
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.07517254200047319,
+  "generation_seconds": 3.346468499999901,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ },
+ {
+  "setup": "I: as B, LLM Qwen2.5-3B",
+  "question_id": "Q16",
+  "question": "Хто отримав Нобелівську премію з фізики 2024 року за відкриття в галузі штучних нейронних мереж?",
+  "answer": "У наданих документах немає відповіді на це запитання.",
+  "retrieved_ids": [
+   "Штучна нейронна мережа#2",
+   "Штучний інтелект#2",
+   "Штучний інтелект#27"
+  ],
+  "retrieved_scores": [
+   0.8566,
+   0.8556,
+   0.8522
+  ],
+  "first_relevant_rank": null,
+  "evidence_recall": 0.0,
+  "fact_coverage": 1.0,
+  "accuracy": 5,
+  "completeness": 5,
+  "coherence": 5,
+  "refused": true,
+  "partially_refused": false,
+  "answerable": false,
+  "retrieval_seconds": 0.06063404100041225,
+  "generation_seconds": 3.9085494999999355,
+  "judge_output": "```json\n{\"accuracy\": 5, \"completeness\": 5, \"coherence\": 5}\n```"
+ }
+]

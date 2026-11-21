@@ -109,3 +109,30 @@ python main_lab2.py
 python scripts/make_reference_docx.py   # only if the Word styles need regenerating
 python scripts/build_report.py lab2
 ```
+
+## 🧬 Laboratory Work #3 (Evolutionary Algorithms, variant 1)
+
+A hand-written **genetic algorithm** (normalized genes, tournament selection, uniform crossover, Gaussian mutation, elitism) tunes 7 hyperparameters of `HistGradientBoostingRegressor` on **California Housing**. Fitness = −RMSE on the validation split; the test split is used once. Compared with default hyperparameters and with random search under the same budget (272 evaluations, 5 seeds each).
+
+| Method | Val RMSE (mean ± std) | Test RMSE (mean ± std) | Test R² |
+| :--- | :---: | :---: | :---: |
+| Default hyperparameters | 0.4775 | 0.4620 | 0.837 |
+| Random search | 0.4542 ± 0.0019 | 0.4401 ± 0.0020 | 0.852 |
+| Genetic algorithm | **0.4502 ± 0.0004** | **0.4392 ± 0.0023** | **0.853** |
+
+```bash
+python main_lab3.py                 # ~15 min on Apple M1 Pro; outputs in artifacts/lab3/
+python scripts/build_report.py lab3 # report/REPORT_LAB3.docx / .pdf
+```
+
+## 🔎 Laboratory Work #4 (Retrieval-Augmented Generation)
+
+A local RAG system over 40 Ukrainian Wikipedia articles about AI: cleaning → sentence-aware chunking with overlap → `multilingual-e5-small` embeddings → **ChromaDB** → top-k cosine search (+ optional `bge-reranker-v2-m3` cross-encoder) → **Gemma 3 4B** (4-bit, Apple MLX) answers with citations; dialogue history with follow-up question rewriting; evaluation on 16 control questions (2 of them without an answer in the corpus) over 9 configurations. Key-fact coverage: 0.58 without retrieval → 0.95 with RAG (base setup). No API keys: every model runs locally (macOS on Apple Silicon is required for MLX).
+
+```bash
+python main_lab4.py          # full run (~25 min): indexing, demos, evaluation; outputs in artifacts/lab4/
+python main_lab4.py chat     # interactive chat (/history, /clear, /exit)
+python scripts/build_report.py lab4
+```
+
+Models are downloaded from Hugging Face on the first run (~8 GB in `~/.cache/huggingface`). Tests: `python -m pytest`.

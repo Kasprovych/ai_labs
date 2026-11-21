@@ -1,0 +1,197 @@
+2026-11-21 14:25:12 [INFO   ] Application             : Initializing Laboratory Work #3: Genetic Algorithm for Hyperparameter Optimization (scikit-learn 1.9.1)
+
+================================================================================
+ >>> STEP 1: DATASET AND TRAIN / VALIDATION / TEST SPLIT
+================================================================================
+
+2026-11-21 14:25:12 [INFO   ] src.evolution.housing_data: California Housing: 20640 rows, 8 features -> train=12384, val=4128, test=4128
+2026-11-21 14:25:12 [INFO   ] Application             : Features: MedInc, HouseAge, AveRooms, AveBedrms, Population, AveOccup, Latitude, Longitude; target: median house value ($100k)
+
+================================================================================
+ >>> STEP 2: SEARCH SPACE (GENOTYPE -> HYPERPARAMETERS)
+================================================================================
+
+|   Gene | Hyperparameter    | Type   | Range                   |   Default |
+|-------:|:------------------|:-------|:------------------------|----------:|
+|      0 | learning_rate     | float  | [0.01, 0.5], log scale  |       0.1 |
+|      1 | max_iter          | int    | [50, 500]               |     100   |
+|      2 | max_leaf_nodes    | int    | [4, 64]                 |      31   |
+|      3 | min_samples_leaf  | int    | [1, 100]                |      20   |
+|      4 | l2_regularization | float  | [0.0001, 10], log scale |       0   |
+|      5 | max_features      | float  | [0.3, 1]                |       1   |
+|      6 | max_bins          | int    | [16, 255]               |     255   |
+
+================================================================================
+ >>> STEP 3: BASELINE WITH DEFAULT HYPERPARAMETERS
+================================================================================
+
+2026-11-21 14:25:13 [INFO   ] Application             : Default model: validation RMSE 0.4775
+
+================================================================================
+ >>> STEP 4: GENETIC ALGORITHM (SELECTION -> CROSSOVER -> MUTATION -> ELITISM)
+================================================================================
+
+2026-11-21 14:25:13 [INFO   ] Application             : Population=20, generations=15, tournament=3, p_crossover=0.90, p_mutation=0.20, sigma=0.10, elites=2 -> 272 fitness evaluations per run
+2026-11-21 14:25:13 [INFO   ] Application             : GA run, seed 1
+2026-11-21 14:25:22 [INFO   ] src.evolution.genetic_algorithm:   generation  0 | best RMSE 0.4564 | mean 0.4943 | worst 0.6436 | diversity 0.272 | evaluations  20
+2026-11-21 14:25:31 [INFO   ] src.evolution.genetic_algorithm:   generation  1 | best RMSE 0.4564 | mean 0.4678 | worst 0.4996 | diversity 0.222 | evaluations  38
+2026-11-21 14:25:42 [INFO   ] src.evolution.genetic_algorithm:   generation  2 | best RMSE 0.4543 | mean 0.4609 | worst 0.4747 | diversity 0.173 | evaluations  56
+2026-11-21 14:25:55 [INFO   ] src.evolution.genetic_algorithm:   generation  3 | best RMSE 0.4532 | mean 0.4586 | worst 0.4736 | diversity 0.144 | evaluations  74
+2026-11-21 14:26:13 [INFO   ] src.evolution.genetic_algorithm:   generation  4 | best RMSE 0.4525 | mean 0.4560 | worst 0.4615 | diversity 0.108 | evaluations  92
+2026-11-21 14:26:28 [INFO   ] src.evolution.genetic_algorithm:   generation  5 | best RMSE 0.4521 | mean 0.4548 | worst 0.4643 | diversity 0.093 | evaluations 110
+2026-11-21 14:26:40 [INFO   ] src.evolution.genetic_algorithm:   generation  6 | best RMSE 0.4515 | mean 0.4537 | worst 0.4568 | diversity 0.052 | evaluations 128
+2026-11-21 14:26:57 [INFO   ] src.evolution.genetic_algorithm:   generation  7 | best RMSE 0.4515 | mean 0.4543 | worst 0.4571 | diversity 0.076 | evaluations 146
+2026-11-21 14:27:13 [INFO   ] src.evolution.genetic_algorithm:   generation  8 | best RMSE 0.4506 | mean 0.4535 | worst 0.4576 | diversity 0.057 | evaluations 164
+2026-11-21 14:27:29 [INFO   ] src.evolution.genetic_algorithm:   generation  9 | best RMSE 0.4506 | mean 0.4536 | worst 0.4566 | diversity 0.059 | evaluations 182
+2026-11-21 14:27:45 [INFO   ] src.evolution.genetic_algorithm:   generation 10 | best RMSE 0.4506 | mean 0.4538 | worst 0.4566 | diversity 0.049 | evaluations 200
+2026-11-21 14:28:02 [INFO   ] src.evolution.genetic_algorithm:   generation 11 | best RMSE 0.4503 | mean 0.4540 | worst 0.4608 | diversity 0.063 | evaluations 218
+2026-11-21 14:28:19 [INFO   ] src.evolution.genetic_algorithm:   generation 12 | best RMSE 0.4503 | mean 0.4533 | worst 0.4573 | diversity 0.050 | evaluations 236
+2026-11-21 14:28:35 [INFO   ] src.evolution.genetic_algorithm:   generation 13 | best RMSE 0.4503 | mean 0.4533 | worst 0.4566 | diversity 0.055 | evaluations 254
+2026-11-21 14:28:51 [INFO   ] src.evolution.genetic_algorithm:   generation 14 | best RMSE 0.4503 | mean 0.4533 | worst 0.4570 | diversity 0.063 | evaluations 272
+2026-11-21 14:28:51 [INFO   ] Application             : GA run, seed 2
+2026-11-21 14:29:00 [INFO   ] src.evolution.genetic_algorithm:   generation  0 | best RMSE 0.4544 | mean 0.5251 | worst 0.7516 | diversity 0.280 | evaluations  20
+2026-11-21 14:29:12 [INFO   ] src.evolution.genetic_algorithm:   generation  1 | best RMSE 0.4544 | mean 0.4681 | worst 0.5053 | diversity 0.234 | evaluations  38
+2026-11-21 14:29:29 [INFO   ] src.evolution.genetic_algorithm:   generation  2 | best RMSE 0.4525 | mean 0.4583 | worst 0.4790 | diversity 0.166 | evaluations  56
+2026-11-21 14:29:45 [INFO   ] src.evolution.genetic_algorithm:   generation  3 | best RMSE 0.4525 | mean 0.4557 | worst 0.4625 | diversity 0.089 | evaluations  74
+2026-11-21 14:29:59 [INFO   ] src.evolution.genetic_algorithm:   generation  4 | best RMSE 0.4525 | mean 0.4545 | worst 0.4588 | diversity 0.066 | evaluations  92
+2026-11-21 14:30:14 [INFO   ] src.evolution.genetic_algorithm:   generation  5 | best RMSE 0.4515 | mean 0.4537 | worst 0.4580 | diversity 0.052 | evaluations 110
+2026-11-21 14:30:28 [INFO   ] src.evolution.genetic_algorithm:   generation  6 | best RMSE 0.4510 | mean 0.4529 | worst 0.4587 | diversity 0.061 | evaluations 128
+2026-11-21 14:30:44 [INFO   ] src.evolution.genetic_algorithm:   generation  7 | best RMSE 0.4509 | mean 0.4539 | worst 0.4584 | diversity 0.067 | evaluations 146
+2026-11-21 14:30:58 [INFO   ] src.evolution.genetic_algorithm:   generation  8 | best RMSE 0.4509 | mean 0.4542 | worst 0.4581 | diversity 0.063 | evaluations 164
+2026-11-21 14:31:13 [INFO   ] src.evolution.genetic_algorithm:   generation  9 | best RMSE 0.4507 | mean 0.4534 | worst 0.4579 | diversity 0.067 | evaluations 182
+2026-11-21 14:31:29 [INFO   ] src.evolution.genetic_algorithm:   generation 10 | best RMSE 0.4507 | mean 0.4540 | worst 0.4574 | diversity 0.072 | evaluations 200
+2026-11-21 14:31:43 [INFO   ] src.evolution.genetic_algorithm:   generation 11 | best RMSE 0.4505 | mean 0.4535 | worst 0.4574 | diversity 0.070 | evaluations 218
+2026-11-21 14:31:56 [INFO   ] src.evolution.genetic_algorithm:   generation 12 | best RMSE 0.4505 | mean 0.4537 | worst 0.4572 | diversity 0.066 | evaluations 236
+2026-11-21 14:32:07 [INFO   ] src.evolution.genetic_algorithm:   generation 13 | best RMSE 0.4504 | mean 0.4522 | worst 0.4559 | diversity 0.051 | evaluations 254
+2026-11-21 14:32:20 [INFO   ] src.evolution.genetic_algorithm:   generation 14 | best RMSE 0.4504 | mean 0.4530 | worst 0.4583 | diversity 0.042 | evaluations 272
+2026-11-21 14:32:20 [INFO   ] Application             : GA run, seed 3
+2026-11-21 14:32:29 [INFO   ] src.evolution.genetic_algorithm:   generation  0 | best RMSE 0.4616 | mean 0.4906 | worst 0.5614 | diversity 0.263 | evaluations  20
+2026-11-21 14:32:38 [INFO   ] src.evolution.genetic_algorithm:   generation  1 | best RMSE 0.4539 | mean 0.4702 | worst 0.5122 | diversity 0.244 | evaluations  38
+2026-11-21 14:32:47 [INFO   ] src.evolution.genetic_algorithm:   generation  2 | best RMSE 0.4539 | mean 0.4614 | worst 0.4690 | diversity 0.171 | evaluations  56
+2026-11-21 14:32:56 [INFO   ] src.evolution.genetic_algorithm:   generation  3 | best RMSE 0.4539 | mean 0.4589 | worst 0.4690 | diversity 0.156 | evaluations  74
+2026-11-21 14:33:09 [INFO   ] src.evolution.genetic_algorithm:   generation  4 | best RMSE 0.4535 | mean 0.4576 | worst 0.4670 | diversity 0.125 | evaluations  92
+2026-11-21 14:33:22 [INFO   ] src.evolution.genetic_algorithm:   generation  5 | best RMSE 0.4535 | mean 0.4573 | worst 0.4612 | diversity 0.136 | evaluations 110
+2026-11-21 14:33:33 [INFO   ] src.evolution.genetic_algorithm:   generation  6 | best RMSE 0.4518 | mean 0.4562 | worst 0.4670 | diversity 0.110 | evaluations 128
+2026-11-21 14:33:47 [INFO   ] src.evolution.genetic_algorithm:   generation  7 | best RMSE 0.4509 | mean 0.4558 | worst 0.4588 | diversity 0.057 | evaluations 146
+2026-11-21 14:33:59 [INFO   ] src.evolution.genetic_algorithm:   generation  8 | best RMSE 0.4509 | mean 0.4561 | worst 0.4624 | diversity 0.065 | evaluations 164
+2026-11-21 14:34:11 [INFO   ] src.evolution.genetic_algorithm:   generation  9 | best RMSE 0.4509 | mean 0.4552 | worst 0.4599 | diversity 0.071 | evaluations 182
+2026-11-21 14:34:24 [INFO   ] src.evolution.genetic_algorithm:   generation 10 | best RMSE 0.4509 | mean 0.4554 | worst 0.4647 | diversity 0.069 | evaluations 200
+2026-11-21 14:34:36 [INFO   ] src.evolution.genetic_algorithm:   generation 11 | best RMSE 0.4507 | mean 0.4563 | worst 0.4693 | diversity 0.066 | evaluations 218
+2026-11-21 14:34:50 [INFO   ] src.evolution.genetic_algorithm:   generation 12 | best RMSE 0.4507 | mean 0.4556 | worst 0.4717 | diversity 0.061 | evaluations 236
+2026-11-21 14:35:01 [INFO   ] src.evolution.genetic_algorithm:   generation 13 | best RMSE 0.4507 | mean 0.4546 | worst 0.4619 | diversity 0.064 | evaluations 254
+2026-11-21 14:35:11 [INFO   ] src.evolution.genetic_algorithm:   generation 14 | best RMSE 0.4507 | mean 0.4540 | worst 0.4592 | diversity 0.036 | evaluations 272
+2026-11-21 14:35:11 [INFO   ] Application             : GA run, seed 4
+2026-11-21 14:35:19 [INFO   ] src.evolution.genetic_algorithm:   generation  0 | best RMSE 0.4579 | mean 0.4871 | worst 0.5777 | diversity 0.267 | evaluations  20
+2026-11-21 14:35:26 [INFO   ] src.evolution.genetic_algorithm:   generation  1 | best RMSE 0.4556 | mean 0.4723 | worst 0.5306 | diversity 0.256 | evaluations  38
+2026-11-21 14:35:34 [INFO   ] src.evolution.genetic_algorithm:   generation  2 | best RMSE 0.4556 | mean 0.4642 | worst 0.4871 | diversity 0.212 | evaluations  56
+2026-11-21 14:35:42 [INFO   ] src.evolution.genetic_algorithm:   generation  3 | best RMSE 0.4540 | mean 0.4612 | worst 0.4665 | diversity 0.167 | evaluations  74
+2026-11-21 14:35:51 [INFO   ] src.evolution.genetic_algorithm:   generation  4 | best RMSE 0.4540 | mean 0.4594 | worst 0.4686 | diversity 0.153 | evaluations  92
+2026-11-21 14:36:02 [INFO   ] src.evolution.genetic_algorithm:   generation  5 | best RMSE 0.4534 | mean 0.4564 | worst 0.4676 | diversity 0.110 | evaluations 110
+2026-11-21 14:36:13 [INFO   ] src.evolution.genetic_algorithm:   generation  6 | best RMSE 0.4526 | mean 0.4573 | worst 0.4756 | diversity 0.106 | evaluations 128
+2026-11-21 14:36:25 [INFO   ] src.evolution.genetic_algorithm:   generation  7 | best RMSE 0.4526 | mean 0.4561 | worst 0.4606 | diversity 0.081 | evaluations 146
+2026-11-21 14:36:37 [INFO   ] src.evolution.genetic_algorithm:   generation  8 | best RMSE 0.4510 | mean 0.4550 | worst 0.4599 | diversity 0.066 | evaluations 164
+2026-11-21 14:36:49 [INFO   ] src.evolution.genetic_algorithm:   generation  9 | best RMSE 0.4507 | mean 0.4553 | worst 0.4646 | diversity 0.053 | evaluations 182
+2026-11-21 14:37:02 [INFO   ] src.evolution.genetic_algorithm:   generation 10 | best RMSE 0.4507 | mean 0.4562 | worst 0.4639 | diversity 0.060 | evaluations 200
+2026-11-21 14:37:13 [INFO   ] src.evolution.genetic_algorithm:   generation 11 | best RMSE 0.4502 | mean 0.4543 | worst 0.4628 | diversity 0.069 | evaluations 218
+2026-11-21 14:37:26 [INFO   ] src.evolution.genetic_algorithm:   generation 12 | best RMSE 0.4502 | mean 0.4553 | worst 0.4628 | diversity 0.068 | evaluations 236
+2026-11-21 14:37:37 [INFO   ] src.evolution.genetic_algorithm:   generation 13 | best RMSE 0.4502 | mean 0.4547 | worst 0.4630 | diversity 0.065 | evaluations 254
+2026-11-21 14:37:51 [INFO   ] src.evolution.genetic_algorithm:   generation 14 | best RMSE 0.4502 | mean 0.4540 | worst 0.4570 | diversity 0.063 | evaluations 272
+2026-11-21 14:37:51 [INFO   ] Application             : GA run, seed 5
+2026-11-21 14:37:58 [INFO   ] src.evolution.genetic_algorithm:   generation  0 | best RMSE 0.4594 | mean 0.5140 | worst 0.7422 | diversity 0.289 | evaluations  20
+2026-11-21 14:38:06 [INFO   ] src.evolution.genetic_algorithm:   generation  1 | best RMSE 0.4572 | mean 0.4722 | worst 0.5104 | diversity 0.255 | evaluations  38
+2026-11-21 14:38:14 [INFO   ] src.evolution.genetic_algorithm:   generation  2 | best RMSE 0.4572 | mean 0.4625 | worst 0.4839 | diversity 0.195 | evaluations  56
+2026-11-21 14:38:23 [INFO   ] src.evolution.genetic_algorithm:   generation  3 | best RMSE 0.4540 | mean 0.4599 | worst 0.4709 | diversity 0.170 | evaluations  74
+2026-11-21 14:38:32 [INFO   ] src.evolution.genetic_algorithm:   generation  4 | best RMSE 0.4530 | mean 0.4603 | worst 0.4777 | diversity 0.184 | evaluations  92
+2026-11-21 14:38:41 [INFO   ] src.evolution.genetic_algorithm:   generation  5 | best RMSE 0.4530 | mean 0.4594 | worst 0.4792 | diversity 0.181 | evaluations 110
+2026-11-21 14:38:51 [INFO   ] src.evolution.genetic_algorithm:   generation  6 | best RMSE 0.4529 | mean 0.4608 | worst 0.4751 | diversity 0.201 | evaluations 128
+2026-11-21 14:39:02 [INFO   ] src.evolution.genetic_algorithm:   generation  7 | best RMSE 0.4529 | mean 0.4575 | worst 0.4671 | diversity 0.193 | evaluations 146
+2026-11-21 14:39:15 [INFO   ] src.evolution.genetic_algorithm:   generation  8 | best RMSE 0.4526 | mean 0.4576 | worst 0.4632 | diversity 0.184 | evaluations 164
+2026-11-21 14:39:28 [INFO   ] src.evolution.genetic_algorithm:   generation  9 | best RMSE 0.4504 | mean 0.4554 | worst 0.4597 | diversity 0.107 | evaluations 182
+2026-11-21 14:39:40 [INFO   ] src.evolution.genetic_algorithm:   generation 10 | best RMSE 0.4504 | mean 0.4542 | worst 0.4572 | diversity 0.074 | evaluations 200
+2026-11-21 14:39:53 [INFO   ] src.evolution.genetic_algorithm:   generation 11 | best RMSE 0.4504 | mean 0.4551 | worst 0.4626 | diversity 0.061 | evaluations 218
+2026-11-21 14:40:07 [INFO   ] src.evolution.genetic_algorithm:   generation 12 | best RMSE 0.4504 | mean 0.4547 | worst 0.4586 | diversity 0.067 | evaluations 236
+2026-11-21 14:40:21 [INFO   ] src.evolution.genetic_algorithm:   generation 13 | best RMSE 0.4495 | mean 0.4538 | worst 0.4573 | diversity 0.064 | evaluations 254
+2026-11-21 14:40:34 [INFO   ] src.evolution.genetic_algorithm:   generation 14 | best RMSE 0.4495 | mean 0.4548 | worst 0.4591 | diversity 0.074 | evaluations 272
+
+================================================================================
+ >>> STEP 5: RANDOM SEARCH WITH THE SAME EVALUATION BUDGET
+================================================================================
+
+2026-11-21 14:40:34 [INFO   ] Application             : Random search run, seed 1
+2026-11-21 14:42:24 [INFO   ] src.evolution.genetic_algorithm:   random search: best RMSE 0.4512 after 272 evaluations
+2026-11-21 14:42:24 [INFO   ] Application             : Random search run, seed 2
+2026-11-21 14:44:09 [INFO   ] src.evolution.genetic_algorithm:   random search: best RMSE 0.4544 after 272 evaluations
+2026-11-21 14:44:09 [INFO   ] Application             : Random search run, seed 3
+2026-11-21 14:45:59 [INFO   ] src.evolution.genetic_algorithm:   random search: best RMSE 0.4548 after 272 evaluations
+2026-11-21 14:45:59 [INFO   ] Application             : Random search run, seed 4
+2026-11-21 14:47:45 [INFO   ] src.evolution.genetic_algorithm:   random search: best RMSE 0.4537 after 272 evaluations
+2026-11-21 14:47:45 [INFO   ] Application             : Random search run, seed 5
+2026-11-21 14:49:32 [INFO   ] src.evolution.genetic_algorithm:   random search: best RMSE 0.4570 after 272 evaluations
+
+================================================================================
+ >>> STEP 6: FINAL EVALUATION ON THE HELD-OUT TEST SPLIT
+================================================================================
+
+
+Best hyperparameters found in every run:
+| Configuration         |   learning_rate |   max_iter |   max_leaf_nodes |   min_samples_leaf |   l2_regularization |   max_features |   max_bins |
+|:----------------------|----------------:|-----------:|-----------------:|-------------------:|--------------------:|---------------:|-----------:|
+| Default               |         0.1     |        100 |               31 |                 20 |           0         |         1      |        255 |
+| Random search, seed 1 |         0.06321 |        383 |               54 |                 26 |           0.7148    |         0.5969 |        244 |
+| Random search, seed 2 |         0.07183 |        472 |               49 |                 58 |           0.122     |         0.6546 |        247 |
+| Random search, seed 3 |         0.0817  |        436 |               42 |                 65 |           0.00901   |         0.5496 |        188 |
+| Random search, seed 4 |         0.0471  |        447 |               64 |                 23 |           0.7986    |         0.3733 |        174 |
+| Random search, seed 5 |         0.05305 |        378 |               54 |                 96 |           0.7922    |         0.8738 |        240 |
+| GA, seed 1            |         0.05927 |        479 |               59 |                  1 |          10         |         0.5696 |        240 |
+| GA, seed 2            |         0.06728 |        477 |               45 |                 28 |           0.01429   |         0.6587 |        247 |
+| GA, seed 3            |         0.09005 |        500 |               41 |                 73 |           0.0008173 |         0.5158 |        185 |
+| GA, seed 4            |         0.07873 |        340 |               62 |                 20 |           0.002418  |         0.486  |        188 |
+| GA, seed 5            |         0.07109 |        477 |               46 |                 36 |           0.4654    |         0.7367 |        189 |
+
+Validation and test metrics per run:
+| Configuration         |   Val RMSE |   Test RMSE |   Test MAE |   Test R2 |
+|:----------------------|-----------:|------------:|-----------:|----------:|
+| Default               |     0.4775 |      0.462  |     0.3074 |    0.8371 |
+| Random search, seed 1 |     0.4512 |      0.4383 |     0.2857 |    0.8534 |
+| Random search, seed 2 |     0.4544 |      0.437  |     0.2858 |    0.8543 |
+| Random search, seed 3 |     0.4548 |      0.4415 |     0.2882 |    0.8512 |
+| Random search, seed 4 |     0.4537 |      0.442  |     0.2876 |    0.8509 |
+| Random search, seed 5 |     0.457  |      0.4415 |     0.2894 |    0.8513 |
+| GA, seed 1            |     0.4503 |      0.4392 |     0.2856 |    0.8528 |
+| GA, seed 2            |     0.4504 |      0.437  |     0.2855 |    0.8543 |
+| GA, seed 3            |     0.4507 |      0.4414 |     0.2902 |    0.8513 |
+| GA, seed 4            |     0.4502 |      0.4421 |     0.2875 |    0.8509 |
+| GA, seed 5            |     0.4495 |      0.4363 |     0.2831 |    0.8547 |
+
+Summary over seeds (same evaluation budget for GA and random search):
+| Method                  |   Runs | Val RMSE (mean ± std)   | Test RMSE (mean ± std)   |   Best test RMSE |   Test R2 (mean) |
+|:------------------------|-------:|:------------------------|:-------------------------|-----------------:|-----------------:|
+| Default hyperparameters |      1 | 0.4775 ± 0.0000         | 0.4620 ± 0.0000          |           0.462  |           0.8371 |
+| Random search           |      5 | 0.4542 ± 0.0019         | 0.4401 ± 0.0020          |           0.437  |           0.8522 |
+| Genetic algorithm       |      5 | 0.4502 ± 0.0004         | 0.4392 ± 0.0023          |           0.4363 |           0.8528 |
+
+Search cost:
+| Method            |   Seed |   Fitness evaluations |   Models trained |   Seconds |
+|:------------------|-------:|----------------------:|-----------------:|----------:|
+| Genetic algorithm |      1 |                   272 |              251 |     218.1 |
+| Genetic algorithm |      2 |                   272 |              247 |     209.7 |
+| Genetic algorithm |      3 |                   272 |              250 |     170.4 |
+| Genetic algorithm |      4 |                   272 |              251 |     160.3 |
+| Genetic algorithm |      5 |                   272 |              261 |     163   |
+| Random search     |      1 |                   272 |              272 |     110.1 |
+| Random search     |      2 |                   272 |              272 |     105.1 |
+| Random search     |      3 |                   272 |              272 |     109.9 |
+| Random search     |      4 |                   272 |              272 |     105.4 |
+| Random search     |      5 |                   272 |              272 |     107   |
+
+
+================================================================================
+ >>> STEP 7: PLOTS
+================================================================================
+
+2026-11-21 14:49:50 [INFO   ] Application             : Saved plot 'GA convergence and diversity' to /Users/ross/Documents/ai_labs/artifacts/lab3/plots/ga_convergence.png
+2026-11-21 14:49:50 [INFO   ] Application             : Saved plot 'GA vs random search' to /Users/ross/Documents/ai_labs/artifacts/lab3/plots/ga_vs_random_search.png
+2026-11-21 14:49:50 [INFO   ] Application             : Saved plot 'Population evolution' to /Users/ross/Documents/ai_labs/artifacts/lab3/plots/population_evolution.png
+2026-11-21 14:49:50 [INFO   ] Application             : Saved plot 'Final comparison' to /Users/ross/Documents/ai_labs/artifacts/lab3/plots/final_comparison.png
+2026-11-21 14:49:50 [INFO   ] Application             : Summary saved to /Users/ross/Documents/ai_labs/artifacts/lab3/metrics_summary.md
+2026-11-21 14:49:50 [INFO   ] Application             : All tasks completed successfully!

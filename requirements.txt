@@ -9,3 +9,10 @@ seaborn>=0.13.0
 tabulate>=0.9.0
 certifi>=2024.2.2
 python-docx>=1.1.0  # report build (scripts/build_report.py lab2)
+threadpoolctl>=3.2.0  # Lab 3: single-threaded model fits
+pytest>=8.0.0  # unit tests (python -m pytest)
+# Lab 4 (python main_lab4.py): RAG system, all models run locally
+requests>=2.31.0  # corpus download (Wikipedia API)
+sentence-transformers>=3.0.0  # embeddings and cross-encoder re-ranker
+chromadb>=0.5.0  # vector database
+mlx-lm>=0.20.0  # local LLM on Apple Silicon (macOS, M-series only)

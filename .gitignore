@@ -24,3 +24,9 @@ data/*.zip
 
 # Antigravity artifacts
 .gemini/
+
+# Lab 3-4 caches (re-created by the code)
+data/sklearn_cache/
+data/lab4/chroma_db/
+artifacts/lab4/chat_history.json
+.pytest_cache/
